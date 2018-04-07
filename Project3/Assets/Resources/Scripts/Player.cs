@@ -127,6 +127,8 @@ public class Player : MonoBehaviour {
 			// Set the start and end position of the movement for the lerp
 			startPos = floor.spaces [positionOnFloorX, positionOnFloorZ].transform.position;
 			endPos = floor.spaces [newXPos, newZPos].transform.position;
+			startPos.y = 0.5f;
+			endPos.y = 0.5f;
 
 			// Set the start time and length of the travel distance
 			startTime = Time.time;

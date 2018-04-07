@@ -30,7 +30,7 @@ public class Floor : MonoBehaviour {
 					newSpace.GetComponent<Space> ().isObstacle = false;
 				} else {
 					newSpace = new GameObject("Space " + i + "," + j + "");
-					newSpace.transform.position = new Vector3 (j + 0.5f, 0f, i + 0.5f);
+					newSpace.transform.position = new Vector3 (j + 0.5f, 0.5f, i + 0.5f);
 					newSpace.AddComponent<Space> ();
 					newSpace.GetComponent<Space> ().isObstacle = false;
 				}

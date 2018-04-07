@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MovableObstacle : MonoBehaviour {
+	// Attributes
 	public int positionOnFloorX;
 	public int positionOnFloorZ;
 	public Floor floor;

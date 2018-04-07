@@ -16,6 +16,7 @@ public class Floor : MonoBehaviour {
 	public List<GameObject> movableObjects;
 	public float xOffset;
 	public float zOffset;
+	public GameObject enemyPrefab;
 
 	// Use this for initialization
 	void Start () {
@@ -40,7 +41,7 @@ public class Floor : MonoBehaviour {
 				GameObject newSpace;
 				float rand = Random.Range (0f, 100f);
 				// Obstacle Space
-				if (rand < 15f && i > 1 && i < 8 && j > 1 && j < 8) {
+				if (rand < 10f && i > 1 && i < 8 && j > 1 && j < 8) {
 					newSpace = GameObject.Instantiate (obstaclePrefab, new Vector3 (j + xOffset, 0.5f, i + zOffset), Quaternion.identity);
 					newSpace.AddComponent<Space> ();
 					newSpace.GetComponent<Space> ().isObstacle = true;
@@ -114,6 +115,8 @@ public class Floor : MonoBehaviour {
 					newSpace.GetComponent<Space> ().wasVisited = false;
 				}
 
+
+
 				// Start Space
 				if (i == 0 && j == 0) {
 					newSpace.GetComponent<Space> ().occupied = true;
@@ -136,6 +139,17 @@ public class Floor : MonoBehaviour {
 
 					newSpace.GetComponent<Space> ().isStartPosition = false;
 					newSpace.GetComponent<Space> ().isEndPosition = false;
+				}
+
+				// create an enemy
+				if (i == 9 && j == 0) {
+					GameObject enemy = GameObject.Instantiate(enemyPrefab, new Vector3 (j + xOffset, 0.5f, i + zOffset), Quaternion.identity);
+					enemy.AddComponent<Enemy> ();
+
+					Debug.Log ("adding enemy script");
+					enemy.GetComponent<Enemy> ().positionOnFloorX = i;
+					enemy.GetComponent<Enemy> ().positionOnFloorZ = j;
+					newSpace.GetComponent<Space> ().occupied = true;
 				}
 
 				spaces [i, j] = newSpace;

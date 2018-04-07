@@ -10,6 +10,10 @@ public class Floor : MonoBehaviour {
 	public GameObject obstaclePrefab;
 	public GameObject endSpacePrefab;
 	public GameObject forwardSpacePrefab;
+	public GameObject movableObstaclePrefab;
+	public GameObject breakableSpacePrefab;
+	public Material breakableSpaceMat;
+	public List<GameObject> movableObjects;
 	public float xOffset;
 	public float zOffset;
 
@@ -20,7 +24,7 @@ public class Floor : MonoBehaviour {
 		spaces = new GameObject[length, width];
 		xOffset = this.transform.position.x + 0.5f - (width/2);
 		zOffset = this.transform.position.z + 0.5f - (length/2);
-
+		movableObjects = new List<GameObject> ();
 		CreateLevel1 ();
 	}
 	
@@ -42,6 +46,9 @@ public class Floor : MonoBehaviour {
 					newSpace.GetComponent<Space> ().isObstacle = true;
 					newSpace.GetComponent<Space> ().isMovingSpace = false;
 					newSpace.GetComponent<Space> ().direction = -1;
+					newSpace.GetComponent<Space> ().isMovableObstacle = false;
+					newSpace.GetComponent<Space> ().isBreakableSpace = false;
+					newSpace.GetComponent<Space> ().wasVisited = false;
 				} 
 				// End Space
 				else if (i == length - 1 && j == width - 1) {
@@ -50,15 +57,48 @@ public class Floor : MonoBehaviour {
 					newSpace.GetComponent<Space> ().isObstacle = false;
 					newSpace.GetComponent<Space> ().isMovingSpace = false;
 					newSpace.GetComponent<Space> ().direction = -1;
+					newSpace.GetComponent<Space> ().isMovableObstacle = false;
+					newSpace.GetComponent<Space> ().isBreakableSpace = false;
+					newSpace.GetComponent<Space> ().wasVisited = false;
 				} 
 				// Forward Moving Space
-				else if (rand > 20f && rand < 35f && i > 1 && i < 8 && j > 1 && j < 8) {
+				else if (rand > 20f && rand < 30f && i > 1 && i < 8 && j > 1 && j < 8) {
 					newSpace = GameObject.Instantiate (forwardSpacePrefab, new Vector3 (j + xOffset, 0f, i + zOffset), Quaternion.identity);
 					newSpace.AddComponent<Space> ();
 					newSpace.GetComponent<Space> ().isObstacle = false;
 					newSpace.GetComponent<Space> ().isMovingSpace = true;
 					newSpace.GetComponent<Space> ().direction = 0;
 					newSpace.transform.Rotate (new Vector3 (0f, 180f, 0f));
+					newSpace.GetComponent<Space> ().isMovableObstacle = false;
+					newSpace.GetComponent<Space> ().isBreakableSpace = false;
+					newSpace.GetComponent<Space> ().wasVisited = false;
+				}
+				// Movable Obstalce
+				else if (rand > 40f && rand < 50f && i > 1 && i < 8 && j > 1 && j < 8) {
+					newSpace = GameObject.Instantiate (normalSpacePrefab, new Vector3 (j + xOffset, 0f, i + zOffset), Quaternion.identity);
+					newSpace.AddComponent<Space> ();
+					newSpace.GetComponent<Space> ().isObstacle = false;
+					newSpace.GetComponent<Space> ().isMovingSpace = false;
+					newSpace.GetComponent<Space> ().isMovableObstacle = true;
+					newSpace.GetComponent<Space> ().direction = -1;
+					GameObject movableObstacleObj = GameObject.Instantiate (movableObstaclePrefab, new Vector3 (j + xOffset, 0.5f, i + zOffset), Quaternion.identity);
+					movableObstacleObj.AddComponent<MovableObstacle> ();
+					movableObstacleObj.GetComponent<MovableObstacle> ().positionOnFloorX = i;
+					movableObstacleObj.GetComponent<MovableObstacle> ().positionOnFloorZ = j;
+					movableObjects.Add (movableObstacleObj);
+					newSpace.GetComponent<Space> ().isBreakableSpace = false;
+					newSpace.GetComponent<Space> ().wasVisited = false;
+				}
+				// Breakable Spaces
+				else if (rand > 60f && rand < 70f && i > 1 && i < 8 && j > 1 && j < 8) {
+					newSpace = GameObject.Instantiate (breakableSpacePrefab, new Vector3 (j + xOffset, 0f, i + zOffset), Quaternion.identity);
+					newSpace.AddComponent<Space> ();
+					newSpace.GetComponent<Space> ().isObstacle = false;
+					newSpace.GetComponent<Space> ().isMovingSpace = false;
+					newSpace.GetComponent<Space> ().isMovableObstacle = false;
+					newSpace.GetComponent<Space> ().direction = -1;
+					newSpace.GetComponent<Space> ().isBreakableSpace = true;
+					newSpace.GetComponent<Space> ().wasVisited = false;
 				}
 				// Normal Space
 				else {
@@ -69,6 +109,9 @@ public class Floor : MonoBehaviour {
 					newSpace.GetComponent<Space> ().isObstacle = false;
 					newSpace.GetComponent<Space> ().isMovingSpace = false;
 					newSpace.GetComponent<Space> ().direction = -1;
+					newSpace.GetComponent<Space> ().isMovableObstacle = false;
+					newSpace.GetComponent<Space> ().isBreakableSpace = false;
+					newSpace.GetComponent<Space> ().wasVisited = false;
 				}
 
 				// Start Space

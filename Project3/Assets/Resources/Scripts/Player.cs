@@ -58,9 +58,21 @@ public class Player : MonoBehaviour {
 				// Update player's grid position
 				newXPos += 1;
 				// If the new grid position is occupied, reset newPos and don't move
-				if (floor.spaces [newXPos, positionOnFloorZ].GetComponent<Space> ().occupied == false) {
+				if (floor.spaces [newXPos, positionOnFloorZ].GetComponent<Space> ().occupied == false && floor.spaces [newXPos, positionOnFloorZ].GetComponent<Space> ().isMovableObstacle == false) {
 					moved = true;
-				} else {
+				} 
+				else if (floor.spaces [newXPos, positionOnFloorZ].GetComponent<Space> ().isMovableObstacle == true && newXPos + 1 < floor.length && floor.spaces [newXPos + 1, positionOnFloorZ].GetComponent<Space> ().occupied == false &&  floor.spaces [newXPos + 1, positionOnFloorZ].GetComponent<Space> ().isMovableObstacle == false  && newXPos < floor.length - 1){
+					moved = true;
+					foreach (GameObject movObstc in floor.movableObjects) {
+						Debug.Log ("Object moving");
+						if (movObstc.GetComponent<MovableObstacle> ().positionOnFloorX == newXPos && movObstc.GetComponent<MovableObstacle> ().positionOnFloorZ == positionOnFloorZ) {
+
+							movObstc.GetComponent<MovableObstacle> ().moved = true;
+							movObstc.GetComponent<MovableObstacle> ().direction = 0;
+						}
+					}
+				}
+				else {
 					newXPos -= 1;
 				}
 			} else {
@@ -75,10 +87,22 @@ public class Player : MonoBehaviour {
 				// Update player's grid position
 				newXPos -= 1;
 				// If the new grid position is occupied, reset newPos and don't move
-				if (floor.spaces [newXPos, positionOnFloorZ].GetComponent<Space> ().occupied == false) {
+				if (floor.spaces [newXPos, positionOnFloorZ].GetComponent<Space> ().occupied == false && floor.spaces [newXPos, positionOnFloorZ].GetComponent<Space> ().isMovableObstacle == false) {
 					//newXPos -= 1;
 					moved = true;
-				} else {
+				} 
+				else if (floor.spaces [newXPos, positionOnFloorZ].GetComponent<Space> ().isMovableObstacle == true && newXPos - 1 >= 0 && floor.spaces [newXPos - 1, positionOnFloorZ].GetComponent<Space> ().occupied == false && floor.spaces [newXPos - 1, positionOnFloorZ].GetComponent<Space> ().isMovableObstacle == false && newXPos > 0){
+					moved = true;
+					foreach (GameObject movObstc in floor.movableObjects) {
+						Debug.Log ("Object moving");
+						if (movObstc.GetComponent<MovableObstacle> ().positionOnFloorX == newXPos && movObstc.GetComponent<MovableObstacle> ().positionOnFloorZ == positionOnFloorZ) {
+
+							movObstc.GetComponent<MovableObstacle> ().moved = true;
+							movObstc.GetComponent<MovableObstacle> ().direction = 2;
+						}
+					}
+				}
+				else {
 					newXPos += 1;
 				}
 			} else {
@@ -93,10 +117,22 @@ public class Player : MonoBehaviour {
 				// Update player's grid position
 				newZPos -= 1;
 				// If the new grid position is occupied, reset newPos and don't move
-				if (floor.spaces [positionOnFloorX, newZPos].GetComponent<Space> ().occupied == false) {
+				if (floor.spaces [positionOnFloorX, newZPos].GetComponent<Space> ().occupied == false && floor.spaces [positionOnFloorX, newZPos].GetComponent<Space> ().isMovableObstacle == false) {
 					//newZPos -= 1;
 					moved = true;
-				} else {
+				} 
+				else if (floor.spaces [positionOnFloorX, newZPos].GetComponent<Space> ().isMovableObstacle == true && newZPos - 1 >= 0 && floor.spaces [positionOnFloorX, newZPos - 1].GetComponent<Space> ().occupied == false && floor.spaces [positionOnFloorX, newZPos - 1].GetComponent<Space> ().isMovableObstacle == false && newZPos > 0){
+					moved = true;
+					foreach (GameObject movObstc in floor.movableObjects) {
+						Debug.Log ("Object moving");
+						if (movObstc.GetComponent<MovableObstacle> ().positionOnFloorX == positionOnFloorX && movObstc.GetComponent<MovableObstacle> ().positionOnFloorZ == newZPos) {
+
+							movObstc.GetComponent<MovableObstacle> ().moved = true;
+							movObstc.GetComponent<MovableObstacle> ().direction = 1;
+						}
+					}
+				}
+				else {
 					newZPos += 1;
 				}
 			} else {
@@ -111,10 +147,22 @@ public class Player : MonoBehaviour {
 				// Update player's grid position
 				newZPos += 1;
 				// If the new grid position is occupied, reset newPos and don't move
-				if (floor.spaces [positionOnFloorX, newZPos].GetComponent<Space> ().occupied == false) {
+				if (floor.spaces [positionOnFloorX, newZPos].GetComponent<Space> ().occupied == false && floor.spaces [positionOnFloorX, newZPos].GetComponent<Space> ().isMovableObstacle == false) {
 					//newZPos += 1;
 					moved = true;
-				} else {
+				} 
+				else if (floor.spaces [positionOnFloorX, newZPos].GetComponent<Space> ().isMovableObstacle == true && newZPos + 1 < floor.width && floor.spaces [positionOnFloorX, newZPos + 1].GetComponent<Space> ().occupied == false && floor.spaces [positionOnFloorX, newZPos + 1].GetComponent<Space> ().isMovableObstacle == false && newZPos < floor.width - 1){
+					moved = true;
+					foreach (GameObject movObstc in floor.movableObjects) {
+						Debug.Log ("Object moving");
+						if (movObstc.GetComponent<MovableObstacle> ().positionOnFloorX == positionOnFloorX && movObstc.GetComponent<MovableObstacle> ().positionOnFloorZ == newZPos) {
+							
+							movObstc.GetComponent<MovableObstacle> ().moved = true;
+							movObstc.GetComponent<MovableObstacle> ().direction = 3;
+						}
+					}
+				}
+				else {
 					newZPos -= 1;
 				}// If the new grid position is occupied, reset newPos and don't move
 			} else {
@@ -165,6 +213,16 @@ public class Player : MonoBehaviour {
 				positionOnFloorZ = newZPos;
 
 				floor.spaces [positionOnFloorX, positionOnFloorZ].GetComponent<Space> ().occupied = true;
+
+				if (floor.spaces [positionOnFloorX, positionOnFloorZ].GetComponent<Space> ().isBreakableSpace) {
+					if (floor.spaces [positionOnFloorX, positionOnFloorZ].GetComponent<Space> ().wasVisited == false) {
+						floor.spaces [positionOnFloorX, positionOnFloorZ].GetComponent<MeshRenderer> ().material = floor.breakableSpaceMat;
+						floor.spaces [positionOnFloorX, positionOnFloorZ].GetComponent<Space> ().wasVisited = true;
+					} else {
+						Debug.Log ("Floor Breaks...");
+					}
+
+				}
 			}
 		}
 
@@ -173,7 +231,8 @@ public class Player : MonoBehaviour {
 			Debug.Log ("You win!");
 			currentFloor++;
 			PlayerPrefs.SetInt ("currentFloor", currentFloor);
-			Application.LoadLevel ("Level" + 2 + "");
+			//Application.LoadLevel ("Level" + 2 + "");
+
 		}
 	}
 }

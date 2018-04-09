@@ -8,11 +8,11 @@ public class Player : MonoBehaviour {
 	public int positionOnFloorZ;
 	public float yPosition;
 	public Floor floor;
+	public Floor1 floor1;
 	public bool moved;
 	public bool moving;
 	Vector3 startPos;
 	Vector3 endPos;
-	public int currentFloor;
 	public int newXPos;
 	public int newZPos;
 	public float fracJourney;
@@ -20,9 +20,16 @@ public class Player : MonoBehaviour {
 	public float startTime;
 	public float journeyLength;
 
+
+	// Set in the Inspector Window
+	// Let's the player know what floor script to look for
+	public int currentFloor;
+
 	// Use this for initialization
 	void Start () {
+
 		floor = GameObject.Find ("Floor").GetComponent<Floor> ();
+
 		positionOnFloorX = 0;
 		positionOnFloorZ = 0;
 		yPosition = this.transform.position.y;
@@ -226,6 +233,7 @@ public class Player : MonoBehaviour {
 			}
 		}
 
+		/*
 		// Open new scene/puzzle when player reaches end position
 		if (floor.spaces [positionOnFloorX, positionOnFloorZ].GetComponent<Space> ().isEndPosition == true) {
 			Debug.Log ("You win!");
@@ -234,5 +242,6 @@ public class Player : MonoBehaviour {
 			//Application.LoadLevel ("Level" + 2 + "");
 
 		}
+		*/
 	}
 }

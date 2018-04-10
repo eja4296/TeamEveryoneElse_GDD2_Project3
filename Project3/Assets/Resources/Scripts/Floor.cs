@@ -93,8 +93,8 @@ public abstract class Floor : MonoBehaviour
 		if (isMovable) {
 			GameObject movableObstacleObj = GameObject.Instantiate (movableObstaclePrefab, new Vector3 (x + xOffset, 0.5f, z + zOffset), Quaternion.identity);
 			movableObstacleObj.AddComponent<MovableObstacle> ();
-			movableObstacleObj.GetComponent<MovableObstacle> ().positionOnFloorX = x;
-			movableObstacleObj.GetComponent<MovableObstacle> ().positionOnFloorZ = z;
+			movableObstacleObj.GetComponent<MovableObstacle> ().positionOnFloorX = z;
+			movableObstacleObj.GetComponent<MovableObstacle> ().positionOnFloorZ = x;
 			movableObjects.Add (movableObstacleObj);
 		}
         spaces[z, x] = newSpace;

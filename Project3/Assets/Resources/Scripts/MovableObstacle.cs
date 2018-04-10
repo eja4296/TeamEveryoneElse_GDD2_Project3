@@ -18,11 +18,13 @@ public class MovableObstacle : MonoBehaviour {
 	public float speed;
 	public float startTime;
 	public float journeyLength;
+	public GameObject player;
 
 
 	// Use this for initialization
 	void Start () {
-		floor = GameObject.Find ("Floor").GetComponent<Floor> ();
+		player = GameObject.Find ("Player");
+		floor = player.GetComponent<Player>().floor;
 		moving = false;
 		moved = false;
 		direction = -1;

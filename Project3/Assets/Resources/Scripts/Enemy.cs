@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player");
-		floor = GameObject.Find ("Floor").GetComponent<Floor> ();
+		floor = player.GetComponent<Player>().floor;
 		moved = false;
 		moving = false;
 		startPos = Vector3.zero;

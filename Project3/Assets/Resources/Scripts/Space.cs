@@ -18,6 +18,8 @@ public class Space : MonoBehaviour {
 	public bool isBreakableSpace;
 	public bool wasVisited;
 
+
+
 	// Use this for initialization
 	void Start () {
 		//position = this.transform.position;
@@ -34,7 +36,7 @@ public class Space : MonoBehaviour {
 	public void MovingSpace(){
 		Debug.Log("moving player");
 		Player plyr = GameObject.Find("Player").GetComponent<Player>();
-		Floor flr = GameObject.Find ("Floor").GetComponent<Floor> ();
+		Floor flr = plyr.floor;
 
 		// Check if player is at edge of floor
 		// Forward, direction = 0

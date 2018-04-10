@@ -70,7 +70,7 @@ public abstract class Floor : MonoBehaviour
     /// <param name="isMovingSpace">If this object can move</param>
     /// <param name="isBreakable">If this is a breakable tile</param>
     /// <param name="direction">Direction this tile would move us in (-1 default)</param>
-    public void CreateTile(GameObject prefab, int x, int y, int z, bool isObstacle, bool isMovingSpace, bool isBreakable, int direction)
+	public void CreateTile(GameObject prefab, int x, float y, int z, bool isObstacle, bool isMovingSpace, bool isBreakable, bool occupied, bool isEnemy, bool isMovable, int direction)
     {
         GameObject newSpace = GameObject.Instantiate(prefab, new Vector3(x + xOffset, y, z + zOffset), Quaternion.identity);
         newSpace.AddComponent<Space>();
@@ -79,6 +79,24 @@ public abstract class Floor : MonoBehaviour
         newSpace.GetComponent<Space>().isBreakableSpace = isBreakable;
         newSpace.GetComponent<Space>().direction = direction;
         newSpace.GetComponent<Space>().wasVisited = false;
+		newSpace.GetComponent<Space> ().occupied = occupied;
+		newSpace.GetComponent<Space> ().isMovableObstacle = isMovable;
+		if (isMovingSpace == true) {
+			newSpace.transform.Rotate(new Vector3 (0f, (90f * direction), 0f));
+		}
+		if (isEnemy) {
+			GameObject enemy = GameObject.Instantiate(enemyPrefab, new Vector3 (x + xOffset, 0.5f, z + zOffset), Quaternion.identity);
+			enemy.AddComponent<Enemy> ();
+			enemy.GetComponent<Enemy> ().positionOnFloorX = x;
+			enemy.GetComponent<Enemy> ().positionOnFloorZ = z;
+		}
+		if (isMovable) {
+			GameObject movableObstacleObj = GameObject.Instantiate (movableObstaclePrefab, new Vector3 (x + xOffset, 0.5f, z + zOffset), Quaternion.identity);
+			movableObstacleObj.AddComponent<MovableObstacle> ();
+			movableObstacleObj.GetComponent<MovableObstacle> ().positionOnFloorX = x;
+			movableObstacleObj.GetComponent<MovableObstacle> ().positionOnFloorZ = z;
+			movableObjects.Add (movableObstacleObj);
+		}
         spaces[z, x] = newSpace;
     }
 

@@ -7,7 +7,7 @@ public class CrackedPuzzleFloor : Floor {
     // 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End
     private int[,] puzzle =
     {
-        {2, 3, 0, 0, 0, 0, 0, 0, 0, 0 },
+        {3, 2, 0, 0, 0, 0, 0, 0, 0, 0 },
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -29,15 +29,22 @@ public class CrackedPuzzleFloor : Floor {
                 switch (puzzle[i, j])
                 {
                     case 0: // Crackable tiles
-                        CreateTile(breakableSpacePrefab, j, 0, i, false, false, true, -1);
+						CreateTile(breakableSpacePrefab, j, 0, i, false, false, true, false, false, false, -1);
                         break;
                     case 1: // Cracked tiles SHOULD NEVER BE INITALIZED
+						CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, -1);
                         break;
                     case 2: // Jester location
+						CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, -1);
+						break;
                     case 3: // Player location
+						CreateTile(normalSpacePrefab, j, 0, i, false, false, false, true, false, false, -1);
+						break;
                     case 4: // Ending location
+						CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, -1);
+						break;
                     default: // Non-crackable tiles
-                        CreateTile(normalSpacePrefab, j, 0, i, false, false, false, -1);
+						CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, -1);
                         break;
                 }
             }

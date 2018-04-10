@@ -86,23 +86,16 @@ public class PushPuzzleFloor : Floor {
 	/// Resets the puzzle because the player stepped on a 
 	/// breakable tile twice
 	/// </summary>
-	private void ResetPuzzle()
+	public override void ResetPuzzle()
 	{
 		resetLevel = true;
 
-		/*
-		 * 
-		for (int i = 0; i < puzzle.GetLength(0); i++)
-		{
-			for (int j = 0; j < puzzle.GetLength(1); j++)
-			{
-				if (spaces[i, j].GetComponent<Space>().wasVisited)
-				{
-					spaces[i, j].GetComponent<Space>().wasVisited = false;
-					spaces[i, j].GetComponent<MeshRenderer>().material = unbrokenSpaceMat;
-				}
-			}
-		}
-		*/
+		// Need to reset the positions of the pushable objects
+		// Called in Player class with 'R' key press
+
+		// Can't do this, have to destroy other objects first, or find some way to reset everything that 
+		// CreateLevel ();
+
+
 	}
 }

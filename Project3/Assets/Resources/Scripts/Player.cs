@@ -292,16 +292,14 @@ public class Player : MonoBehaviour
 		// Open new scene/puzzle when player reaches end position
 		if (floor.spaces [positionOnFloorX, positionOnFloorZ].GetComponent<Space> ().isEndPosition == true) {
 			
-			//currentFloor++;
 			floor.NextLevel();
-			//PlayerPrefs.SetInt ("currentFloor", currentFloor);
-			//Application.LoadLevel ("Level" + 2 + "");
 
 		}
 
 
 		if (Input.GetKey (KeyCode.R)) {
 			ResetPlayer ();
+			floor.ResetPuzzle ();
 		}
     }
 
@@ -313,5 +311,7 @@ public class Player : MonoBehaviour
 		newXPos = 0;
 		newZPos = 0;
 		this.transform.position = new Vector3(positionOnFloorX + 0.5f, 0.5f, positionOnFloorZ + 0.5f);
+
+		floor.resetLevel = true;
 	}
 }

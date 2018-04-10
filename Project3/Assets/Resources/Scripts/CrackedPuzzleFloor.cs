@@ -107,7 +107,7 @@ public class CrackedPuzzleFloor : Floor {
     /// Resets the puzzle because the player stepped on a 
     /// breakable tile twice
     /// </summary>
-    private void ResetPuzzle()
+	public override void ResetPuzzle()
     {
         resetLevel = true;
 

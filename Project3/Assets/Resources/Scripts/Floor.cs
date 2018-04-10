@@ -52,7 +52,7 @@ public abstract class Floor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		
+
     }
 
     // Will check the progress of the respective child puzzle
@@ -62,6 +62,8 @@ public abstract class Floor : MonoBehaviour
     public abstract void CreateLevel();
 
 	public abstract void NextLevel();
+
+	public abstract void ResetPuzzle ();
 
     /// <summary>
     /// Creates a tile Game Object with the given information

@@ -18,14 +18,11 @@ public class Enemy : MonoBehaviour {
 	public float startTime;
 	public float journeyLength;
 	public GameObject player;
-	public bool chase = false;
-	public Player me;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player");
 		floor = GameObject.Find ("Floor").GetComponent<Floor> ();
-		me = player.GetComponent<Player> ();
 		moved = false;
 		moving = false;
 		startPos = Vector3.zero;
@@ -45,11 +42,6 @@ public class Enemy : MonoBehaviour {
 		if (moving) {
 			Moving ();
 		}
-	}
-
-	public void Chase(){
-		if (Mathf.Abs (this.positionOnFloorX - me.positionOnFloorX) <= 5 && Mathf.Abs (this.positionOnFloorZ - me.positionOnFloorZ) <= 5)
-			chase = true;
 	}
 
 	public void Moved(){

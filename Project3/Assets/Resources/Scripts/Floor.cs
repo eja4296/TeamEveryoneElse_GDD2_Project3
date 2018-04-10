@@ -28,6 +28,7 @@ public abstract class Floor : MonoBehaviour
     public GameObject forwardSpacePrefab;
     public GameObject movableObstaclePrefab;
     public GameObject breakableSpacePrefab;
+	public GameObject jesterPrefab;
 
     // Player positions in relation to the grid
     public int playerPosX = 0;
@@ -83,6 +84,7 @@ public abstract class Floor : MonoBehaviour
 		newSpace.GetComponent<Space> ().isMovableObstacle = isMovable;
 		if (isMovingSpace == true) {
 			newSpace.transform.Rotate(new Vector3 (0f, (90f * direction), 0f));
+
 		}
 		if (isEnemy) {
 			GameObject enemy = GameObject.Instantiate(enemyPrefab, new Vector3 (x + xOffset, 0.5f, z + zOffset), Quaternion.identity);

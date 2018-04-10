@@ -5,18 +5,20 @@ using UnityEngine;
 public class MovingPuzzleFloor : Floor {
 
 	// 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End
+	// --> Left
+	// <-- Right
 	private int[,] puzzle =
 	{
-		{3, 2, 5, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 4, 0, 0, 0, 0, 0 }
+		{4, 6, 7, 1, 1, 1, 1, 1, 2, 3 },
+		{7, 7, 7, 2, 1, 2, 1, 7, 3, 0 },
+		{2, 2, 0, 1, 0, 1, 0, 7, 8, 0 },
+		{2, 3, 0, 2, 3, 3, 3, 7, 7, 0 },
+		{2, 8, 0, 7, 2, 1, 2, 8, 2, 0 },
+		{2, 8, 0, 8, 2, 0, 1, 7, 1, 0 },
+		{7, 2, 0, 2, 3, 0, 8, 2, 1, 0 },
+		{7, 2, 0, 1, 1, 0, 8, 1, 7, 0 },
+		{8, 1, 0, 7, 7, 7, 3, 2, 7, 0 },
+		{8, 8, 0, 7, 5, 7, 0, 3, 8, 8 }
 	};
 
 	public override void CreateLevel()
@@ -28,25 +30,34 @@ public class MovingPuzzleFloor : Floor {
 			{
 				switch (puzzle[i, j])
 				{
-				case 0: // Crackable tiles
+				case 0: // Moving Tile - Downward
+					CreateTile(forwardSpacePrefab, j, 0, i, false, true, false, false, false, false, 0);
+					break;
+				case 1: // Moving Tile - Left
+					CreateTile(forwardSpacePrefab, j, 0, i, false, true, false, false, false, false, 3);
+					break;
+				case 2: // Moving Tile - Forward
+					CreateTile(forwardSpacePrefab, j, 0, i, false, true, false, false, false, false, 2);
+					break;
+				case 3: // PMoving Tile - Right
 					CreateTile(forwardSpacePrefab, j, 0, i, false, true, false, false, false, false, 1);
 					break;
-				case 1: // Cracked tiles SHOULD NEVER BE INITALIZED
+				case 4: // Player/Start Location 
 					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, -1);
 					break;
-				case 2: // Jester location
+				case 5: // Ending location
+					CreateTile (endSpacePrefab, j, 0.5f, i, false, false, false, false, false, false, -1);
+					break;
+				case 6: // Jester Location
+					CreateTile (jesterPrefab, j, 0.5f, i, true, false, false, false, false, false, -1);
+					break;
+				case 7: // Normal Space
 					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, -1);
 					break;
-				case 3: // Player location
-					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, true, false, false, -1);
+				case 8: // Obstacle Spcae
+					CreateTile(obstaclePrefab, j, 0.5f, i, true, false, false, true, false, false, -1);
 					break;
-				case 4: // Ending location
-					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, -1);
-					break;
-				case 5:
-					CreateTile (obstaclePrefab, j, 0.5f, i, false, false, false, true, false, false, 1);
-					break;
-				default: // Non-crackable tiles
+				default: 
 					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, -1);
 					break;
 				}

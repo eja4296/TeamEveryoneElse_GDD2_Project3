@@ -298,5 +298,19 @@ public class Player : MonoBehaviour
 
 		}
 		*/
+
+		if (Input.GetKey (KeyCode.R)) {
+			ResetPlayer ();
+		}
     }
+
+	void ResetPlayer(){
+		
+		floor.spaces [positionOnFloorX, positionOnFloorZ].GetComponent<Space> ().occupied = false;
+		positionOnFloorX = 0;
+		positionOnFloorZ = 0;
+		newXPos = 0;
+		newZPos = 0;
+		this.transform.position = new Vector3(positionOnFloorX + 0.5f, 0.5f, positionOnFloorZ + 0.5f);
+	}
 }

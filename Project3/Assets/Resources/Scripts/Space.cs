@@ -39,8 +39,8 @@ public class Space : MonoBehaviour {
 		Floor flr = plyr.floor;
 
 		// Check if player is at edge of floor
-		// Forward, direction = 0
-		if (direction == 0 && plyr.positionOnFloorX < flr.length - 1) {
+		// Forward, direction = 2
+		if (direction == 2 && plyr.positionOnFloorX < flr.length - 1) {
 			// Update player's grid position
 			plyr.newXPos += 1;
 			// If the new grid position is occupied, reset newPos and don't move
@@ -50,8 +50,8 @@ public class Space : MonoBehaviour {
 				plyr.newXPos -= 1;
 			}
 		}
-		// Backward, direction = 2
-		else if (direction == 2 && plyr.positionOnFloorX > 0) {
+		// Backward, direction = 0
+		else if (direction == 0 && plyr.positionOnFloorX > 0) {
 			// Update player's grid position
 			plyr.newXPos -= 1;
 			// If the new grid position is occupied, reset newPos and don't move

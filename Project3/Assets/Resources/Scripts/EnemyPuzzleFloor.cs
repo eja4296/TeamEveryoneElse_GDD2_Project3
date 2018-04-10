@@ -1,22 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyPuzzleFloor : Floor {
 
 	// 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End
 	private int[,] puzzle =
 	{
-		{3, 2, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{3, 2, 0, 0, 0, 0, 0, 0, 0, 6 },
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{0, 0, 0, 0, 0, 6, 0, 0, 0, 0 },
 		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 0, 6, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 4, 0, 0, 0, 0, 0 }
+		{6, 0, 0, 0, 4, 0, 0, 0, 0, 6 }
 	};
 
 	public override void CreateLevel()
@@ -29,28 +30,28 @@ public class EnemyPuzzleFloor : Floor {
 				switch (puzzle[i, j])
 				{
 				case 0: // Crackable tiles
-					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, 1);
+					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, 1);
 					break;
 				case 1: // Cracked tiles SHOULD NEVER BE INITALIZED
-					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, -1);
+					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, -1);
 					break;
 				case 2: // Jester location
-					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, -1);
+					CreateTile(jesterPrefab, j, 0.5f, i, true, false, false, true, false, false, false, -1);
 					break;
 				case 3: // Player location
-					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, true, false, false, -1);
+					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, true, false, false, false, -1);
 					break;
 				case 4: // Ending location
-					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, -1);
+					CreateTile(endSpacePrefab, j, 0.5f, i, false, false, false, false, false, false, true, -1);
 					break;
 				case 5: // Obstacle
-					CreateTile (obstaclePrefab, j, 0.5f, i, false, false, false, true, false, false, 1);
+					CreateTile (obstaclePrefab, j, 0.5f, i, false, false, false, true, false, false, false, 1);
 					break;
 				case 6: // Enemy
-					CreateTile (normalSpacePrefab, j, 0, i, false, false, false, false, true, false, -1);
+					CreateTile (normalSpacePrefab, j, 0, i, false, false, false, true, true, false, false, -1);
 					break;
 				default: // Non-crackable tiles
-					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, -1);
+					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, -1);
 					break;
 				}
 			}
@@ -74,6 +75,10 @@ public class EnemyPuzzleFloor : Floor {
 			}
 		}
 		*/
+	}
+
+	public override void NextLevel(){
+		SceneManager.LoadScene ("PushLevel_1", LoadSceneMode.Single);
 	}
 
 

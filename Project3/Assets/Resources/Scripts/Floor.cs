@@ -52,6 +52,7 @@ public abstract class Floor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		
     }
 
     // Will check the progress of the respective child puzzle
@@ -59,6 +60,8 @@ public abstract class Floor : MonoBehaviour
 
     // Will be created in children classes to initalize the respective puzzle
     public abstract void CreateLevel();
+
+	public abstract void NextLevel();
 
     /// <summary>
     /// Creates a tile Game Object with the given information
@@ -71,7 +74,7 @@ public abstract class Floor : MonoBehaviour
     /// <param name="isMovingSpace">If this object can move</param>
     /// <param name="isBreakable">If this is a breakable tile</param>
     /// <param name="direction">Direction this tile would move us in (-1 default)</param>
-	public void CreateTile(GameObject prefab, int x, float y, int z, bool isObstacle, bool isMovingSpace, bool isBreakable, bool occupied, bool isEnemy, bool isMovable, int direction)
+	public void CreateTile(GameObject prefab, int x, float y, int z, bool isObstacle, bool isMovingSpace, bool isBreakable, bool occupied, bool isEnemy, bool isMovable, bool isEndSpace, int direction)
     {
         GameObject newSpace = GameObject.Instantiate(prefab, new Vector3(x + xOffset, y, z + zOffset), Quaternion.identity);
         newSpace.AddComponent<Space>();
@@ -82,6 +85,7 @@ public abstract class Floor : MonoBehaviour
         newSpace.GetComponent<Space>().wasVisited = false;
 		newSpace.GetComponent<Space> ().occupied = occupied;
 		newSpace.GetComponent<Space> ().isMovableObstacle = isMovable;
+		newSpace.GetComponent<Space> ().isEndPosition = isEndSpace;
 		if (isMovingSpace == true) {
 			newSpace.transform.Rotate(new Vector3 (0f, (90f * direction), 0f));
 
@@ -89,8 +93,8 @@ public abstract class Floor : MonoBehaviour
 		if (isEnemy) {
 			GameObject enemy = GameObject.Instantiate(enemyPrefab, new Vector3 (x + xOffset, 0.5f, z + zOffset), Quaternion.identity);
 			enemy.AddComponent<Enemy> ();
-			enemy.GetComponent<Enemy> ().positionOnFloorX = x;
-			enemy.GetComponent<Enemy> ().positionOnFloorZ = z;
+			enemy.GetComponent<Enemy> ().positionOnFloorX = z;
+			enemy.GetComponent<Enemy> ().positionOnFloorZ = x;
 		}
 		if (isMovable) {
 			GameObject movableObstacleObj = GameObject.Instantiate (movableObstaclePrefab, new Vector3 (x + xOffset, 0.5f, z + zOffset), Quaternion.identity);

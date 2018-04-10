@@ -288,23 +288,24 @@ public class Player : MonoBehaviour
             }
         }
 
-        /*
+        
 		// Open new scene/puzzle when player reaches end position
 		if (floor.spaces [positionOnFloorX, positionOnFloorZ].GetComponent<Space> ().isEndPosition == true) {
-			Debug.Log ("You win!");
-			currentFloor++;
-			PlayerPrefs.SetInt ("currentFloor", currentFloor);
+			
+			//currentFloor++;
+			floor.NextLevel();
+			//PlayerPrefs.SetInt ("currentFloor", currentFloor);
 			//Application.LoadLevel ("Level" + 2 + "");
 
 		}
-		*/
+
 
 		if (Input.GetKey (KeyCode.R)) {
 			ResetPlayer ();
 		}
     }
 
-	void ResetPlayer(){
+	public void ResetPlayer(){
 		
 		floor.spaces [positionOnFloorX, positionOnFloorZ].GetComponent<Space> ().occupied = false;
 		positionOnFloorX = 0;

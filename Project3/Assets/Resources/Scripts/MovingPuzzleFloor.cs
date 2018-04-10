@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovingPuzzleFloor : Floor {
 
@@ -31,34 +32,34 @@ public class MovingPuzzleFloor : Floor {
 				switch (puzzle[i, j])
 				{
 				case 0: // Moving Tile - Downward
-					CreateTile(forwardSpacePrefab, j, 0, i, false, true, false, false, false, false, 0);
+					CreateTile(forwardSpacePrefab, j, 0, i, false, true, false, false, false, false, false, 0);
 					break;
 				case 1: // Moving Tile - Left
-					CreateTile(forwardSpacePrefab, j, 0, i, false, true, false, false, false, false, 3);
+					CreateTile(forwardSpacePrefab, j, 0, i, false, true, false, false, false, false, false, 3);
 					break;
 				case 2: // Moving Tile - Forward
-					CreateTile(forwardSpacePrefab, j, 0, i, false, true, false, false, false, false, 2);
+					CreateTile(forwardSpacePrefab, j, 0, i, false, true, false, false, false, false, false, 2);
 					break;
-				case 3: // PMoving Tile - Right
-					CreateTile(forwardSpacePrefab, j, 0, i, false, true, false, false, false, false, 1);
+				case 3: // Moving Tile - Right
+					CreateTile(forwardSpacePrefab, j, 0, i, false, true, false, false, false, false, false, 1);
 					break;
 				case 4: // Player/Start Location 
-					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, -1);
+					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, -1);
 					break;
 				case 5: // Ending location
-					CreateTile (endSpacePrefab, j, 0.5f, i, false, false, false, false, false, false, -1);
+					CreateTile (endSpacePrefab, j, 0.5f, i, false, false, false, false, false, false, true, -1);
 					break;
 				case 6: // Jester Location
-					CreateTile (jesterPrefab, j, 0.5f, i, true, false, false, false, false, false, -1);
+					CreateTile (jesterPrefab, j, 0.5f, i, true, false, false, true, false, false, false, -1);
 					break;
 				case 7: // Normal Space
-					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, -1);
+					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, -1);
 					break;
 				case 8: // Obstacle Spcae
-					CreateTile(obstaclePrefab, j, 0.5f, i, true, false, false, true, false, false, -1);
+					CreateTile(obstaclePrefab, j, 0.5f, i, true, false, false, true, false, false, false, -1);
 					break;
 				default: 
-					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, -1);
+					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, -1);
 					break;
 				}
 			}
@@ -82,6 +83,10 @@ public class MovingPuzzleFloor : Floor {
 			}
 		}
 		*/
+	}
+
+	public override void NextLevel(){
+		SceneManager.LoadScene ("EnemyLevel_1", LoadSceneMode.Single);
 	}
 
 

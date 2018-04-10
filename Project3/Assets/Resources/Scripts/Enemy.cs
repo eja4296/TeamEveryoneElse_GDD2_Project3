@@ -42,6 +42,10 @@ public class Enemy : MonoBehaviour {
 		if (moving) {
 			Moving ();
 		}
+
+		if (positionOnFloorX == player.GetComponent<Player> ().positionOnFloorX && positionOnFloorZ == player.GetComponent<Player> ().positionOnFloorZ) {
+			player.GetComponent<Player> ().ResetPlayer ();
+		}
 	}
 
 	public void Moved(){

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CrackedPuzzleFloor : Floor {
 
+    Player player;
     // 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End
     private int[,] puzzle =
     {
@@ -22,6 +23,8 @@ public class CrackedPuzzleFloor : Floor {
 
     public override void CreateLevel()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
         Debug.Log("Create Level Called");
         for (int i = 0; i < puzzle.GetLength(0); i++)
         {
@@ -111,7 +114,7 @@ public class CrackedPuzzleFloor : Floor {
     {
         resetLevel = true;
 
-        for (int i = 0; i < puzzle.GetLength(0); i++)
+        /*for (int i = 0; i < puzzle.GetLength(0); i++)
         {
             for (int j = 0; j < puzzle.GetLength(1); j++)
             {
@@ -121,6 +124,12 @@ public class CrackedPuzzleFloor : Floor {
                     spaces[i, j].GetComponent<MeshRenderer>().material = unbrokenSpaceMat;
                 }
             }
-        }
+        }*/
+
+        SceneManager.LoadScene("CrackableLevel_1");
+        //player.positionOnFloorX = 0;
+        //player.positionOnFloorZ = 0;
+        //player.newXPos = 0;
+        //player.newZPos = 0;
     }
 }

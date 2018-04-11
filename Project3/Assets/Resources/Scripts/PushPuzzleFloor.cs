@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PushPuzzleFloor : Floor {
 
+    public GameObject[] pushableObjects;
+
 	// 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End
 	private int[,] puzzle =
 	{
@@ -56,7 +58,10 @@ public class PushPuzzleFloor : Floor {
 				}
 			}
 		}
-	}
+
+        pushableObjects = GameObject.FindGameObjectsWithTag("object");
+
+    }
 
 
 	public override void PuzzleCheck()
@@ -90,12 +95,17 @@ public class PushPuzzleFloor : Floor {
 	{
 		resetLevel = true;
 
-		// Need to reset the positions of the pushable objects
-		// Called in Player class with 'R' key press
+        // Need to reset the positions of the pushable objects
+        // Called in Player class with 'R' key press
 
-		// Can't do this, have to destroy other objects first, or find some way to reset everything that 
-		// CreateLevel ();
+        // Can't do this, have to destroy other objects first, or find some way to reset everything that 
 
+        for (int i = 0; i < pushableObjects.Length; i++)
+        {
+            Destroy(pushableObjects[i]);
+            SceneManager.LoadScene("PushLevel_1");
+        }
 
-	}
+        CreateLevel ();
+    }
 }

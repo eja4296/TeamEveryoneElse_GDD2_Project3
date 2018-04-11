@@ -5,7 +5,18 @@ licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - breakableSpaceMat: {instanceID: 0}
+  - unbrokenSpaceMat: {instanceID: 0}
+  - enemyPrefab: {instanceID: 0}
+  - normalSpacePrefab: {instanceID: 0}
+  - obstaclePrefab: {instanceID: 0}
+  - endSpacePrefab: {instanceID: 0}
+  - forwardSpacePrefab: {instanceID: 0}
+  - movableObstaclePrefab: {fileID: 1875351223674514, guid: e2ed94e2aa94fd8499e7b3b9415810e0,
+      type: 2}
+  - breakableSpacePrefab: {instanceID: 0}
+  - jesterPrefab: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

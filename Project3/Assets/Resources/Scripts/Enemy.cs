@@ -46,12 +46,11 @@ public class Enemy : MonoBehaviour {
 			Moving ();
 		}
 
-		if (positionOnFloorX == player.GetComponent<Player> ().positionOnFloorX && positionOnFloorZ == player.GetComponent<Player> ().positionOnFloorZ) {
-			player.GetComponent<Player> ().ResetPlayer ();
-		}
 
-        //if (Mathf.Abs(positionOnFloorX - play.positionOnFloorX) <= 5 && Mathf.Abs(positionOnFloorZ - play.positionOnFloorZ) <= 5)
-        //    chase = true;
+
+
+
+
 	}
 
 	public void Moved(){
@@ -63,141 +62,110 @@ public class Enemy : MonoBehaviour {
 		// Only move to space that is: not occupied, inside the bounderies
 		bool findValidMovement = false;
 
+		// Uncomment to enable Enemy Chase
+		/*
+		if (Mathf.Abs (positionOnFloorX - play.positionOnFloorX) <= 3 && Mathf.Abs (positionOnFloorZ - play.positionOnFloorZ) <= 3) {
+			chase = true;
+		} else {
+			chase = false;
+		}
+		*/
+
         // Loop to create movement
-        while (findValidMovement == false)
-        {
+		if (!chase) {
 
-            if (!chase)
-            {
-                // Random int: 0, 1, 2, or 3 (forward, left, backward, and right directions)
-                int rand = Random.Range(0, 4);
+			while (findValidMovement == false)
+			{
+				// Random int: 0, 1, 2, or 3 (forward, left, backward, and right directions)
+				int rand = Random.Range (0, 4);
 
-                // Move forward
-                if (rand == 0)
-                {
-                    if (positionOnFloorX < floor.length - 1)
-                    {
-                        // Update enemy's grid position
-                        newXPos += 1;
-                        // If the new grid position is occupied, reset newPos and don't move
-                        if (floor.spaces[newXPos, positionOnFloorZ].GetComponent<Space>().occupied == false)
-                        {
-                            // Keep new position and exit loop
-                            findValidMovement = true;
-                        }
-                        else
-                        {
-                            newXPos -= 1;
-                        }
-                    }
-                    else
-                    {
-                        // Can't move
-                    }
-                }
+				// Move forward
+				if (rand == 0) {
+					if (positionOnFloorX < floor.length - 1) {
+						// Update enemy's grid position
+						newXPos += 1;
+						// If the new grid position is occupied, reset newPos and don't move
+						if (floor.spaces [newXPos, positionOnFloorZ].GetComponent<Space> ().occupied == false) {
+							// Keep new position and exit loop
+							findValidMovement = true;
+						} else {
+							newXPos -= 1;
+						}
+					} else {
+						// Can't move
+					}
+				}
                 // Move left
-                else if (rand == 1)
-                {
-                    if (positionOnFloorZ > 0)
-                    {
-                        // Update enemy's grid position
-                        newZPos -= 1;
-                        // If the new grid position is occupied, reset newPos and don't move
-                        if (floor.spaces[positionOnFloorX, newZPos].GetComponent<Space>().occupied == false)
-                        {
-                            // Keep new position and exit loop
-                            findValidMovement = true;
-                        }
-                        else
-                        {
-                            newZPos += 1;
-                        }
-                    }
-                    else
-                    {
-                        // Can't move
-                    }
-                }
+                else if (rand == 1) {
+					if (positionOnFloorZ > 0) {
+						// Update enemy's grid position
+						newZPos -= 1;
+						// If the new grid position is occupied, reset newPos and don't move
+						if (floor.spaces [positionOnFloorX, newZPos].GetComponent<Space> ().occupied == false) {
+							// Keep new position and exit loop
+							findValidMovement = true;
+						} else {
+							newZPos += 1;
+						}
+					} else {
+						// Can't move
+					}
+				}
                 // Move backward
-                else if (rand == 2)
-                {
-                    if (positionOnFloorX > 0)
-                    {
-                        // Update enemy's grid position
-                        newXPos -= 1;
-                        // If the new grid position is occupied, reset newPos and don't move
-                        if (floor.spaces[newXPos, positionOnFloorZ].GetComponent<Space>().occupied == false)
-                        {
-                            // Keep new position and exit loop
-                            findValidMovement = true;
-                        }
-                        else
-                        {
-                            newXPos += 1;
-                        }
-                    }
-                    else
-                    {
-                        // Can't move
-                    }
-                }
+                else if (rand == 2) {
+					if (positionOnFloorX > 0) {
+						// Update enemy's grid position
+						newXPos -= 1;
+						// If the new grid position is occupied, reset newPos and don't move
+						if (floor.spaces [newXPos, positionOnFloorZ].GetComponent<Space> ().occupied == false) {
+							// Keep new position and exit loop
+							findValidMovement = true;
+						} else {
+							newXPos += 1;
+						}
+					} else {
+						// Can't move
+					}
+				}
                 // move right
-                else if (rand == 3)
-                {
-                    if (positionOnFloorZ < floor.width - 1)
-                    {
-                        // Update enemy's grid position
-                        newZPos += 1;
-                        // If the new grid position is occupied, reset newPos and don't move
-                        if (floor.spaces[positionOnFloorX, newZPos].GetComponent<Space>().occupied == false)
-                        {
-                            // Keep new position and exit loop
-                            findValidMovement = true;
-                        }
-                        else
-                        {
-                            newZPos -= 1;
-                        }
-                    }
-                    else
-                    {
-                        // Can't move
-                    }
-                }
-            }
+                else if (rand == 3) {
+					if (positionOnFloorZ < floor.width - 1) {
+						// Update enemy's grid position
+						newZPos += 1;
+						// If the new grid position is occupied, reset newPos and don't move
+						if (floor.spaces [positionOnFloorX, newZPos].GetComponent<Space> ().occupied == false) {
+							// Keep new position and exit loop
+							findValidMovement = true;
+						} else {
+							newZPos -= 1;
+						}
+					} else {
+						// Can't move
+					}
+				}
+				}
+			} else { // Chasing
 
-            if (chase)
-            {
-                if (positionOnFloorZ < floor.length - 1 && positionOnFloorZ < 0)
-                {
-                    // Update enemy's grid position based on where player is
-                    if (Mathf.Abs(positionOnFloorZ - play.positionOnFloorZ) < Mathf.Abs(positionOnFloorX - play.positionOnFloorX))      // If the Z distance of enemy and player is less than X distance,
-                    {                                                                                                                   // move in the Z direction
-                        if (positionOnFloorZ < play.positionOnFloorZ)   // If player is below enemy, enemy will move down. Otherwise, move up
-                            newZPos--;
-                        else
-                            newZPos++;
-                    }
-                    else
-                    {
-                        if (positionOnFloorX < play.positionOnFloorX)
-                            newXPos--;
-                        else
-                            newXPos++;
-                    }
-                    // If the new grid position is occupied, reset newPos and don't move
-                    if (floor.spaces[newXPos, positionOnFloorZ].GetComponent<Space>().occupied == false)
-                    {
-                        // Keep new position and exit loop
-                        findValidMovement = true;
-                    }
-                }
-                else
-                {
-                    // Can't move
-                }
-            }
-        }
+				// Same X or Z distance is greater than x distance, move Z
+				if (play.positionOnFloorX == positionOnFloorX || Mathf.Abs (positionOnFloorZ - play.positionOnFloorZ) > Mathf.Abs (positionOnFloorX - play.positionOnFloorX)) {
+					if (positionOnFloorZ < play.positionOnFloorZ) {
+						newZPos++;
+					} else {
+						newZPos--;
+					}
+				} 
+				// Same Z or X distance is greater than Z distance, Move X
+				else if (play.positionOnFloorZ == positionOnFloorZ || Mathf.Abs (positionOnFloorZ - play.positionOnFloorZ) < Mathf.Abs (positionOnFloorX - play.positionOnFloorX)) {
+					if (positionOnFloorX < play.positionOnFloorX) {
+						newXPos++;
+					} else {
+						newXPos--;
+					}
+				} 
+				else {
+
+				}
+        	}
 
 		// Set up for Lerp
 		startPos = floor.spaces [positionOnFloorX, positionOnFloorZ].transform.position;
@@ -233,6 +201,16 @@ public class Enemy : MonoBehaviour {
 			// Set the enemy's current position to the new position
 			positionOnFloorX = newXPos;
 			positionOnFloorZ = newZPos;
+
+			if (Mathf.Abs (positionOnFloorX - play.positionOnFloorX) <= 1 && Mathf.Abs (positionOnFloorZ - play.positionOnFloorZ) <= 1) {
+				player.GetComponent<Player> ().ResetPlayer ();
+			}
+
+			/*
+			if (positionOnFloorX == player.GetComponent<Player> ().positionOnFloorX && positionOnFloorZ == player.GetComponent<Player> ().positionOnFloorZ) {
+				
+			}
+			*/
 
 			// Make enemy's new position occupied
 			floor.spaces [positionOnFloorX, positionOnFloorZ].GetComponent<Space> ().occupied = true;

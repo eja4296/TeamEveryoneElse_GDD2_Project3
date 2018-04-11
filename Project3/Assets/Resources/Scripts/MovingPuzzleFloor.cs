@@ -8,19 +8,19 @@ public class MovingPuzzleFloor : Floor {
 	// 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End
 	// --> Left
 	// <-- Right
-	private int[,] puzzle =
-	{
-		{4, 6, 7, 1, 1, 1, 1, 1, 2, 3 },
-		{7, 7, 7, 2, 1, 2, 1, 7, 3, 0 },
-		{2, 2, 0, 1, 0, 1, 0, 7, 8, 0 },
-		{2, 3, 0, 2, 3, 3, 3, 7, 7, 0 },
-		{2, 8, 0, 7, 2, 1, 2, 8, 2, 0 },
-		{2, 8, 0, 8, 2, 0, 1, 7, 1, 0 },
-		{7, 2, 0, 2, 3, 0, 8, 2, 1, 0 },
-		{7, 2, 0, 1, 1, 0, 8, 1, 7, 0 },
-		{8, 1, 0, 7, 7, 7, 3, 2, 7, 0 },
-		{8, 8, 0, 7, 5, 7, 0, 3, 8, 8 }
-	};
+	//private int[,] puzzle =
+	//{
+	//	{4, 6, 7, 1, 1, 1, 1, 1, 2, 3 },
+	//	{7, 7, 7, 2, 1, 2, 1, 7, 3, 0 },
+	//	{2, 2, 0, 1, 0, 1, 0, 7, 8, 0 },
+	//	{2, 3, 0, 2, 3, 3, 3, 7, 7, 0 },
+	//	{2, 8, 0, 7, 2, 1, 2, 8, 2, 0 },
+	//	{2, 8, 0, 8, 2, 0, 1, 7, 1, 0 },
+	//	{7, 2, 0, 2, 3, 0, 8, 2, 1, 0 },
+	//	{7, 2, 0, 1, 1, 0, 8, 1, 7, 0 },
+	//	{8, 1, 0, 7, 7, 7, 3, 2, 7, 0 },
+	//	{8, 8, 0, 7, 5, 7, 0, 3, 8, 8 }
+	//};
 
 	public override void CreateLevel()
 	{
@@ -66,8 +66,37 @@ public class MovingPuzzleFloor : Floor {
 		}
 	}
 
+    public override int[,] GetEasyPuzzle()
+    {
+        // 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End
+        // --> Left
+        // <-- Right
+        return new int[,] {
+            {4, 6, 7, 1, 1, 1, 1, 1, 2, 3 },
+            {7, 7, 7, 2, 1, 2, 1, 7, 3, 0 },
+            {2, 2, 0, 1, 0, 1, 0, 7, 8, 0 },
+            {2, 3, 0, 2, 3, 3, 3, 7, 7, 0 },
+            {2, 8, 0, 7, 2, 1, 2, 8, 2, 0 },
+            {2, 8, 0, 8, 2, 0, 1, 7, 1, 0 },
+            {7, 2, 0, 2, 3, 0, 8, 2, 1, 0 },
+            {7, 2, 0, 1, 1, 0, 8, 1, 7, 0 },
+            {8, 1, 0, 7, 7, 7, 3, 2, 7, 0 },
+            {8, 8, 0, 7, 5, 7, 0, 3, 8, 8 }
+        };
+    }
 
-	public override void PuzzleCheck()
+    public override int[,] GetMediumPuzzle()
+    {
+        return GetEasyPuzzle();
+    }
+
+    public override int[,] GetHardPuzzle()
+    {
+        return GetEasyPuzzle();
+    }
+
+
+    public override void PuzzleCheck()
 	{
 		/*
 		if (spaces[playerPosX, playerPosZ].GetComponent<Space>().isBreakableSpace)

@@ -6,19 +6,19 @@ using UnityEngine.SceneManagement;
 public class EnemyPuzzleFloor : Floor {
 
 	// 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End
-	private int[,] puzzle =
-	{
-		{3, 2, 0, 0, 0, 0, 0, 0, 0, 6 },
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 6, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{6, 0, 0, 0, 4, 0, 0, 0, 0, 6 }
-	};
+	//private int[,] puzzle =
+	//{
+	//	{3, 2, 0, 0, 0, 0, 0, 0, 0, 6 },
+	//	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+	//	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+	//	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+	//	{0, 0, 0, 0, 0, 6, 0, 0, 0, 0 },
+	//	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+	//	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+	//	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+	//	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+	//	{6, 0, 0, 0, 4, 0, 0, 0, 0, 6 }
+	//};
 
 	public override void CreateLevel()
 	{
@@ -58,8 +58,35 @@ public class EnemyPuzzleFloor : Floor {
 		}
 	}
 
+    public override int[,] GetEasyPuzzle()
+    {
+        // 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End
+        return new int[,] {
+    	    { 3, 2, 0, 0, 0, 0, 0, 0, 0, 6 },
+    	    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+    	    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+    	    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+    	    { 0, 0, 0, 0, 0, 6, 0, 0, 0, 0 },
+    	    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+    	    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+    	    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+    	    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+    	    { 6, 0, 0, 0, 4, 0, 0, 0, 0, 6 }
+        };
+    }
 
-	public override void PuzzleCheck()
+    public override int[,] GetMediumPuzzle()
+    {
+        return GetEasyPuzzle();
+    }
+
+    public override int[,] GetHardPuzzle()
+    {
+        return GetEasyPuzzle();
+    }
+
+
+    public override void PuzzleCheck()
 	{
 		/*
 		if (spaces[playerPosX, playerPosZ].GetComponent<Space>().isBreakableSpace)

@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Difficulty
+{
+    EASY,
+    MEDIUM,
+    HARD
+}
+
 public abstract class Floor : MonoBehaviour
 {
 
@@ -34,6 +41,12 @@ public abstract class Floor : MonoBehaviour
     public int playerPosX = 0;
     public int playerPosZ = 0;
 
+    // The difficult of the puzzles
+    public Difficulty difficulty = Difficulty.EASY;
+
+    // Empty arrays of puzzles
+    public int[,] puzzle;
+
     public bool resetLevel = false;
 
     // Use this for initialization
@@ -45,6 +58,19 @@ public abstract class Floor : MonoBehaviour
         xOffset = this.transform.position.x + 0.5f - (width / 2);
         zOffset = this.transform.position.z + 0.5f - (length / 2);
         movableObjects = new List<GameObject>();
+
+        switch (difficulty)
+        {
+            case Difficulty.EASY:
+                puzzle = GetEasyPuzzle();
+                break;
+            case Difficulty.MEDIUM:
+                puzzle = GetMediumPuzzle();
+                break;
+            case Difficulty.HARD:
+                puzzle = GetHardPuzzle();
+                break;
+        }
 
         CreateLevel();
     }
@@ -64,6 +90,11 @@ public abstract class Floor : MonoBehaviour
 	public abstract void NextLevel();
 
 	public abstract void ResetPuzzle ();
+
+    // Will return the puzzle for the respective difficulty
+    public abstract int[,] GetEasyPuzzle();
+    public abstract int[,] GetMediumPuzzle();
+    public abstract int[,] GetHardPuzzle();
 
     /// <summary>
     /// Creates a tile Game Object with the given information

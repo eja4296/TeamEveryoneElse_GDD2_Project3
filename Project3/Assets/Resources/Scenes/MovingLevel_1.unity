@@ -685,12 +685,22 @@ Prefab:
       propertyPath: floor
       value: 
       objectReference: {fileID: 316232651}
+    - target: {fileID: 114038319519559956, guid: 03700d098a1a71a4aa3f20f8a1880912,
+        type: 2}
+      propertyPath: knightModel
+      value: 
+      objectReference: {fileID: 1343634717}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 03700d098a1a71a4aa3f20f8a1880912, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1343634716 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4758695751320746, guid: 03700d098a1a71a4aa3f20f8a1880912,
+    type: 2}
+  m_PrefabInternal: {fileID: 1343634715}
+--- !u!1 &1343634717 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1818326195945812, guid: 03700d098a1a71a4aa3f20f8a1880912,
     type: 2}
   m_PrefabInternal: {fileID: 1343634715}
 --- !u!1 &1628212028
@@ -988,6 +998,8 @@ MonoBehaviour:
   speed: 0
   startTime: 0
   journeyLength: 0
+  direction: 0
+  knightModel: {fileID: 0}
   currentFloor: 0
 --- !u!23 &2136251074
 MeshRenderer:

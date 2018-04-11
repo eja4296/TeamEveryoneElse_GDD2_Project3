@@ -23,6 +23,9 @@ public class Player : MonoBehaviour
     private float startingX;
     private float startingZ;
 
+	public int direction;
+	public GameObject knightModel;
+
     // Set in the Inspector Window
     // Let's the player know what floor script to look for
     public int currentFloor;
@@ -45,6 +48,7 @@ public class Player : MonoBehaviour
         newXPos = 0;
         newZPos = 0;
         speed = 2f;
+		direction = 0;
 
         if (PlayerPrefs.GetInt("currentFloor") != null)
         {
@@ -83,6 +87,7 @@ public class Player : MonoBehaviour
                 else if (floor.spaces[newXPos, positionOnFloorZ].GetComponent<Space>().isMovableObstacle == true && newXPos + 1 < floor.length && floor.spaces[newXPos + 1, positionOnFloorZ].GetComponent<Space>().occupied == false && floor.spaces[newXPos + 1, positionOnFloorZ].GetComponent<Space>().isMovableObstacle == false && newXPos < floor.length - 1)
                 {
                     moved = true;
+
                     foreach (GameObject movObstc in floor.movableObjects)
                     {
                         Debug.Log("Object moving");
@@ -103,6 +108,9 @@ public class Player : MonoBehaviour
             {
                 // Can't move
             }
+			//direction = 1;
+
+			//knightModel.transform.rotation = new Quaternion (0f, (90f * direction), 0f, 1f);
         }
         // Backward movement with 'S'
         // Only move if player is not already moving
@@ -142,6 +150,8 @@ public class Player : MonoBehaviour
             {
                 // Can't move
             }
+			//direction = 3;
+			//knightModel.transform.rotation = new Quaternion (0f, (90f * direction), 0f, 1f);
         }
         // Left movement with 'A'
         // Only move if player is not already moving
@@ -181,6 +191,8 @@ public class Player : MonoBehaviour
             {
                 // Can't move
             }
+			//direction = 2;
+			//knightModel.transform.rotation = new Quaternion (0f, (90f * direction), 0f, 1f);
         }
         // Right movement with 'D'
         // Only move if player is not already moving
@@ -220,6 +232,8 @@ public class Player : MonoBehaviour
             {
                 // Can't move
             }
+			//direction = 4;
+			//knightModel.transform.rotation = new Quaternion (0f, (90f * direction), 0f, 1f);
         }
 
         // If a key was pressed to move the player
@@ -228,9 +242,13 @@ public class Player : MonoBehaviour
             // Set the start and end position of the movement for the lerp
             startPos = floor.spaces[positionOnFloorX, positionOnFloorZ].transform.position;
             endPos = floor.spaces[newXPos, newZPos].transform.position;
-            startPos.y = 0.5f;
-            endPos.y = 0.5f;
+            startPos.y = 0f;
+            endPos.y = 0f;
 
+			startPos.x -= 0.25f;
+			startPos.z += 0.25f;
+			endPos.x -= 0.25f;
+			endPos.z += 0.25f;
             // Set the start time and length of the travel distance
             startTime = Time.time;
             journeyLength = Vector3.Distance(startPos, endPos);
@@ -310,7 +328,7 @@ public class Player : MonoBehaviour
 		positionOnFloorZ = 0;
 		newXPos = 0;
 		newZPos = 0;
-		this.transform.position = new Vector3(positionOnFloorX + 0.5f, 0.5f, positionOnFloorZ + 0.5f);
+		this.transform.position = new Vector3(positionOnFloorX + 0.25f, 0f, positionOnFloorZ + 0.25f);
 
 		floor.resetLevel = true;
 	}

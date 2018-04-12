@@ -110,6 +110,110 @@ ModelImporter:
     100204: Armour_models:Spine
     100206: Armour_models:Spine1
     100208: Armour_models:Spine2
+    100210: Armour_models___Copy:Arm_Left_Guard
+    100212: Armour_models___Copy:Arm_Right_Guard
+    100214: Armour_models___Copy:Chestplate
+    100216: Armour_models___Copy:Elbow_Left_Front_Guard
+    100218: Armour_models___Copy:Elbow_Left_Guard
+    100220: Armour_models___Copy:Elbow_Left_Guard1
+    100222: Armour_models___Copy:Elbow_right_guard
+    100224: Armour_models___Copy:group19
+    100226: Armour_models___Copy:group24
+    100228: Armour_models___Copy:group25
+    100230: Armour_models___Copy:Head
+    100232: Armour_models___Copy:Helmet
+    100234: Armour_models___Copy:Hips
+    100236: Armour_models___Copy:LeftArm
+    100238: Armour_models___Copy:LeftFoot
+    100240: Armour_models___Copy:LeftForeArm
+    100242: Armour_models___Copy:LeftHand
+    100244: Armour_models___Copy:LeftLeg
+    100246: Armour_models___Copy:LeftShoulder
+    100248: Armour_models___Copy:LeftToeBase
+    100250: Armour_models___Copy:LeftUpLeg
+    100252: Armour_models___Copy:Leg_Left
+    100254: Armour_models___Copy:Leg_Right
+    100256: Armour_models___Copy:Neck
+    100258: Armour_models___Copy:QuickRigCharacter_Ctrl_ChestEndEffector
+    100260: Armour_models___Copy:QuickRigCharacter_Ctrl_ChestOriginEffector
+    100262: Armour_models___Copy:QuickRigCharacter_Ctrl_Head
+    100264: Armour_models___Copy:QuickRigCharacter_Ctrl_HeadEffector
+    100266: Armour_models___Copy:QuickRigCharacter_Ctrl_Hips
+    100268: Armour_models___Copy:QuickRigCharacter_Ctrl_HipsEffector
+    100270: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftAnkleEffector
+    100272: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftArm
+    100274: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftElbowEffector
+    100276: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftFoot
+    100278: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftFootEffector
+    100280: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftForeArm
+    100282: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftHand
+    100284: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftHipEffector
+    100286: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftKneeEffector
+    100288: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftLeg
+    100290: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftShoulder
+    100292: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftShoulderEffector
+    100294: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftToeBase
+    100296: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftUpLeg
+    100298: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftWristEffector
+    100300: Armour_models___Copy:QuickRigCharacter_Ctrl_Neck
+    100302: Armour_models___Copy:QuickRigCharacter_Ctrl_Reference
+    100304: Armour_models___Copy:QuickRigCharacter_Ctrl_RightAnkleEffector
+    100306: Armour_models___Copy:QuickRigCharacter_Ctrl_RightArm
+    100308: Armour_models___Copy:QuickRigCharacter_Ctrl_RightElbowEffector
+    100310: Armour_models___Copy:QuickRigCharacter_Ctrl_RightFoot
+    100312: Armour_models___Copy:QuickRigCharacter_Ctrl_RightFootEffector
+    100314: Armour_models___Copy:QuickRigCharacter_Ctrl_RightForeArm
+    100316: Armour_models___Copy:QuickRigCharacter_Ctrl_RightHand
+    100318: Armour_models___Copy:QuickRigCharacter_Ctrl_RightHipEffector
+    100320: Armour_models___Copy:QuickRigCharacter_Ctrl_RightKneeEffector
+    100322: Armour_models___Copy:QuickRigCharacter_Ctrl_RightLeg
+    100324: Armour_models___Copy:QuickRigCharacter_Ctrl_RightShoulder
+    100326: Armour_models___Copy:QuickRigCharacter_Ctrl_RightShoulderEffector
+    100328: Armour_models___Copy:QuickRigCharacter_Ctrl_RightToeBase
+    100330: Armour_models___Copy:QuickRigCharacter_Ctrl_RightUpLeg
+    100332: Armour_models___Copy:QuickRigCharacter_Ctrl_RightWristEffector
+    100334: Armour_models___Copy:QuickRigCharacter_Ctrl_Spine
+    100336: Armour_models___Copy:QuickRigCharacter_Ctrl_Spine1
+    100338: Armour_models___Copy:QuickRigCharacter_Ctrl_Spine2
+    100340: Armour_models___Copy:QuickRigCharacter_Guides
+    100342: Armour_models___Copy:QuickRigCharacter_Head
+    100344: Armour_models___Copy:QuickRigCharacter_Hips
+    100346: Armour_models___Copy:QuickRigCharacter_LeftArm
+    100348: Armour_models___Copy:QuickRigCharacter_LeftFoot
+    100350: Armour_models___Copy:QuickRigCharacter_LeftForeArm
+    100352: Armour_models___Copy:QuickRigCharacter_LeftHand
+    100354: Armour_models___Copy:QuickRigCharacter_LeftLeg
+    100356: Armour_models___Copy:QuickRigCharacter_LeftShoulder
+    100358: Armour_models___Copy:QuickRigCharacter_LeftToeBase
+    100360: Armour_models___Copy:QuickRigCharacter_LeftUpLeg
+    100362: Armour_models___Copy:QuickRigCharacter_Neck
+    100364: Armour_models___Copy:QuickRigCharacter_Reference
+    100366: Armour_models___Copy:QuickRigCharacter_RightArm
+    100368: Armour_models___Copy:QuickRigCharacter_RightFoot
+    100370: Armour_models___Copy:QuickRigCharacter_RightForeArm
+    100372: Armour_models___Copy:QuickRigCharacter_RightHand
+    100374: Armour_models___Copy:QuickRigCharacter_RightLeg
+    100376: Armour_models___Copy:QuickRigCharacter_RightShoulder
+    100378: Armour_models___Copy:QuickRigCharacter_RightToeBase
+    100380: Armour_models___Copy:QuickRigCharacter_RightUpLeg
+    100382: Armour_models___Copy:QuickRigCharacter_Spine
+    100384: Armour_models___Copy:QuickRigCharacter_Spine1
+    100386: Armour_models___Copy:QuickRigCharacter_Spine2
+    100388: Armour_models___Copy:Reference
+    100390: Armour_models___Copy:RightArm
+    100392: Armour_models___Copy:RightFoot
+    100394: Armour_models___Copy:RightForeArm
+    100396: Armour_models___Copy:RightHand
+    100398: Armour_models___Copy:RightLeg
+    100400: Armour_models___Copy:RightShoulder
+    100402: Armour_models___Copy:RightToeBase
+    100404: Armour_models___Copy:RightUpLeg
+    100406: Armour_models___Copy:Shoulder_Left
+    100408: Armour_models___Copy:Shoulder_Right
+    100410: Armour_models___Copy:Skirt
+    100412: Armour_models___Copy:Spine
+    100414: Armour_models___Copy:Spine1
+    100416: Armour_models___Copy:Spine2
     400000: //RootNode
     400002: Armour_models:Arm_Left_Guard
     400004: Armour_models:Arm_Right_Guard
@@ -215,12 +319,120 @@ ModelImporter:
     400204: Armour_models:Spine
     400206: Armour_models:Spine1
     400208: Armour_models:Spine2
+    400210: Armour_models___Copy:Arm_Left_Guard
+    400212: Armour_models___Copy:Arm_Right_Guard
+    400214: Armour_models___Copy:Chestplate
+    400216: Armour_models___Copy:Elbow_Left_Front_Guard
+    400218: Armour_models___Copy:Elbow_Left_Guard
+    400220: Armour_models___Copy:Elbow_Left_Guard1
+    400222: Armour_models___Copy:Elbow_right_guard
+    400224: Armour_models___Copy:group19
+    400226: Armour_models___Copy:group24
+    400228: Armour_models___Copy:group25
+    400230: Armour_models___Copy:Head
+    400232: Armour_models___Copy:Helmet
+    400234: Armour_models___Copy:Hips
+    400236: Armour_models___Copy:LeftArm
+    400238: Armour_models___Copy:LeftFoot
+    400240: Armour_models___Copy:LeftForeArm
+    400242: Armour_models___Copy:LeftHand
+    400244: Armour_models___Copy:LeftLeg
+    400246: Armour_models___Copy:LeftShoulder
+    400248: Armour_models___Copy:LeftToeBase
+    400250: Armour_models___Copy:LeftUpLeg
+    400252: Armour_models___Copy:Leg_Left
+    400254: Armour_models___Copy:Leg_Right
+    400256: Armour_models___Copy:Neck
+    400258: Armour_models___Copy:QuickRigCharacter_Ctrl_ChestEndEffector
+    400260: Armour_models___Copy:QuickRigCharacter_Ctrl_ChestOriginEffector
+    400262: Armour_models___Copy:QuickRigCharacter_Ctrl_Head
+    400264: Armour_models___Copy:QuickRigCharacter_Ctrl_HeadEffector
+    400266: Armour_models___Copy:QuickRigCharacter_Ctrl_Hips
+    400268: Armour_models___Copy:QuickRigCharacter_Ctrl_HipsEffector
+    400270: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftAnkleEffector
+    400272: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftArm
+    400274: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftElbowEffector
+    400276: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftFoot
+    400278: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftFootEffector
+    400280: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftForeArm
+    400282: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftHand
+    400284: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftHipEffector
+    400286: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftKneeEffector
+    400288: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftLeg
+    400290: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftShoulder
+    400292: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftShoulderEffector
+    400294: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftToeBase
+    400296: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftUpLeg
+    400298: Armour_models___Copy:QuickRigCharacter_Ctrl_LeftWristEffector
+    400300: Armour_models___Copy:QuickRigCharacter_Ctrl_Neck
+    400302: Armour_models___Copy:QuickRigCharacter_Ctrl_Reference
+    400304: Armour_models___Copy:QuickRigCharacter_Ctrl_RightAnkleEffector
+    400306: Armour_models___Copy:QuickRigCharacter_Ctrl_RightArm
+    400308: Armour_models___Copy:QuickRigCharacter_Ctrl_RightElbowEffector
+    400310: Armour_models___Copy:QuickRigCharacter_Ctrl_RightFoot
+    400312: Armour_models___Copy:QuickRigCharacter_Ctrl_RightFootEffector
+    400314: Armour_models___Copy:QuickRigCharacter_Ctrl_RightForeArm
+    400316: Armour_models___Copy:QuickRigCharacter_Ctrl_RightHand
+    400318: Armour_models___Copy:QuickRigCharacter_Ctrl_RightHipEffector
+    400320: Armour_models___Copy:QuickRigCharacter_Ctrl_RightKneeEffector
+    400322: Armour_models___Copy:QuickRigCharacter_Ctrl_RightLeg
+    400324: Armour_models___Copy:QuickRigCharacter_Ctrl_RightShoulder
+    400326: Armour_models___Copy:QuickRigCharacter_Ctrl_RightShoulderEffector
+    400328: Armour_models___Copy:QuickRigCharacter_Ctrl_RightToeBase
+    400330: Armour_models___Copy:QuickRigCharacter_Ctrl_RightUpLeg
+    400332: Armour_models___Copy:QuickRigCharacter_Ctrl_RightWristEffector
+    400334: Armour_models___Copy:QuickRigCharacter_Ctrl_Spine
+    400336: Armour_models___Copy:QuickRigCharacter_Ctrl_Spine1
+    400338: Armour_models___Copy:QuickRigCharacter_Ctrl_Spine2
+    400340: Armour_models___Copy:QuickRigCharacter_Guides
+    400342: Armour_models___Copy:QuickRigCharacter_Head
+    400344: Armour_models___Copy:QuickRigCharacter_Hips
+    400346: Armour_models___Copy:QuickRigCharacter_LeftArm
+    400348: Armour_models___Copy:QuickRigCharacter_LeftFoot
+    400350: Armour_models___Copy:QuickRigCharacter_LeftForeArm
+    400352: Armour_models___Copy:QuickRigCharacter_LeftHand
+    400354: Armour_models___Copy:QuickRigCharacter_LeftLeg
+    400356: Armour_models___Copy:QuickRigCharacter_LeftShoulder
+    400358: Armour_models___Copy:QuickRigCharacter_LeftToeBase
+    400360: Armour_models___Copy:QuickRigCharacter_LeftUpLeg
+    400362: Armour_models___Copy:QuickRigCharacter_Neck
+    400364: Armour_models___Copy:QuickRigCharacter_Reference
+    400366: Armour_models___Copy:QuickRigCharacter_RightArm
+    400368: Armour_models___Copy:QuickRigCharacter_RightFoot
+    400370: Armour_models___Copy:QuickRigCharacter_RightForeArm
+    400372: Armour_models___Copy:QuickRigCharacter_RightHand
+    400374: Armour_models___Copy:QuickRigCharacter_RightLeg
+    400376: Armour_models___Copy:QuickRigCharacter_RightShoulder
+    400378: Armour_models___Copy:QuickRigCharacter_RightToeBase
+    400380: Armour_models___Copy:QuickRigCharacter_RightUpLeg
+    400382: Armour_models___Copy:QuickRigCharacter_Spine
+    400384: Armour_models___Copy:QuickRigCharacter_Spine1
+    400386: Armour_models___Copy:QuickRigCharacter_Spine2
+    400388: Armour_models___Copy:Reference
+    400390: Armour_models___Copy:RightArm
+    400392: Armour_models___Copy:RightFoot
+    400394: Armour_models___Copy:RightForeArm
+    400396: Armour_models___Copy:RightHand
+    400398: Armour_models___Copy:RightLeg
+    400400: Armour_models___Copy:RightShoulder
+    400402: Armour_models___Copy:RightToeBase
+    400404: Armour_models___Copy:RightUpLeg
+    400406: Armour_models___Copy:Shoulder_Left
+    400408: Armour_models___Copy:Shoulder_Right
+    400410: Armour_models___Copy:Skirt
+    400412: Armour_models___Copy:Spine
+    400414: Armour_models___Copy:Spine1
+    400416: Armour_models___Copy:Spine2
     2300000: Armour_models:Shoulder_Right
     2300002: Armour_models:Elbow_Left_Guard1
     2300004: Armour_models:Shoulder_Left
+    2300006: Armour_models___Copy:Elbow_Left_Guard1
+    2300008: Armour_models___Copy:Shoulder_Right
     3300000: Armour_models:Shoulder_Right
     3300002: Armour_models:Elbow_Left_Guard1
     3300004: Armour_models:Shoulder_Left
+    3300006: Armour_models___Copy:Elbow_Left_Guard1
+    3300008: Armour_models___Copy:Shoulder_Right
     4300000: Armour_models:Chestplate
     4300002: Armour_models:Shoulder_Left
     4300004: Armour_models:Skirt
@@ -234,6 +446,19 @@ ModelImporter:
     4300020: Armour_models:Shoulder_Right
     4300022: Armour_models:Elbow_right_guard
     4300024: Armour_models:Leg_Right
+    4300026: Armour_models___Copy:Chestplate
+    4300028: Armour_models___Copy:Shoulder_Left
+    4300030: Armour_models___Copy:Skirt
+    4300032: Armour_models___Copy:Helmet
+    4300034: Armour_models___Copy:Leg_Left
+    4300036: Armour_models___Copy:Elbow_Left_Guard
+    4300038: Armour_models___Copy:Elbow_Left_Guard1
+    4300040: Armour_models___Copy:Arm_Left_Guard
+    4300042: Armour_models___Copy:Arm_Right_Guard
+    4300044: Armour_models___Copy:Elbow_Left_Front_Guard
+    4300046: Armour_models___Copy:Shoulder_Right
+    4300048: Armour_models___Copy:Elbow_right_guard
+    4300050: Armour_models___Copy:Leg_Right
     9500000: //RootNode
     13700000: Armour_models:Arm_Left_Guard
     13700002: Armour_models:Arm_Right_Guard
@@ -248,11 +473,34 @@ ModelImporter:
     13700020: Armour_models:Shoulder_Left
     13700022: Armour_models:Shoulder_Right
     13700024: Armour_models:Skirt
+    13700026: Armour_models___Copy:Arm_Left_Guard
+    13700028: Armour_models___Copy:Arm_Right_Guard
+    13700030: Armour_models___Copy:Chestplate
+    13700032: Armour_models___Copy:Elbow_Left_Front_Guard
+    13700034: Armour_models___Copy:Elbow_Left_Guard
+    13700036: Armour_models___Copy:Elbow_Left_Guard1
+    13700038: Armour_models___Copy:Elbow_right_guard
+    13700040: Armour_models___Copy:Helmet
+    13700042: Armour_models___Copy:Leg_Left
+    13700044: Armour_models___Copy:Leg_Right
+    13700046: Armour_models___Copy:Shoulder_Left
+    13700048: Armour_models___Copy:Shoulder_Right
+    13700050: Armour_models___Copy:Skirt
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Armour_models_Armour_Metal
+    second: {fileID: 2100000, guid: 1199a07d281f39e4e922ecf23771141a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Armour_models___Copy_Armour_Metal
+    second: {fileID: 2100000, guid: 1199a07d281f39e4e922ecf23771141a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Armour_models___Copy_lambert2
     second: {fileID: 2100000, guid: 1199a07d281f39e4e922ecf23771141a, type: 2}
   - first:
       type: UnityEngine:Material

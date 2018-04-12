@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public float speed;
     public float startTime;
     public float journeyLength;
+    public float rotateSpeed;
 
     private float startingX;
     private float startingZ;
@@ -86,14 +87,14 @@ public class Player : MonoBehaviour
 
 					direction = 0;
 
-					knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
+					//knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
                 }
                 else if (floor.spaces[newXPos, positionOnFloorZ].GetComponent<Space>().isMovableObstacle == true && newXPos + 1 < floor.length && floor.spaces[newXPos + 1, positionOnFloorZ].GetComponent<Space>().occupied == false && floor.spaces[newXPos + 1, positionOnFloorZ].GetComponent<Space>().isMovableObstacle == false && newXPos < floor.length - 1)
                 {
                     moved = true;
 					direction = 0;
 
-					knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
+					//knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
 
                     foreach (GameObject movObstc in floor.movableObjects)
                     {
@@ -117,7 +118,7 @@ public class Player : MonoBehaviour
             }
 			direction = 0;
 
-			knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
+			//knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
 
         }
         // Backward movement with 'S'
@@ -136,14 +137,14 @@ public class Player : MonoBehaviour
                     moved = true;
 					direction = 2;
 
-					knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
+					//knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
                 }
                 else if (floor.spaces[newXPos, positionOnFloorZ].GetComponent<Space>().isMovableObstacle == true && newXPos - 1 >= 0 && floor.spaces[newXPos - 1, positionOnFloorZ].GetComponent<Space>().occupied == false && floor.spaces[newXPos - 1, positionOnFloorZ].GetComponent<Space>().isMovableObstacle == false && newXPos > 0)
                 {
                     moved = true;
 					direction = 2;
 
-					knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
+					//knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
                     foreach (GameObject movObstc in floor.movableObjects)
                     {
                         Debug.Log("Object moving");
@@ -168,7 +169,7 @@ public class Player : MonoBehaviour
 			//knightModel.transform.rotation = new Quaternion (0f, (90f * direction), 0f, 1f);
 			direction = 2;
 
-			knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
+			//knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
         }
         // Left movement with 'A'
         // Only move if player is not already moving
@@ -186,14 +187,14 @@ public class Player : MonoBehaviour
                     moved = true;
 					direction = 3;
 
-					knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
+					//knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
                 }
                 else if (floor.spaces[positionOnFloorX, newZPos].GetComponent<Space>().isMovableObstacle == true && newZPos - 1 >= 0 && floor.spaces[positionOnFloorX, newZPos - 1].GetComponent<Space>().occupied == false && floor.spaces[positionOnFloorX, newZPos - 1].GetComponent<Space>().isMovableObstacle == false && newZPos > 0)
                 {
                     moved = true;
 					direction = 3;
 
-					knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
+					//knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
                     foreach (GameObject movObstc in floor.movableObjects)
                     {
                         Debug.Log("Object moving");
@@ -218,7 +219,7 @@ public class Player : MonoBehaviour
 			//knightModel.transform.rotation = new Quaternion (0f, (90f * direction), 0f, 1f);
 			direction = 3;
 
-			knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
+			//knightModel.transform.eulerAngles = Vector3.Lerp(knightModel.transform.eulerAngles, new Vector3 (0f, (90f * direction), 0f), Time.deltaTime);
         }
         // Right movement with 'D'
         // Only move if player is not already moving
@@ -236,7 +237,7 @@ public class Player : MonoBehaviour
                     moved = true;
 					direction = 1;
 
-					knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
+                   // knightModel.transform.eulerAngles = Vector3.Lerp(knightModel.transform.eulerAngles, new Vector3(0f, (90f * direction), 0f), Time.deltaTime);
                 }
                 else if (floor.spaces[positionOnFloorX, newZPos].GetComponent<Space>().isMovableObstacle == true && newZPos + 1 < floor.width && floor.spaces[positionOnFloorX, newZPos + 1].GetComponent<Space>().occupied == false && floor.spaces[positionOnFloorX, newZPos + 1].GetComponent<Space>().isMovableObstacle == false && newZPos < floor.width - 1)
                 {
@@ -245,7 +246,7 @@ public class Player : MonoBehaviour
                     {
                         Debug.Log("Object moving");
 						direction = 1;
-						knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
+                        //knightModel.transform.eulerAngles = Vector3.Lerp(knightModel.transform.eulerAngles, new Vector3(0f, (90f * direction), 0f), Time.deltaTime);
                         if (movObstc.GetComponent<MovableObstacle>().positionOnFloorX == positionOnFloorX && movObstc.GetComponent<MovableObstacle>().positionOnFloorZ == newZPos)
                         {
 
@@ -264,9 +265,35 @@ public class Player : MonoBehaviour
                 // Can't move
             }
 			direction = 1;
-			knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
-			//direction = 4;
-			//knightModel.transform.rotation = new Quaternion (0f, (90f * direction), 0f, 1f);
+            
+            //direction = 4;
+        }
+        //Debug.LogError("Direction: " + direction + " , Delta: " + delta);
+        switch (direction) {
+            case 0:
+                Quaternion oldRot = knightModel.transform.rotation;
+                knightModel.transform.LookAt(knightModel.transform.position + new Vector3(0f, 0f, 10f));
+                Quaternion newRot = knightModel.transform.rotation;
+                knightModel.transform.rotation = Quaternion.Lerp(oldRot, newRot, Time.deltaTime * rotateSpeed);
+                break;
+            case 1:
+                Quaternion oldRot1 = knightModel.transform.rotation;
+                knightModel.transform.LookAt(knightModel.transform.position + new Vector3(10f, 0f, 0f));
+                Quaternion newRot1 = knightModel.transform.rotation;
+                knightModel.transform.rotation = Quaternion.Lerp(oldRot1, newRot1, Time.deltaTime * rotateSpeed);
+                break;
+            case 2:
+                Quaternion oldRot2 = knightModel.transform.rotation;
+                knightModel.transform.LookAt(knightModel.transform.position + new Vector3(0f, 0f, -10f));
+                Quaternion newRot2 = knightModel.transform.rotation;
+                knightModel.transform.rotation = Quaternion.Lerp(oldRot2, newRot2, Time.deltaTime * rotateSpeed);
+                break;
+            case 3:
+                Quaternion oldRot3 = knightModel.transform.rotation;
+                knightModel.transform.LookAt(knightModel.transform.position + new Vector3(-10f, 0f, 0f));
+                Quaternion newRot3 = knightModel.transform.rotation;
+                knightModel.transform.rotation = Quaternion.Lerp(oldRot3, newRot3, Time.deltaTime * rotateSpeed);
+                break;
         }
 
         // If a key was pressed to move the player

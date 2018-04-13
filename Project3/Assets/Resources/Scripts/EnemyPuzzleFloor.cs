@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyPuzzleFloor : Floor {
 
+    GameObject[] enemies;
 	// 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End
 	//private int[,] puzzle =
 	//{
@@ -56,6 +57,8 @@ public class EnemyPuzzleFloor : Floor {
 				}
 			}
 		}
+
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
 	}
 
     public override int[,] GetEasyPuzzle()
@@ -64,14 +67,14 @@ public class EnemyPuzzleFloor : Floor {
         return new int[,] {
     	    { 3, 2, 0, 0, 0, 0, 0, 0, 0, 6 },
     	    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+    	    { 0, 0, 0, 0, 0, 0, 0, 5, 0, 0 },
+    	    { 0, 5, 5, 5, 0, 0, 0, 0, 5, 0 },
+    	    { 0, 0, 0, 0, 0, 0, 0, 0, 5, 0 },
+    	    { 0, 0, 0, 0, 0, 0, 0, 5, 0, 0 },
     	    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-    	    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-    	    { 0, 0, 0, 0, 0, 6, 0, 0, 0, 0 },
-    	    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-    	    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-    	    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-    	    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-    	    { 6, 0, 0, 0, 4, 0, 0, 0, 0, 6 }
+    	    { 0, 0, 5, 0, 0, 0, 0, 0, 0, 0 },
+    	    { 0, 0, 0, 5, 0, 0, 0, 0, 0, 0 },
+    	    { 6, 0, 5, 0, 4, 0, 0, 0, 0, 6 }
         };
     }
 
@@ -117,7 +120,7 @@ public class EnemyPuzzleFloor : Floor {
 	{
 		resetLevel = true;
 
-		/*
+        /*
 		 * 
 		for (int i = 0; i < puzzle.GetLength(0); i++)
 		{
@@ -131,5 +134,8 @@ public class EnemyPuzzleFloor : Floor {
 			}
 		}
 		*/
+
+        for (int i = 0; i < enemies.Length; i++)
+            Destroy(enemies[i]);
 	}
 }

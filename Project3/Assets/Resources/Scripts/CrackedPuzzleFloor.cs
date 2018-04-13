@@ -48,6 +48,9 @@ public class CrackedPuzzleFloor : Floor {
                     case 4: // Ending location
 						CreateTile(endSpacePrefab, j, 0.5f, i, false, false, false, false, false, false, true, -1);
 						break;
+                    case 5: // Obstacle location
+                        CreateTile(obstaclePrefab, j, 0.5f, i, true, false, false, true, false, false, false, -1);
+                        break;
                     default: // Non-crackable tiles
 						CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, -1);
                         break;
@@ -60,16 +63,16 @@ public class CrackedPuzzleFloor : Floor {
     {
         // 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End
         return new int[,] {
-            { 3, 2, 0, 0, 0, 0, 0, 0, 0, 0 },
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            { 0, 0, 0, 0, 4, 0, 0, 0, 0, 0 }
+            { 3, 2, 5, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 5, 0, 0, 0, 0, 0, 0, 0 },
+            { 5, 0, 5, 0, 0, 0, 5, 0, 0, 5 },
+            { 5, 0, 5, 0, 5, 5, 5, 0, 0, 5 },
+            { 5, 0, 5, 0, 5, 0, 0, 0, 0, 5 },
+            { 5, 0, 5, 0, 5, 0, 0, 0, 0, 0 },
+            { 0, 0, 5, 0, 5, 0, 0, 0, 0, 0 },
+            { 0, 0, 5, 0, 5, 0, 0, 0, 5, 5 },
+            { 0, 0, 0, 0, 5, 0, 0, 0, 5, 5 },
+            { 0, 0, 0, 5, 4, 0, 0, 0, 5, 5 }
         };
     }
 

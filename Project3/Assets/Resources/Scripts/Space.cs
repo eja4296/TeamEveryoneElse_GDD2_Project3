@@ -59,7 +59,7 @@ public class Space : MonoBehaviour {
 			// If the new grid position is occupied, reset newPos and don't move
 			if (flr.spaces [plyr.newXPos, plyr.positionOnFloorZ].GetComponent<Space> ().occupied == false) {
 				plyr.moved = true;
-				plyr.direction = 3;
+				plyr.direction = 2;
 				//plyr.knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
 			} else {
 				plyr.newXPos += 1;
@@ -72,7 +72,7 @@ public class Space : MonoBehaviour {
 			// If the new grid position is occupied, reset newPos and don't move
 			if (flr.spaces [plyr.positionOnFloorX, plyr.newZPos].GetComponent<Space> ().occupied == false) {
 				plyr.moved = true;
-				plyr.direction = 2;
+				plyr.direction = 3;
 				//plyr.knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
 			} else {
 				plyr.newZPos += 1;

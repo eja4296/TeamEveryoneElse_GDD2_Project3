@@ -626,6 +626,11 @@ Transform:
   m_Father: {fileID: 2117322429}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &248291222 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1789146921666706, guid: 03700d098a1a71a4aa3f20f8a1880912,
+    type: 2}
+  m_PrefabInternal: {fileID: 1517568823}
 --- !u!1 &260768374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,6 +1404,7 @@ MonoBehaviour:
   speed: 0
   startTime: 0
   journeyLength: 0
+  rotateSpeed: 0
   direction: 0
   knightModel: {fileID: 0}
   currentFloor: 0
@@ -2765,6 +2771,7 @@ MonoBehaviour:
     type: 2}
   playerPosX: 0
   playerPosZ: 0
+  difficulty: 0
   resetLevel: 0
 --- !u!1 &1054349701
 GameObject:
@@ -3711,7 +3718,7 @@ Prefab:
         type: 2}
       propertyPath: knightModel
       value: 
-      objectReference: {fileID: 1539389843}
+      objectReference: {fileID: 248291222}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 03700d098a1a71a4aa3f20f8a1880912, type: 2}
   m_IsPrefabParent: 0
@@ -3745,11 +3752,6 @@ Transform:
   m_Father: {fileID: 1054349703}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1539389843 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1818326195945812, guid: 03700d098a1a71a4aa3f20f8a1880912,
-    type: 2}
-  m_PrefabInternal: {fileID: 1517568823}
 --- !u!1 &1543604021
 GameObject:
   m_ObjectHideFlags: 0

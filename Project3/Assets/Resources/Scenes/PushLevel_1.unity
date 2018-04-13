@@ -272,6 +272,7 @@ MonoBehaviour:
     type: 2}
   playerPosX: 0
   playerPosZ: 0
+  difficulty: 0
   resetLevel: 0
   pushableObjects: []
 --- !u!23 &466277122
@@ -583,6 +584,7 @@ MonoBehaviour:
   speed: 0
   startTime: 0
   journeyLength: 0
+  rotateSpeed: 0
   direction: 0
   knightModel: {fileID: 0}
   currentFloor: 0
@@ -862,18 +864,13 @@ Prefab:
         type: 2}
       propertyPath: knightModel
       value: 
-      objectReference: {fileID: 1965847528}
+      objectReference: {fileID: 2076894322}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 03700d098a1a71a4aa3f20f8a1880912, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1965847527 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4758695751320746, guid: 03700d098a1a71a4aa3f20f8a1880912,
-    type: 2}
-  m_PrefabInternal: {fileID: 1965847526}
---- !u!1 &1965847528 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1818326195945812, guid: 03700d098a1a71a4aa3f20f8a1880912,
     type: 2}
   m_PrefabInternal: {fileID: 1965847526}
 --- !u!1 &2041012866
@@ -967,6 +964,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2041012866}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2076894322 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1789146921666706, guid: 03700d098a1a71a4aa3f20f8a1880912,
+    type: 2}
+  m_PrefabInternal: {fileID: 1965847526}
 --- !u!1 &2136666251
 GameObject:
   m_ObjectHideFlags: 0

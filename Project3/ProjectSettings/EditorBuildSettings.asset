@@ -5,21 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Resources/Scenes/Level1.unity
-    guid: c7c8b4e42ed3b9f439c839109cb77ce8
-  - enabled: 0
-    path: Assets/Resources/Scenes/Level2.unity
-    guid: 54e8be91d3fc5e04ca46c61865840fbf
   - enabled: 1
-    path: Assets/Resources/Scenes/EnemyLevel_1.unity
+    path: Assets/Resources/Scenes/Main Menu.unity
+    guid: 7b61881924605974080e1ccc64079379
+  - enabled: 1
+    path: Assets/Resources/Scenes/EnemyLevel.unity
     guid: 055903c1d6527fc47bf67e6349f1f071
+  - enabled: 1
+    path: Assets/Resources/Scenes/MovingLevel_1.unity
+    guid: 816d76f2a481af048a828c10183149de
   - enabled: 1
     path: Assets/Resources/Scenes/CrackableLevel_1.unity
     guid: 3829a9fdb77b9b0448e166fc931cf85c
   - enabled: 1
     path: Assets/Resources/Scenes/PushLevel_1.unity
     guid: 66316953b2c3b22478717121aee8ee6d
-  - enabled: 1
-    path: Assets/Resources/Scenes/MovingLevel_1.unity
-    guid: 816d76f2a481af048a828c10183149de

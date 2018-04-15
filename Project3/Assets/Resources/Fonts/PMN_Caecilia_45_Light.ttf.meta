@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: bf238356b71ffe842b29d7473365c4f8
+timeCreated: 1523751076
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Caecilia Light
+  fontNames:
+  - Caecilia Light
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 0f9ab859cb4d4cd42ade48853f05b60c
+timeCreated: 1523750899
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: a picture alphabet
+  fontNames:
+  - a picture alphabet
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

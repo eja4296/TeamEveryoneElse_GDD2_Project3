@@ -56,6 +56,7 @@ public class MovingPuzzleFloor : Floor {
 					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, false, -1);
 					break;
 				case 8: // Obstacle Spcae
+					
 					CreateTile(obstaclePrefab, j, 0.5f, i, true, false, false, true, false, false, false, false, -1);
 					break;
 				default: 

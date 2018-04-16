@@ -2762,7 +2762,7 @@ MonoBehaviour:
   zOffset: 0
   normalSpacePrefab: {fileID: 1291514326393230, guid: 42a4620ec7e2a7846b106b56e88977f9,
     type: 2}
-  obstaclePrefab: {fileID: 1212487057207092, guid: 5a342dbd168856b4d836da061b399371,
+  obstaclePrefab: {fileID: 1920713295706562, guid: 914aa56c3eb5d19439d3fa1dd4b49eda,
     type: 2}
   endSpacePrefab: {fileID: 1620015939458432, guid: 413bed37bfe5bb54d868a302b0825906,
     type: 2}

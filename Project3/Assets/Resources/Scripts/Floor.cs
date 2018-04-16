@@ -148,6 +148,11 @@ public abstract class Floor : MonoBehaviour
 			newPlayer.GetComponent<Player> ().startingXIndex = z;
 			newPlayer.GetComponent<Player> ().startingZIndex = x;
 		}
+		if (isObstacle) {
+			int randNum = Random.Range(0, 3);
+
+			newSpace.transform.Rotate(new Vector3(0f, randNum * 90f, 0f));
+		}
         spaces[z, x] = newSpace;
     }
 

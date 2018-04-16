@@ -51,12 +51,6 @@ public class Enemy : MonoBehaviour
         {
             Moving();
         }
-
-
-
-
-
-
     }
 
     public void Moved()
@@ -71,14 +65,14 @@ public class Enemy : MonoBehaviour
 
         // Uncomment to enable Enemy Chase
 
-        /*if (Mathf.Abs(positionOnFloorX - play.positionOnFloorX) <= 5 && Mathf.Abs(positionOnFloorZ - play.positionOnFloorZ) <= 5)
+        if (Mathf.Abs(positionOnFloorX - play.positionOnFloorX) <= 3 && Mathf.Abs(positionOnFloorZ - play.positionOnFloorZ) <= 3)
         {
             chase = true;
         }
         else
         {
             chase = false;
-        }*/
+        }
 
 
         // Loop to create movement
@@ -204,6 +198,7 @@ public class Enemy : MonoBehaviour
                         else
                         {
                             newZPos -= 1;
+                            findValidMovement = true;
                         }
                     }
 
@@ -220,11 +215,12 @@ public class Enemy : MonoBehaviour
                         else
                         {
                             newZPos += 1;
+                            findValidMovement = true;
                         }
                     }
                     else
                     {
-                        // Can't move
+                        findValidMovement = true;
                     }
                 }
                 // Same Z or X distance is greater than Z distance, Move X
@@ -243,6 +239,7 @@ public class Enemy : MonoBehaviour
                         else
                         {
                             newXPos -= 1;
+                            findValidMovement = true;
                         }
                     }
                     else if (positionOnFloorX > 0 && positionOnFloorX > play.positionOnFloorX)
@@ -258,13 +255,16 @@ public class Enemy : MonoBehaviour
                         else
                         {
                             newXPos += 1;
+                            findValidMovement = true;
                         }
                     }
                     else
                     {
-                        // Can't move
+                        findValidMovement = true;
                     }
                 }
+                else
+                    findValidMovement = true;
             }
         }
 

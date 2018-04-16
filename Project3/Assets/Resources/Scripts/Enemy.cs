@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        player = GameObject.Find("Player");
+		player = GameObject.Find("Player(Clone)");
         floor = player.GetComponent<Player>().floor;
         play = player.GetComponent<Player>();
         moved = false;
@@ -309,9 +309,9 @@ public class Enemy : MonoBehaviour
 
             if (Mathf.Abs(positionOnFloorX - play.positionOnFloorX) <= 1 && Mathf.Abs(positionOnFloorZ - play.positionOnFloorZ) <= 1)
             {
-                player.GetComponent<Player>().ResetPlayer();
+                //player.GetComponent<Player>().ResetPlayer();
                 floor.ResetPuzzle();
-                SceneManager.LoadScene("EnemyLevel_1");
+                
             }
 
             /*

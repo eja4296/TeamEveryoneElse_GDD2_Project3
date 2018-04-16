@@ -32,28 +32,28 @@ public class PushPuzzleFloor : Floor {
 				switch (puzzle[i, j])
 				{
 				case 0: // Crackable tiles
-					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, -1);
+					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, false, -1);
 					break;
 				case 1: // Cracked tiles SHOULD NEVER BE INITALIZED
-					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, -1);
+					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, false, -1);
 					break;
 				case 2: // Jester location
-					CreateTile(jesterPrefab, j, 0.5f, i, true, false, false, true, false, false, false, -1);
+					CreateTile(jesterPrefab, j, 0.5f, i, true, false, false, true, false, false, false, false, -1);
 					break;
 				case 3: // Player location
-					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, true, false, false, false, -1);
+					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, true, false, false, false, true, -1);
 					break;
 				case 4: // Ending location
-					CreateTile(endSpacePrefab, j, 0.5f, i, false, false, false, false, false, false, true, -1);
+					CreateTile(endSpacePrefab, j, 0.5f, i, false, false, false, false, false, false, true, false, -1);
 					break;
 				case 5: // Obstacle
-					CreateTile (obstaclePrefab, j, 0.5f, i, false, false, false, true, false, false, false, -1);
+					CreateTile (obstaclePrefab, j, 0.5f, i, false, false, false, true, false, false, false, false, -1);
 					break;
 				case 6: // Pushable/Movable Object
-					CreateTile (normalSpacePrefab, j, 0, i, false, false, false, false, false, true, false, -1);
+					CreateTile (normalSpacePrefab, j, 0, i, false, false, false, false, false, true, false, false, -1);
 					break;
 				default: // Non-crackable tiles
-					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, -1);
+					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, false, -1);
 					break;
 				}
 			}

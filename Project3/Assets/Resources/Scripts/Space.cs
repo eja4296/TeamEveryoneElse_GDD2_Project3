@@ -35,7 +35,7 @@ public class Space : MonoBehaviour {
 
 	public void MovingSpace(){
 		Debug.Log("moving player");
-		Player plyr = GameObject.Find("Player").GetComponent<Player>();
+		Player plyr = GameObject.Find("Player(Clone)").GetComponent<Player>();
 		Floor flr = plyr.floor;
 
 		// Check if player is at edge of floor

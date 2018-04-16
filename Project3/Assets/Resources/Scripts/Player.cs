@@ -21,6 +21,9 @@ public class Player : MonoBehaviour
     public float journeyLength;
     public float rotateSpeed;
 
+	public int startingXIndex;
+	public int startingZIndex;
+
     private float startingX;
     private float startingZ;
 
@@ -37,8 +40,8 @@ public class Player : MonoBehaviour
 
         //floor = GameObject.Find ("Floor").GetComponent<Floor> ();
 
-        positionOnFloorX = 0;
-        positionOnFloorZ = 0;
+        //positionOnFloorX = 0;
+        //positionOnFloorZ = 0;
         yPosition = this.transform.position.y;
         startingX = this.transform.position.x;
         startingZ = this.transform.position.z;
@@ -46,8 +49,8 @@ public class Player : MonoBehaviour
         moving = false;
         startPos = Vector3.zero;
         endPos = Vector3.zero;
-        newXPos = 0;
-        newZPos = 0;
+        //newXPos = 0;
+        //newZPos = 0;
         speed = 2f;
 		direction = 0;
 
@@ -384,11 +387,11 @@ public class Player : MonoBehaviour
 	public void ResetPlayer(){
 		
 		floor.spaces [positionOnFloorX, positionOnFloorZ].GetComponent<Space> ().occupied = false;
-		positionOnFloorX = 0;
-		positionOnFloorZ = 0;
-		newXPos = 0;
-		newZPos = 0;
-		this.transform.position = new Vector3(positionOnFloorX + 0.25f, 0f, positionOnFloorZ + 0.25f);
+		positionOnFloorX = startingXIndex;
+		positionOnFloorZ = startingZIndex;
+		newXPos = startingXIndex;
+		newZPos = startingZIndex;
+		this.transform.position = new Vector3(positionOnFloorZ + floor.xOffset - 0.25f, 0f, positionOnFloorX + floor.zOffset + 0.25f);
 
 		floor.resetLevel = true;
 	}

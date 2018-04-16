@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 114038319519559956}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3158,6 +3158,8 @@ MonoBehaviour:
   startTime: 0
   journeyLength: 0
   rotateSpeed: 5
+  startingXIndex: 0
+  startingZIndex: 0
   direction: 0
   knightModel: {fileID: 1789146921666706}
   currentFloor: 0

@@ -23,7 +23,7 @@ public class MovableObstacle : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.Find ("Player");
+		player = GameObject.Find ("Player(Clone)");
 		floor = player.GetComponent<Player>().floor;
 		moving = false;
 		moved = false;

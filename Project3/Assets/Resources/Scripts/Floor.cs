@@ -36,6 +36,7 @@ public abstract class Floor : MonoBehaviour
     public GameObject movableObstaclePrefab;
     public GameObject breakableSpacePrefab;
 	public GameObject jesterPrefab;
+	public GameObject playerPrefab;
 
     // Player positions in relation to the grid
     public int playerPosX = 0;
@@ -107,7 +108,7 @@ public abstract class Floor : MonoBehaviour
     /// <param name="isMovingSpace">If this object can move</param>
     /// <param name="isBreakable">If this is a breakable tile</param>
     /// <param name="direction">Direction this tile would move us in (-1 default)</param>
-	public void CreateTile(GameObject prefab, int x, float y, int z, bool isObstacle, bool isMovingSpace, bool isBreakable, bool occupied, bool isEnemy, bool isMovable, bool isEndSpace, int direction)
+	public void CreateTile(GameObject prefab, int x, float y, int z, bool isObstacle, bool isMovingSpace, bool isBreakable, bool occupied, bool isEnemy, bool isMovable, bool isEndSpace, bool isPlayer, int direction)
     {
         GameObject newSpace = GameObject.Instantiate(prefab, new Vector3(x + xOffset, y, z + zOffset), Quaternion.identity);
         newSpace.AddComponent<Space>();
@@ -128,6 +129,7 @@ public abstract class Floor : MonoBehaviour
 			enemy.AddComponent<Enemy> ();
 			enemy.GetComponent<Enemy> ().positionOnFloorX = z;
 			enemy.GetComponent<Enemy> ().positionOnFloorZ = x;
+
 		}
 		if (isMovable) {
 			GameObject movableObstacleObj = GameObject.Instantiate (movableObstaclePrefab, new Vector3 (x + xOffset, 0.5f, z + zOffset), Quaternion.identity);
@@ -135,6 +137,16 @@ public abstract class Floor : MonoBehaviour
 			movableObstacleObj.GetComponent<MovableObstacle> ().positionOnFloorX = z;
 			movableObstacleObj.GetComponent<MovableObstacle> ().positionOnFloorZ = x;
 			movableObjects.Add (movableObstacleObj);
+		}
+		if (isPlayer) {
+			GameObject newPlayer = GameObject.Instantiate (playerPrefab, new Vector3 (x + xOffset - 0.25f, 0f, z + zOffset + 0.25f), Quaternion.identity);
+			newPlayer.GetComponent<Player> ().floor = this.gameObject.GetComponent<Floor>();
+			newPlayer.GetComponent<Player> ().positionOnFloorX = z;
+			newPlayer.GetComponent<Player> ().positionOnFloorZ = x;
+			newPlayer.GetComponent<Player> ().newXPos = z;
+			newPlayer.GetComponent<Player> ().newZPos = x;
+			newPlayer.GetComponent<Player> ().startingXIndex = z;
+			newPlayer.GetComponent<Player> ().startingZIndex = x;
 		}
         spaces[z, x] = newSpace;
     }

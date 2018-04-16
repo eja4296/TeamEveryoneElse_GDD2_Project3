@@ -1405,6 +1405,8 @@ MonoBehaviour:
   startTime: 0
   journeyLength: 0
   rotateSpeed: 0
+  startingXIndex: 0
+  startingZIndex: 0
   direction: 0
   knightModel: {fileID: 0}
   currentFloor: 0
@@ -2769,6 +2771,8 @@ MonoBehaviour:
   breakableSpacePrefab: {fileID: 0}
   jesterPrefab: {fileID: 1732577955657632, guid: 286c88acca35310409a1462d4dc50067,
     type: 2}
+  playerPrefab: {fileID: 1298860888064782, guid: 03700d098a1a71a4aa3f20f8a1880912,
+    type: 2}
   playerPosX: 0
   playerPosZ: 0
   difficulty: 0
@@ -3719,6 +3723,10 @@ Prefab:
       propertyPath: knightModel
       value: 
       objectReference: {fileID: 248291222}
+    - target: {fileID: 1298860888064782, guid: 03700d098a1a71a4aa3f20f8a1880912, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 03700d098a1a71a4aa3f20f8a1880912, type: 2}
   m_IsPrefabParent: 0

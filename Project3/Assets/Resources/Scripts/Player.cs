@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
     // Let's the player know what floor script to look for
     public int currentFloor;
 
+	public List<MovableObstacle> movingObjects = new List<MovableObstacle> ();
+
     // Use this for initialization
     void Start()
     {
@@ -89,26 +91,26 @@ public class Player : MonoBehaviour
                     moved = true;
 
 					direction = 0;
-
-					//knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
                 }
-                else if (floor.spaces[newXPos, positionOnFloorZ].GetComponent<Space>().isMovableObstacle == true && newXPos + 1 < floor.length && floor.spaces[newXPos + 1, positionOnFloorZ].GetComponent<Space>().occupied == false && floor.spaces[newXPos + 1, positionOnFloorZ].GetComponent<Space>().isMovableObstacle == false && newXPos < floor.length - 1)
+				// check if new space is a moveable object, check if space on the other side is occupied, check if space on other side is a moveable obstacle, check if space on other side is in bounds
+                else if (floor.spaces[newXPos, positionOnFloorZ].GetComponent<Space>().isMovableObstacle == true)
                 {
-                    moved = true;
 					direction = 0;
+					movingObjects = new List<MovableObstacle> ();
+					// Recursive push
+					moved = MovableRecusionCheck (newXPos, direction);
+                    
+					if (!moved) {
+						newXPos -= 1;
+					} else {
+						for(int i = movingObjects.Count - 1; i >= 0; i--){
+							movingObjects[i].moved = true;
+							movingObjects[i].direction = 0;
+							floor.spaces [movingObjects[i].positionOnFloorX, movingObjects[i].positionOnFloorZ].GetComponent<Space> ().isMovableObstacle = false;
+							floor.spaces [movingObjects[i].positionOnFloorX + 1, movingObjects[i].positionOnFloorZ].GetComponent<Space> ().isMovableObstacle = true;
+						}
 
-					//knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
-
-                    foreach (GameObject movObstc in floor.movableObjects)
-                    {
-                        Debug.Log("Object moving");
-                        if (movObstc.GetComponent<MovableObstacle>().positionOnFloorX == newXPos && movObstc.GetComponent<MovableObstacle>().positionOnFloorZ == positionOnFloorZ)
-                        {
-
-                            movObstc.GetComponent<MovableObstacle>().moved = true;
-                            movObstc.GetComponent<MovableObstacle>().direction = 0;
-                        }
-                    }
+					}
                 }
                 else
                 {
@@ -142,22 +144,23 @@ public class Player : MonoBehaviour
 
 					//knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
                 }
-                else if (floor.spaces[newXPos, positionOnFloorZ].GetComponent<Space>().isMovableObstacle == true && newXPos - 1 >= 0 && floor.spaces[newXPos - 1, positionOnFloorZ].GetComponent<Space>().occupied == false && floor.spaces[newXPos - 1, positionOnFloorZ].GetComponent<Space>().isMovableObstacle == false && newXPos > 0)
+                else if (floor.spaces[newXPos, positionOnFloorZ].GetComponent<Space>().isMovableObstacle == true)
                 {
-                    moved = true;
 					direction = 2;
+					movingObjects = new List<MovableObstacle> ();
+					// Recursive push
+					moved = MovableRecusionCheck (newXPos, direction);
 
-					//knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
-                    foreach (GameObject movObstc in floor.movableObjects)
-                    {
-                        Debug.Log("Object moving");
-                        if (movObstc.GetComponent<MovableObstacle>().positionOnFloorX == newXPos && movObstc.GetComponent<MovableObstacle>().positionOnFloorZ == positionOnFloorZ)
-                        {
-
-                            movObstc.GetComponent<MovableObstacle>().moved = true;
-                            movObstc.GetComponent<MovableObstacle>().direction = 2;
-                        }
-                    }
+					if (!moved) {
+						newXPos += 1;
+					} else {
+						for(int i = movingObjects.Count - 1; i >= 0; i--){
+							movingObjects[i].moved = true;
+							movingObjects[i].direction = 2;
+							floor.spaces [movingObjects[i].positionOnFloorX, movingObjects[i].positionOnFloorZ].GetComponent<Space> ().isMovableObstacle = false;
+							floor.spaces [movingObjects[i].positionOnFloorX - 1, movingObjects[i].positionOnFloorZ].GetComponent<Space> ().isMovableObstacle = true;
+						}
+					}
                 }
                 else
                 {
@@ -192,22 +195,23 @@ public class Player : MonoBehaviour
 
 					//knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
                 }
-                else if (floor.spaces[positionOnFloorX, newZPos].GetComponent<Space>().isMovableObstacle == true && newZPos - 1 >= 0 && floor.spaces[positionOnFloorX, newZPos - 1].GetComponent<Space>().occupied == false && floor.spaces[positionOnFloorX, newZPos - 1].GetComponent<Space>().isMovableObstacle == false && newZPos > 0)
+                else if (floor.spaces[positionOnFloorX, newZPos].GetComponent<Space>().isMovableObstacle == true)
                 {
-                    moved = true;
 					direction = 3;
+					movingObjects = new List<MovableObstacle> ();
+					// Recursive push
+					moved = MovableRecusionCheck (newZPos, direction);
 
-					//knightModel.transform.eulerAngles = new Vector3 (0f, (90f * direction), 0f);
-                    foreach (GameObject movObstc in floor.movableObjects)
-                    {
-                        Debug.Log("Object moving");
-                        if (movObstc.GetComponent<MovableObstacle>().positionOnFloorX == positionOnFloorX && movObstc.GetComponent<MovableObstacle>().positionOnFloorZ == newZPos)
-                        {
-
-                            movObstc.GetComponent<MovableObstacle>().moved = true;
-                            movObstc.GetComponent<MovableObstacle>().direction = 1;
-                        }
-                    }
+					if (!moved) {
+						newZPos += 1;
+					} else {
+						for(int i = movingObjects.Count - 1; i >= 0; i--){
+							movingObjects[i].moved = true;
+							movingObjects[i].direction = 1;
+							floor.spaces [movingObjects[i].positionOnFloorX, movingObjects[i].positionOnFloorZ].GetComponent<Space> ().isMovableObstacle = false;
+							floor.spaces [movingObjects[i].positionOnFloorX, movingObjects[i].positionOnFloorZ - 1].GetComponent<Space> ().isMovableObstacle = true;
+						}
+					}
                 }
                 else
                 {
@@ -242,21 +246,23 @@ public class Player : MonoBehaviour
 
                    // knightModel.transform.eulerAngles = Vector3.Lerp(knightModel.transform.eulerAngles, new Vector3(0f, (90f * direction), 0f), Time.deltaTime);
                 }
-                else if (floor.spaces[positionOnFloorX, newZPos].GetComponent<Space>().isMovableObstacle == true && newZPos + 1 < floor.width && floor.spaces[positionOnFloorX, newZPos + 1].GetComponent<Space>().occupied == false && floor.spaces[positionOnFloorX, newZPos + 1].GetComponent<Space>().isMovableObstacle == false && newZPos < floor.width - 1)
+                else if (floor.spaces[positionOnFloorX, newZPos].GetComponent<Space>().isMovableObstacle == true)
                 {
-                    moved = true;
-                    foreach (GameObject movObstc in floor.movableObjects)
-                    {
-                        Debug.Log("Object moving");
-						direction = 1;
-                        //knightModel.transform.eulerAngles = Vector3.Lerp(knightModel.transform.eulerAngles, new Vector3(0f, (90f * direction), 0f), Time.deltaTime);
-                        if (movObstc.GetComponent<MovableObstacle>().positionOnFloorX == positionOnFloorX && movObstc.GetComponent<MovableObstacle>().positionOnFloorZ == newZPos)
-                        {
+					direction = 1;
+					movingObjects = new List<MovableObstacle> ();
+					// Recursive push
+					moved = MovableRecusionCheck (newZPos, direction);
 
-                            movObstc.GetComponent<MovableObstacle>().moved = true;
-                            movObstc.GetComponent<MovableObstacle>().direction = 3;
-                        }
-                    }
+					if (!moved) {
+						newZPos -= 1;
+					} else {
+						for(int i = movingObjects.Count - 1; i >= 0; i--){
+							movingObjects[i].moved = true;
+							movingObjects[i].direction = 3;
+							floor.spaces [movingObjects[i].positionOnFloorX, movingObjects[i].positionOnFloorZ].GetComponent<Space> ().isMovableObstacle = false;
+							floor.spaces [movingObjects[i].positionOnFloorX, movingObjects[i].positionOnFloorZ + 1].GetComponent<Space> ().isMovableObstacle = true;
+						}
+					}
                 }
                 else
                 {
@@ -394,5 +400,122 @@ public class Player : MonoBehaviour
 		this.transform.position = new Vector3(positionOnFloorZ + floor.xOffset - 0.25f, 0f, positionOnFloorX + floor.zOffset + 0.25f);
 
 		floor.resetLevel = true;
+	}
+
+	public bool MovableRecusionCheck(int index, int direction){
+		bool canMove = false;
+		switch (direction) {
+		// up, +x
+		case 0:
+			// Check if space on other side of movable object is in bounds, occupied, or another obstacle
+			if (index + 1 < floor.length && floor.spaces [index + 1, positionOnFloorZ].GetComponent<Space> ().occupied == false) {
+				// The current obstacle can move, add it to the List
+				foreach (GameObject movObstc in floor.movableObjects)
+				{
+					if (movObstc.GetComponent<MovableObstacle>().positionOnFloorX == index && movObstc.GetComponent<MovableObstacle>().positionOnFloorZ == positionOnFloorZ)
+					{
+						movingObjects.Add (movObstc.GetComponent<MovableObstacle>());
+					}
+				}
+				// If the space on the other side is not another movable object, done recusing
+				if (floor.spaces [index + 1, positionOnFloorZ].GetComponent<Space> ().isMovableObstacle == false) {
+					canMove = true;
+				} 
+				// If the space on the other side does have another movable object, recurse
+				else {
+					canMove = MovableRecusionCheck (index + 1, direction);
+				}
+			}
+			// If the space on the other side is out of bounds or occupied, can't move
+			else{
+				canMove = false;
+			}
+			break;
+
+		// right, +z
+		case 1:
+			// Check if space on other side of movable object is in bounds, occupied, or another obstacle
+			if (index + 1 < floor.width && floor.spaces [positionOnFloorX, index + 1].GetComponent<Space> ().occupied == false) {
+				// The current obstacle can move, add it to the List
+				foreach (GameObject movObstc in floor.movableObjects)
+				{
+					if (movObstc.GetComponent<MovableObstacle>().positionOnFloorX == positionOnFloorX && movObstc.GetComponent<MovableObstacle>().positionOnFloorZ == index)
+					{
+						movingObjects.Add (movObstc.GetComponent<MovableObstacle>());
+					}
+				}
+				// If the space on the other side is not another movable object, done recusing
+				if (floor.spaces [positionOnFloorX, index + 1].GetComponent<Space> ().isMovableObstacle == false) {
+					canMove = true;
+				} 
+				// If the space on the other side does have another movable object, recurse
+				else {
+					canMove = MovableRecusionCheck (index + 1, direction);
+				}
+			}
+			// If the space on the other side is out of bounds or occupied, can't move
+			else{
+				canMove = false;
+			}
+			break;
+		// down, -x
+		case 2:
+			// Check if space on other side of movable object is in bounds, occupied, or another obstacle
+			if (index - 1 >= 0 && floor.spaces [index - 1, positionOnFloorZ].GetComponent<Space> ().occupied == false) {
+				// The current obstacle can move, add it to the List
+				foreach (GameObject movObstc in floor.movableObjects)
+				{
+					if (movObstc.GetComponent<MovableObstacle>().positionOnFloorX == index && movObstc.GetComponent<MovableObstacle>().positionOnFloorZ == positionOnFloorZ)
+					{
+						movingObjects.Add (movObstc.GetComponent<MovableObstacle>());
+					}
+				}
+				// If the space on the other side is not another movable object, done recusing
+				if (floor.spaces [index - 1, positionOnFloorZ].GetComponent<Space> ().isMovableObstacle == false) {
+					canMove = true;
+				} 
+				// If the space on the other side does have another movable object, recurse
+				else {
+					canMove = MovableRecusionCheck (index - 1, direction);
+				}
+			}
+			// If the space on the other side is out of bounds or occupied, can't move
+			else{
+				canMove = false;
+			}
+			break;
+		// left, -z
+		case 3:
+			// Check if space on other side of movable object is in bounds, occupied, or another obstacle
+			if (index - 1 >= 0 && floor.spaces [positionOnFloorX, index - 1].GetComponent<Space> ().occupied == false) {
+				// The current obstacle can move, add it to the List
+				foreach (GameObject movObstc in floor.movableObjects)
+				{
+					if (movObstc.GetComponent<MovableObstacle>().positionOnFloorX == positionOnFloorX && movObstc.GetComponent<MovableObstacle>().positionOnFloorZ == index)
+					{
+						movingObjects.Add (movObstc.GetComponent<MovableObstacle>());
+					}
+				}
+				// If the space on the other side is not another movable object, done recusing
+				if (floor.spaces [positionOnFloorX, index - 1].GetComponent<Space> ().isMovableObstacle == false) {
+					canMove = true;
+				} 
+				// If the space on the other side does have another movable object, recurse
+				else {
+					canMove = MovableRecusionCheck (index - 1, direction);
+				}
+			}
+			// If the space on the other side is out of bounds or occupied, can't move
+			else{
+				canMove = false;
+			}
+			break;
+
+		default:
+			canMove = false;
+			break;
+		}
+
+		return canMove;
 	}
 }

@@ -98,13 +98,13 @@ public class MovableObstacle : MonoBehaviour {
 			moving = false;
 
 			// Make the player's current position unoccupied
-			floor.spaces [positionOnFloorX, positionOnFloorZ].GetComponent<Space> ().isMovableObstacle = false;
+			//floor.spaces [positionOnFloorX, positionOnFloorZ].GetComponent<Space> ().isMovableObstacle = false;
 
 			// Set the player's current position to the new position
 			positionOnFloorX = newXPos;
 			positionOnFloorZ = newZPos;
 
-			floor.spaces [positionOnFloorX, positionOnFloorZ].GetComponent<Space> ().isMovableObstacle = true;
+			//floor.spaces [positionOnFloorX, positionOnFloorZ].GetComponent<Space> ().isMovableObstacle = true;
 		}
 	}
 }

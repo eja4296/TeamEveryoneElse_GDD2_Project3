@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum Difficulty
 {
+    TUTORIAL,
     EASY,
     MEDIUM,
     HARD
@@ -53,12 +54,7 @@ public abstract class Floor : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        length = 10;
-        width = 10;
-        spaces = new GameObject[length, width];
-        xOffset = this.transform.position.x + 0.5f - (width / 2);
-        zOffset = this.transform.position.z + 0.5f - (length / 2);
-        movableObjects = new List<GameObject>();
+        
 
         switch (difficulty)
         {
@@ -72,7 +68,13 @@ public abstract class Floor : MonoBehaviour
                 puzzle = GetHardPuzzle();
                 break;
         }
-
+        Debug.LogError(puzzle[0,0]);
+        length = puzzle.GetLength(0);
+        width = puzzle.GetLength(1);
+        spaces = new GameObject[length, width];
+        xOffset = this.transform.position.x + 0.5f - (width / 2);
+        zOffset = this.transform.position.z + 0.5f - (length / 2);
+        movableObjects = new List<GameObject>();
         CreateLevel();
     }
 

@@ -10,16 +10,16 @@ public class PushPuzzleFloor : Floor {
 	// 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End
 	//private int[,] puzzle =
 	//{
-	//	{3, 2, 0, 6, 0, 0, 0, 0, 0, 0 },
-	//	{0, 0, 0, 0, 0, 6, 0, 6, 0, 0 },
-	//	{0, 0, 0, 0, 0, 0, 5, 0, 0, 0 },
-	//	{6, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-	//	{0, 0, 6, 0, 5, 0, 0, 0, 0, 0 },
-	//	{0, 0, 0, 0, 0, 0, 6, 0, 0, 6 },
 	//	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-	//	{5, 6, 6, 6, 6, 6, 6, 6, 0, 0 },
-	//	{0, 6, 0, 0, 0, 0, 0, 6, 5, 0 },
-	//	{0, 6, 0, 0, 4, 0, 0, 6, 0, 0 }
+	//	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+	//	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+	//	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+	//	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+	//	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+	//	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+	//	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+	//	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+	//	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
 	//};
 
 	public override void CreateLevel()
@@ -31,10 +31,7 @@ public class PushPuzzleFloor : Floor {
 			{
 				switch (puzzle[i, j])
 				{
-				case 0: // Crackable tiles
-					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, false, -1);
-					break;
-				case 1: // Cracked tiles SHOULD NEVER BE INITALIZED
+				case 0: //Regular tile
 					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, false, -1);
 					break;
 				case 2: // Jester location
@@ -63,9 +60,9 @@ public class PushPuzzleFloor : Floor {
 
     }
 
-    public override int[,] GetEasyPuzzle()
+    public override int[,] GetMediumPuzzle()
     {
-        // 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End
+        // 2 - Jester, 3 - Player, 4 - End
         return new int[,] {
             {3, 2, 0, 6, 0, 0, 0, 0, 0, 0 },
             {0, 0, 0, 0, 0, 6, 0, 6, 0, 0 },
@@ -80,14 +77,39 @@ public class PushPuzzleFloor : Floor {
         };
     }
 
-    public override int[,] GetMediumPuzzle()
+    public override int[,] GetEasyPuzzle()
     {
-        return GetEasyPuzzle();
+        return new int[,]
+        {
+        	{3, 2, 0, 0, 0, 0, 0, 0, 0, 0 , 0},
+        	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 , 0},
+        	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 , 0},
+        	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 , 0},
+        	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 , 0},
+        	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 , 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 , 0},
+        	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0 , 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 , 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 , 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 , 4}
+        };
     }
 
     public override int[,] GetHardPuzzle()
     {
-        return GetEasyPuzzle();
+        return new int[,]
+{
+            {3, 2, 0, 0, 0, 0, 0, 0, 0, 0 },
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+        };
     }
 
 

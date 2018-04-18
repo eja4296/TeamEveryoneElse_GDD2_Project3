@@ -18,18 +18,33 @@ public class Space : MonoBehaviour {
 	public bool isBreakableSpace;
 	public bool wasVisited;
 
+	Component halo;
 
 
 	// Use this for initialization
 	void Start () {
 		//position = this.transform.position;
-
+		halo = this.gameObject.GetComponent("Halo");
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (isMovingSpace && occupied) {
 			MovingSpace ();
+
+
+			halo.GetType ().GetProperty ("enabled").SetValue (halo, true, null);
+			/*
+			if(turnOn)
+			{
+				halo.GetType().GetProperty("enabled").SetValue(halo, true, null);
+			}
+			else
+			{
+				halo.GetType().GetProperty("enabled").SetValue(halo, false, null);
+			*/
+		} else if (isMovingSpace && !occupied){
+			halo.GetType().GetProperty("enabled").SetValue(halo, false, null);
 		}
 	}
 
@@ -93,5 +108,6 @@ public class Space : MonoBehaviour {
 		}
 
 		occupied = false;
+
 	}
 }

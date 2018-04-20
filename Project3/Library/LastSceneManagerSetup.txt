@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Resources/Scenes/CrackableLevel_1.unity
+=======
+- path: Assets/Resources/Scenes/PushLevel_1.unity
+>>>>>>> 925f8db311c0110b6e3cc7417901a523badf3865
   isLoaded: 1
   isActive: 1

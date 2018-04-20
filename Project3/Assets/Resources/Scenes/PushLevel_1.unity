@@ -1728,7 +1728,7 @@ Prefab:
         type: 2}
       propertyPath: knightModel
       value: 
-      objectReference: {fileID: 2076894322}
+      objectReference: {fileID: 0}
     - target: {fileID: 1298860888064782, guid: 03700d098a1a71a4aa3f20f8a1880912, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -1862,11 +1862,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2041012866}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2076894322 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1789146921666706, guid: 03700d098a1a71a4aa3f20f8a1880912,
-    type: 2}
-  m_PrefabInternal: {fileID: 1965847526}
 --- !u!1001 &2109812550
 Prefab:
   m_ObjectHideFlags: 0

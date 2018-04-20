@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Animator knightAnimator;
+    private float stopTimer;
+    
     // Attributes
     public int positionOnFloorX;
     public int positionOnFloorZ;
@@ -26,9 +29,10 @@ public class Player : MonoBehaviour
 
     private float startingX;
     private float startingZ;
-
+    
 	public int direction;
 	public GameObject knightModel;
+
 
     // Set in the Inspector Window
     // Let's the player know what floor script to look for
@@ -39,7 +43,7 @@ public class Player : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        stopTimer = .1f;
         //floor = GameObject.Find ("Floor").GetComponent<Floor> ();
 
         //positionOnFloorX = 0;
@@ -53,7 +57,7 @@ public class Player : MonoBehaviour
         endPos = Vector3.zero;
         //newXPos = 0;
         //newZPos = 0;
-        speed = 2f;
+        speed = 1.25f;
 		direction = 0;
 
         if (PlayerPrefs.GetInt("currentFloor") != null)
@@ -382,12 +386,23 @@ public class Player : MonoBehaviour
 			floor.NextLevel();
 
 		}
+        //animate
+        if (moving && !knightAnimator.GetCurrentAnimatorStateInfo(0).IsName("Run") && !knightAnimator.GetCurrentAnimatorStateInfo(0).IsName("Start Run")) {
+            knightAnimator.Play("Start Run");
+            knightAnimator.SetBool("StoppedRunning", false);
+        } else if (!moving && !knightAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle") && !knightAnimator.GetCurrentAnimatorStateInfo(0).IsName("Stop Run")) {
+            stopTimer -= Time.deltaTime;
+        }
 
-
-		if (Input.GetKey (KeyCode.R)) {
+        if (stopTimer <= 0f) {
+            stopTimer = .1f;
+            knightAnimator.SetBool("StoppedRunning", true);
+        }
+        if (Input.GetKey (KeyCode.R)) {
 			ResetPlayer ();
 			floor.ResetPuzzle ();
 		}
+
     }
 
 	public void ResetPlayer(){
@@ -515,7 +530,8 @@ public class Player : MonoBehaviour
 			canMove = false;
 			break;
 		}
+        
+        return canMove;
 
-		return canMove;
 	}
 }

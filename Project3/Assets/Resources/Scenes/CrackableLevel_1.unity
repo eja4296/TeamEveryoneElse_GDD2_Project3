@@ -138,7 +138,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 317493767}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7780237, y: 0.7723093, z: 1.237119}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1432446807}
@@ -269,7 +269,7 @@ Prefab:
         type: 2}
       propertyPath: knightModel
       value: 
-      objectReference: {fileID: 2081222888}
+      objectReference: {fileID: 0}
     - target: {fileID: 4644865723212282, guid: 03700d098a1a71a4aa3f20f8a1880912, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.234
@@ -309,7 +309,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 801475497}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.2219763, y: -0.7723093, z: 3.762881}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 317493768}
@@ -349,10 +349,12 @@ MonoBehaviour:
     type: 2}
   playerPrefab: {fileID: 1298860888064782, guid: 03700d098a1a71a4aa3f20f8a1880912,
     type: 2}
+  wallPrefab: {fileID: 1339019127812592, guid: e0bfc8d9ac4ef694f8a513d5e7ff54c5, type: 2}
   playerPosX: 0
   playerPosZ: 0
-  difficulty: 0
+  difficulty: 1
   resetLevel: 0
+  mainCam: {fileID: 1957878368}
 --- !u!23 &801475500
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -428,7 +430,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &866907618
 Transform:
   m_ObjectHideFlags: 0
@@ -610,7 +612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &973647798
 Transform:
   m_ObjectHideFlags: 0
@@ -701,7 +703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1159804218
 Transform:
   m_ObjectHideFlags: 0
@@ -792,7 +794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1186621176
 Transform:
   m_ObjectHideFlags: 0
@@ -916,6 +918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eeddb98738d2274690a1e7981fbd476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knightAnimator: {fileID: 0}
   positionOnFloorX: 0
   positionOnFloorZ: 0
   yPosition: 0
@@ -1066,14 +1069,9 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1957878365}
   m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 5, y: 4.5, z: -2.5}
+  m_LocalPosition: {x: 0, y: 4.5, z: -7.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
---- !u!1 &2081222888 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1789146921666706, guid: 03700d098a1a71a4aa3f20f8a1880912,
-    type: 2}
-  m_PrefabInternal: {fileID: 638894305}

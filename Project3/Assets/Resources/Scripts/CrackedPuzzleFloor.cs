@@ -61,6 +61,11 @@ public class CrackedPuzzleFloor : Floor {
 		player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
+    public override int[,] GetTutorialPuzzle()
+    {
+        return GetEasyPuzzle();
+    }
+
     public override int[,] GetEasyPuzzle()
     {
         // 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End
@@ -85,7 +90,18 @@ public class CrackedPuzzleFloor : Floor {
 
     public override int[,] GetHardPuzzle()
     {
-        return GetEasyPuzzle();
+        return new int[,] {
+            { 2, 3, 5, 5, 5, 5, 5, 5, 5, 5 },
+            { 5, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 5, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 5, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 5, 0, 0, 6, 6, 6, 0, 0, 0, 0 },
+            { 5, 0, 0, 6, 6, 6, 0, 0, 0, 0 },
+            { 5, 0, 0, 6, 6, 6, 0, 0, 0, 0 },
+            { 5, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 5, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 5, 0, 0, 0, 4, 0, 0, 0, 0, 0 }
+        };
     }
 
     public override void PuzzleCheck()

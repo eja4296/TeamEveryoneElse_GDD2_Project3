@@ -88,7 +88,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 112000002, guid: 0b22bc8ebdf5abd4187ad1c18008bb20,
     type: 2}
   m_UseShadowmask: 1
@@ -269,7 +268,7 @@ Prefab:
         type: 2}
       propertyPath: knightModel
       value: 
-      objectReference: {fileID: 2081222888}
+      objectReference: {fileID: 0}
     - target: {fileID: 4644865723212282, guid: 03700d098a1a71a4aa3f20f8a1880912, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.234
@@ -351,7 +350,7 @@ MonoBehaviour:
     type: 2}
   playerPosX: 0
   playerPosZ: 0
-  difficulty: 0
+  difficulty: 3
   resetLevel: 0
 --- !u!23 &801475500
 MeshRenderer:
@@ -397,9 +396,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &801475502
@@ -488,9 +487,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &866907621
@@ -579,9 +578,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &959454358
@@ -670,9 +669,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &973647801
@@ -761,9 +760,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1159804221
@@ -852,9 +851,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1186621179
@@ -916,6 +915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eeddb98738d2274690a1e7981fbd476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knightAnimator: {fileID: 0}
   positionOnFloorX: 0
   positionOnFloorZ: 0
   yPosition: 0
@@ -1054,7 +1054,6 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -1072,8 +1071,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
---- !u!1 &2081222888 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1789146921666706, guid: 03700d098a1a71a4aa3f20f8a1880912,
-    type: 2}
-  m_PrefabInternal: {fileID: 638894305}

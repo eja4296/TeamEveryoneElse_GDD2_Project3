@@ -61,6 +61,11 @@ public class EnemyPuzzleFloor : Floor {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
 	}
 
+    public override int[,] GetTutorialPuzzle()
+    {
+        return GetEasyPuzzle();
+    }
+
     public override int[,] GetEasyPuzzle()
     {
         // 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End

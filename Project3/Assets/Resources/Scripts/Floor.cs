@@ -58,6 +58,9 @@ public abstract class Floor : MonoBehaviour
 
         switch (difficulty)
         {
+            case Difficulty.TUTORIAL:
+                puzzle = GetTutorialPuzzle();
+                break;
             case Difficulty.EASY:
                 puzzle = GetEasyPuzzle();
                 break;
@@ -67,6 +70,7 @@ public abstract class Floor : MonoBehaviour
             case Difficulty.HARD:
                 puzzle = GetHardPuzzle();
                 break;
+            
         }
         Debug.LogError(puzzle[0,0]);
         length = puzzle.GetLength(0);
@@ -95,6 +99,7 @@ public abstract class Floor : MonoBehaviour
 	public abstract void ResetPuzzle ();
 
     // Will return the puzzle for the respective difficulty
+    public abstract int[,] GetTutorialPuzzle();
     public abstract int[,] GetEasyPuzzle();
     public abstract int[,] GetMediumPuzzle();
     public abstract int[,] GetHardPuzzle();

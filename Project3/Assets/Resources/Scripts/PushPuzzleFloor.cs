@@ -77,6 +77,11 @@ public class PushPuzzleFloor : Floor {
         };
     }
 
+    public override int[,] GetTutorialPuzzle()
+    {
+        return GetEasyPuzzle();
+    }
+
     public override int[,] GetEasyPuzzle()
     {
         return new int[,]

@@ -38,6 +38,7 @@ public abstract class Floor : MonoBehaviour
     public GameObject breakableSpacePrefab;
 	public GameObject jesterPrefab;
 	public GameObject playerPrefab;
+	public GameObject wallPrefab;
 
     // Player positions in relation to the grid
     public int playerPosX = 0;
@@ -50,6 +51,8 @@ public abstract class Floor : MonoBehaviour
     public int[,] puzzle;
 
     public bool resetLevel = false;
+
+	public Camera mainCam;
 
     // Use this for initialization
     void Start()
@@ -72,7 +75,7 @@ public abstract class Floor : MonoBehaviour
                 break;
             
         }
-        Debug.LogError(puzzle[0,0]);
+        
         length = puzzle.GetLength(0);
         width = puzzle.GetLength(1);
         spaces = new GameObject[length, width];
@@ -80,6 +83,7 @@ public abstract class Floor : MonoBehaviour
         zOffset = this.transform.position.z + 0.5f - (length / 2);
         movableObjects = new List<GameObject>();
         CreateLevel();
+		CreateWalls ();
     }
 
     // Update is called once per frame
@@ -162,6 +166,22 @@ public abstract class Floor : MonoBehaviour
 		}
         spaces[z, x] = newSpace;
     }
+
+	void CreateWalls(){
+		int increment = 0;
+		GameObject rightWall = GameObject.Instantiate(wallPrefab, new Vector3(width / 2f, 0f, 0f), Quaternion.identity);
+		rightWall.transform.Rotate (90f, 0f, 90f);
+		rightWall.transform.localScale = new Vector3 (length / 10f * 2f, 1f, 1f);
+		GameObject backWall = GameObject.Instantiate(wallPrefab, new Vector3(0f, 0f, length / 2f), Quaternion.identity);
+		backWall.transform.Rotate (90f, 0f, 180f);
+		backWall.transform.localScale = new Vector3 (length / 10f * 2f, 1f, 1f);
+		GameObject leftWall = GameObject.Instantiate(wallPrefab, new Vector3(-width / 2f, 0f, 0f), Quaternion.identity);
+		leftWall.transform.Rotate (90f, 0f, 270f);
+		leftWall.transform.localScale = new Vector3 (length / 10f * 2f, 1f, 1f);
+
+		int camOffset = (length - 10) / 2;
+		mainCam.transform.position = new Vector3(mainCam.transform.position.x, mainCam.transform.position.y, mainCam.transform.position.z - camOffset);
+	}
 
     //public void CreateLevel(){
 

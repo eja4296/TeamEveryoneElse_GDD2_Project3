@@ -160,8 +160,10 @@ public class PushPuzzleFloor : Floor {
         for (int i = 0; i < pushableObjects.Length; i++)
         {
             Destroy(pushableObjects[i]);
-            SceneManager.LoadScene("PushLevel_1");
+            
         }
+
+		SceneManager.LoadScene("PushLevel_1");
 
         CreateLevel ();
     }

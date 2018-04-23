@@ -329,6 +329,10 @@ public class Player : MonoBehaviour
             // Set moving to true
             moving = true;
             moved = false;
+
+			if (floor.spaces [newXPos, newZPos].GetComponent<Space> ().isMovingSpace) {
+				floor.spaces [newXPos, newZPos].GetComponent<Space> ().EnableHalo ();
+			}
         }
 
         // Lerp if player is moving
@@ -355,6 +359,10 @@ public class Player : MonoBehaviour
                 // Set the player's previous position to the current position
                 prevXPos = positionOnFloorX;
                 prevZPos = positionOnFloorZ;
+
+				if (floor.spaces [prevXPos, prevZPos].GetComponent<Space> ().isMovingSpace) {
+					floor.spaces [prevXPos, prevZPos].GetComponent<Space> ().DisableHalo ();
+				}
 
                 // Set the player's current position to the new position
                 positionOnFloorX = newXPos;

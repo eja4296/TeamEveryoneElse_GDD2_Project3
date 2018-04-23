@@ -6,26 +6,9 @@ using UnityEngine.SceneManagement;
 public class CrackedPuzzleFloor : Floor {
 
     Player player;
-    // 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End
-    //private int[,] puzzle =
-    //{
-    //    {3, 2, 0, 0, 0, 0, 0, 0, 0, 0 },
-    //    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-    //    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-    //    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-    //    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-    //    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-    //    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-    //    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-    //    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-    //    {0, 0, 0, 0, 4, 0, 0, 0, 0, 0 }
-    //};
-
+    private int endI, endJ;
     public override void CreateLevel()
     {
-
-
-
         Debug.Log("Create Level Called");
         for (int i = 0; i < puzzle.GetLength(0); i++)
         {
@@ -46,7 +29,9 @@ public class CrackedPuzzleFloor : Floor {
 						CreateTile(normalSpacePrefab, j, 0, i, false, false, false, true, false, false, false, true, -1);
 						break;
                     case 4: // Ending location
-						CreateTile(endSpacePrefab, j, 0.5f, i, false, false, false, false, false, false, true, false, -1);
+						CreateTile(endSpacePrefab, j, 0.5f, i, true, false, false, true, false, false, true, false, -1);
+                        endI = i;
+                        endJ = j;
 						break;
                     case 5: // Obstacle location
 						CreateTile(obstaclePrefab, j, 0.5f, i, true, false, false, true, false, false, false, false, -1);
@@ -63,7 +48,12 @@ public class CrackedPuzzleFloor : Floor {
 
     public override int[,] GetTutorialPuzzle()
     {
-        return GetEasyPuzzle();
+        return new int[,] {
+            { 5, 3, 2, 5 },
+            { 5, 0, 0, 5 },
+            { 5, 0, 0, 5 },
+            { 5, 4, 6, 5 },
+        };
     }
 
     public override int[,] GetEasyPuzzle()
@@ -113,6 +103,8 @@ public class CrackedPuzzleFloor : Floor {
             {
                 spaces[playerPosX, playerPosZ].GetComponent<MeshRenderer>().material = breakableSpaceMat;
                 spaces[playerPosX, playerPosZ].GetComponent<Space>().wasVisited = true;
+                // Check to see if we are complete (open end tile)
+                IsComplete();
             }
             else
             {
@@ -123,37 +115,40 @@ public class CrackedPuzzleFloor : Floor {
 
 	// Send Game to next level, from Player class
 	public override void NextLevel(){
-		bool allVisited = true;
-
-		// Loop through breakable spaces to see if all have been visited first
-		for (int i = 0; i < puzzle.GetLength(0); i++)
-		{
-			if (allVisited == false) {
-				break;
-			}
-			for (int j = 0; j < puzzle.GetLength(1); j++)
-			{
-				if (allVisited == false) {
-					break;
-				}
-				if (spaces [i, j].GetComponent<Space> ().isBreakableSpace) {
-					if (spaces [i, j].GetComponent<Space> ().wasVisited) {
-						allVisited = true;
-					} else {
-						allVisited = false;
-					}
-				}
-
-	
-			}
-		}
-
 		// If all crackable spaces were visited, move to next level
-		if (allVisited) {
-			SceneManager.LoadScene ("MovingLevel_1", LoadSceneMode.Single);
+		if (IsComplete()) {
+            SceneManager.LoadScene ("MovingLevel_1", LoadSceneMode.Single);
 		}
 
 	}
+
+    /// <summary>
+    /// Checks to see if every ice tile has been cracked,
+    /// If all tiles are cracked, the end may now be walked on
+    /// </summary>
+    /// <returns>True if all ice is cracked, false if at least one isn't cracked</returns>
+    private bool IsComplete()
+    {
+        // Loop through breakable spaces to see if all have been visited first
+        for (int i = 0; i < puzzle.GetLength(0); i++)
+        {
+            for (int j = 0; j < puzzle.GetLength(1); j++)
+            {
+                if (spaces[i, j].GetComponent<Space>().isBreakableSpace)
+                {
+                    if (!spaces[i, j].GetComponent<Space>().wasVisited)
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        // If we make it here it is complete, open the end to be walkable
+        spaces[endI, endJ].GetComponent<Space>().isObstacle = false;
+        spaces[endI, endJ].GetComponent<Space>().occupied = false;
+        return true;
+    }
 
     /// <summary>
     /// Resets the puzzle because the player stepped on a 
@@ -162,23 +157,6 @@ public class CrackedPuzzleFloor : Floor {
 	public override void ResetPuzzle()
     {
         resetLevel = true;
-
-        /*for (int i = 0; i < puzzle.GetLength(0); i++)
-        {
-            for (int j = 0; j < puzzle.GetLength(1); j++)
-            {
-                if (spaces[i, j].GetComponent<Space>().wasVisited)
-                {
-                    spaces[i, j].GetComponent<Space>().wasVisited = false;
-                    spaces[i, j].GetComponent<MeshRenderer>().material = unbrokenSpaceMat;
-                }
-            }
-        }*/
-
         SceneManager.LoadScene("CrackableLevel_1");
-        //player.positionOnFloorX = 0;
-        //player.positionOnFloorZ = 0;
-        //player.newXPos = 0;
-        //player.newZPos = 0;
     }
 }

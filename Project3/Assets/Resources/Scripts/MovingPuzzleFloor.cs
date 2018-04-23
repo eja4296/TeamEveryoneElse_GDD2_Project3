@@ -69,7 +69,12 @@ public class MovingPuzzleFloor : Floor {
 
     public override int[,] GetTutorialPuzzle()
     {
-        return GetEasyPuzzle();
+		return new int[,] {
+			{6, 4, 1, 0 },
+			{7, 7, 2, 0 },
+			{2, 0, 7, 7 },
+			{2, 3, 7, 5 },
+		};
     }
 
     public override int[,] GetEasyPuzzle()

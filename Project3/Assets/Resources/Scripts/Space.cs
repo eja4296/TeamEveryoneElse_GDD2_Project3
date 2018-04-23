@@ -33,7 +33,6 @@ public class Space : MonoBehaviour {
 			MovingSpace ();
 
 
-			halo.GetType ().GetProperty ("enabled").SetValue (halo, true, null);
 			/*
 			if(turnOn)
 			{
@@ -44,7 +43,7 @@ public class Space : MonoBehaviour {
 				halo.GetType().GetProperty("enabled").SetValue(halo, false, null);
 			*/
 		} else if (isMovingSpace && !occupied){
-			halo.GetType().GetProperty("enabled").SetValue(halo, false, null);
+			
 		}
 	}
 
@@ -109,5 +108,15 @@ public class Space : MonoBehaviour {
 
 		occupied = false;
 
+	}
+
+	public void EnableHalo(){
+		halo.GetType ().GetProperty ("enabled").SetValue (halo, true, null);
+		//halo.GetType ().GetProperty ("size").SetValue (halo, 2, null);
+
+	}
+
+	public void DisableHalo(){
+		halo.GetType ().GetProperty ("enabled").SetValue (halo, false, null);
 	}
 }

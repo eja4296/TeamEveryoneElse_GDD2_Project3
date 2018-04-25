@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 112000002, guid: ed1fee500f4ae044499c115fbf15ef95,
     type: 2}
   m_UseShadowmask: 1
@@ -133,12 +134,12 @@ Prefab:
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 483
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 268.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
@@ -183,57 +184,57 @@ Prefab:
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.503125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.503125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_LocalScale.z
-      value: 0.503125
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 138d93fcf27e5f24e9d770ff23e05bd2, type: 2}
@@ -316,9 +317,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &437785506
@@ -591,9 +592,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &600362511
@@ -734,9 +735,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1053697815
@@ -762,7 +763,7 @@ MonoBehaviour:
   width: 0
   breakableSpaceMat: {fileID: 0}
   unbrokenSpaceMat: {fileID: 0}
-  enemyPrefab: {fileID: 1474826813098246, guid: df336c1f5e2669341b46779807e590e9,
+  enemyPrefab: {fileID: 1593898353560798, guid: cf86a783e84d0ee4babe73db1fd590e9,
     type: 2}
   movableObjects: []
   xOffset: 0
@@ -781,6 +782,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 1298860888064782, guid: 03700d098a1a71a4aa3f20f8a1880912,
     type: 2}
   wallPrefab: {fileID: 1778368542775712, guid: dfa0350d1057f854e97993023fb88c65, type: 2}
+  knightAnimator: {fileID: 9500000, guid: 3b14fe421dad37d4aa7745f4d61785dd, type: 3}
   playerPosX: 0
   playerPosZ: 0
   difficulty: 0
@@ -959,9 +961,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1550579233
@@ -1035,6 +1037,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -1130,9 +1133,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1819378212
@@ -1221,9 +1224,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &2060352546

@@ -40,6 +40,8 @@ public abstract class Floor : MonoBehaviour
 	public GameObject playerPrefab;
 	public GameObject wallPrefab;
 
+	public Animator knightAnimator;
+
     // Player positions in relation to the grid
     public int playerPosX = 0;
     public int playerPosZ = 0;
@@ -136,10 +138,11 @@ public abstract class Floor : MonoBehaviour
 
 		}
 		if (isEnemy) {
-			GameObject enemy = GameObject.Instantiate(enemyPrefab, new Vector3 (x + xOffset, 0.5f, z + zOffset), Quaternion.identity);
+			GameObject enemy = GameObject.Instantiate(enemyPrefab, new Vector3 (x + xOffset - 0.25f, 0f, z + zOffset + 0.25f), Quaternion.identity);
 			enemy.AddComponent<Enemy> ();
 			enemy.GetComponent<Enemy> ().positionOnFloorX = z;
 			enemy.GetComponent<Enemy> ().positionOnFloorZ = x;
+			enemy.GetComponent<Enemy> ().knightAnimator = knightAnimator;
 
 		}
 		if (isMovable) {

@@ -23,6 +23,12 @@ public class Enemy : MonoBehaviour
     public Player play;
     public bool chase = false;
 
+	public Animator knightAnimator;
+	private float stopTimer;
+	public float rotateSpeed;
+	public int direction = 0;
+
+
     // Use this for initialization
     void Start()
     {
@@ -34,11 +40,39 @@ public class Enemy : MonoBehaviour
         startPos = Vector3.zero;
         endPos = Vector3.zero;
 		speed = 1.25f;
+		stopTimer = .1f;
     }
 
     // Update is called once per frame
     void Update()
     {
+		switch (direction) {
+		case 0:
+			Quaternion oldRot = this.transform.rotation;
+			this.transform.LookAt(this.transform.position + new Vector3(0f, 0f, 10f));
+			Quaternion newRot = this.transform.rotation;
+			this.transform.rotation = Quaternion.Lerp(oldRot, newRot, Time.deltaTime * rotateSpeed);
+			break;
+		case 1:
+			Quaternion oldRot1 = this.transform.rotation;
+			this.transform.LookAt(this.transform.position + new Vector3(10f, 0f, 0f));
+			Quaternion newRot1 = this.transform.rotation;
+			this.transform.rotation = Quaternion.Lerp(oldRot1, newRot1, Time.deltaTime * rotateSpeed);
+			break;
+		case 2:
+			Quaternion oldRot2 = this.transform.rotation;
+			this.transform.LookAt(this.transform.position + new Vector3(0f, 0f, -10f));
+			Quaternion newRot2 = this.transform.rotation;
+			this.transform.rotation = Quaternion.Lerp(oldRot2, newRot2, Time.deltaTime * rotateSpeed);
+			break;
+		case 3:
+			Quaternion oldRot3 = this.transform.rotation;
+			this.transform.LookAt(this.transform.position + new Vector3(-10f, 0f, 0f));
+			Quaternion newRot3 = this.transform.rotation;
+			this.transform.rotation = Quaternion.Lerp(oldRot3, newRot3, Time.deltaTime * rotateSpeed);
+			break;
+		}
+
         // Check if the player has moved and if the enemy is not currently moving
         // If so, choose a movement for the enemy
         if (moving == false && player.GetComponent<Player>().moving == true)
@@ -271,8 +305,13 @@ public class Enemy : MonoBehaviour
         // Set up for Lerp
         startPos = floor.spaces[positionOnFloorX, positionOnFloorZ].transform.position;
         endPos = floor.spaces[newXPos, newZPos].transform.position;
-        startPos.y = 0.5f;
-        endPos.y = 0.5f;
+        startPos.y = 0f;
+        endPos.y = 0f;
+
+		startPos.x -= 0.25f;
+		startPos.z += 0.25f;
+		endPos.x -= 0.25f;
+		endPos.z += 0.25f;
 
         // Set the start time and length of the travel distance
         startTime = Time.time;
@@ -319,6 +358,19 @@ public class Enemy : MonoBehaviour
 				
 			}
 			*/
+
+			//animate
+			if (moving && !knightAnimator.GetCurrentAnimatorStateInfo(0).IsName("Run") && !knightAnimator.GetCurrentAnimatorStateInfo(0).IsName("Start Run")) {
+				knightAnimator.Play("Start Run");
+				knightAnimator.SetBool("StoppedRunning", false);
+			} else if (!moving && !knightAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle") && !knightAnimator.GetCurrentAnimatorStateInfo(0).IsName("Stop Run")) {
+				stopTimer -= Time.deltaTime;
+			}
+
+			if (stopTimer <= 0f) {
+				stopTimer = .1f;
+				knightAnimator.SetBool("StoppedRunning", true);
+			}
 
             // Make enemy's new position occupied
             floor.spaces[positionOnFloorX, positionOnFloorZ].GetComponent<Space>().occupied = true;

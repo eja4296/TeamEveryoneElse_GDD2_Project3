@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
         moving = false;
         startPos = Vector3.zero;
         endPos = Vector3.zero;
-        speed = 2f;
+		speed = 1.25f;
     }
 
     // Update is called once per frame

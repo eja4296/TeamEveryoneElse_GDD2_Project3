@@ -413,7 +413,7 @@ MonoBehaviour:
   wallPrefab: {fileID: 1778368542775712, guid: dfa0350d1057f854e97993023fb88c65, type: 2}
   playerPosX: 0
   playerPosZ: 0
-  difficulty: 0
+  difficulty: 1
   resetLevel: 0
   mainCam: {fileID: 1957878368}
 --- !u!23 &801475500
@@ -662,6 +662,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_RootOrder
@@ -670,12 +675,12 @@ Prefab:
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 483
+      value: 378.5
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 268.5
+      value: 179
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
@@ -771,6 +776,56 @@ Prefab:
         type: 2}
       propertyPath: m_LocalScale.z
       value: 0.503125
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[0]
+      value: Careful where you step my friend. Crack all the ice before the end.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[1]
+      value: tep on once the ice will crack. Step on twice and ye go back!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[2]
+      value: Stone and crates matter none, they be there to add some fun!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[3]
+      value: eat puzzle one look at you! But this is only puzzle two!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[4]
+      value: "More to come don\u2019t you wait. You cannot escape your horrid fate!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[5]
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[6]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[7]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[8]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[9]
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 138d93fcf27e5f24e9d770ff23e05bd2, type: 2}

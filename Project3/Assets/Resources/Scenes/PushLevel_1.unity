@@ -598,15 +598,20 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 483
+      value: 233.5
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 268.5
+      value: 176.5
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
@@ -693,6 +698,57 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1554168170}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[0]
+      value: Noble knight, strength you must. Push my barrels with great thrust!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[1]
+      value: Push one or maybe two, but beware the crates stop you!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[2]
+      value: Can you make it through this maze? Or ye get trapped with great haze!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[3]
+      value: "Ye at the start of puzzle three, I hope you\u2019re having fun with
+        me!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[4]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[5]
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[6]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[7]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[8]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
+        type: 2}
+      propertyPath: dialogue.Array.data[9]
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 138d93fcf27e5f24e9d770ff23e05bd2, type: 2}
   m_IsPrefabParent: 0

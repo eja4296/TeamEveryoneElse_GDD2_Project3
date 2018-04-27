@@ -60,7 +60,7 @@ public class PushPuzzleFloor : Floor {
 
     }
 
-    public override int[,] GetMediumPuzzle()
+    public override int[,] GetHardPuzzle()
     {
         // 2 - Jester, 3 - Player, 4 - End
         return new int[,] {
@@ -88,7 +88,7 @@ public class PushPuzzleFloor : Floor {
         };
     }
 
-    public override int[,] GetEasyPuzzle()
+    public override int[,] GetMediumPuzzle()
     {
         return new int[,]
         {
@@ -103,20 +103,18 @@ public class PushPuzzleFloor : Floor {
         };
     }
 
-    public override int[,] GetHardPuzzle()
+    public override int[,] GetEasyPuzzle()
     {
         return new int[,]
 {
-            {3, 2, 0, 0, 0, 0, 0, 0, 0, 0 },
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+            {3, 2, 5, 0, 5, 0, 0, 0},
+            {0, 6, 6, 0, 0, 6, 0, 0},
+            {0, 5, 5, 5, 5, 0, 6, 0},
+            {6, 5, 0, 0, 5, 0, 5, 0},
+            {6, 6, 6, 0, 0, 0, 5, 0},
+            {0, 5, 0, 6, 0, 0, 5, 0},
+            {0, 5, 0, 6, 0, 5, 5, 0},
+            {5, 5, 0, 0, 6, 0, 5, 4},
         };
     }
 
@@ -162,8 +160,21 @@ public class PushPuzzleFloor : Floor {
             Destroy(pushableObjects[i]);
             
         }
-
-		SceneManager.LoadScene("PushLevel_1");
+        switch (difficulty) {
+            case Difficulty.TUTORIAL:
+                SceneManager.LoadScene("PushLevel_1");
+                break;
+            case Difficulty.EASY:
+                SceneManager.LoadScene("PushLevel_2");
+                break;
+            case Difficulty.MEDIUM:
+                SceneManager.LoadScene("PushLevel_3");
+                break;
+            case Difficulty.HARD:
+                SceneManager.LoadScene("PushLevel_4");
+                break;
+        }
+		
 
         CreateLevel ();
     }

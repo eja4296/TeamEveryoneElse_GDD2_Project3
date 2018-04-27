@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Resources/Scenes/MovingLevel_1.unity
-=======
 - path: Assets/Resources/Scenes/PushLevel_1.unity
->>>>>>> 7ca6403bca6eee399cca719c37c294b04fcdbff5
   isLoaded: 1
   isActive: 1

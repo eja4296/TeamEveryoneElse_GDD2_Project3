@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class EnemyPuzzleFloor : Floor {
-
+    public GameObject winScreen;
     GameObject[] enemies;
 	// 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End
 	//private int[,] puzzle =
@@ -113,7 +113,8 @@ public class EnemyPuzzleFloor : Floor {
 	}
 
 	public override void NextLevel(){
-		SceneManager.LoadScene ("PushLevel_1", LoadSceneMode.Single);
+        //SceneManager.LoadScene ("PushLevel_1", LoadSceneMode.Single);
+        winScreen.SetActive(true);
 	}
 
 

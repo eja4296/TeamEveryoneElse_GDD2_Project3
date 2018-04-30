@@ -64,7 +64,7 @@ public class PushPuzzleFloor : Floor {
     {
         // 2 - Jester, 3 - Player, 4 - End
         return new int[,] {
-            {3, 2, 0, 6, 0, 0, 6, 0, 6, 0 },
+            {3, 2, 0, 6, 0, 0, 6, 6, 6, 0 },
             {0, 0, 0, 5, 0, 5, 6, 0, 6, 6 },
             {6, 6, 0, 5, 0, 5, 0, 0, 0, 0 },
             {6, 0, 5, 0, 0, 5, 6, 5, 0, 0 },
@@ -155,12 +155,13 @@ public class PushPuzzleFloor : Floor {
         // Called in Player class with 'R' key press
 
         // Can't do this, have to destroy other objects first, or find some way to reset everything that 
-
+		/*
         for (int i = 0; i < pushableObjects.Length; i++)
         {
             Destroy(pushableObjects[i]);
             
         }
+
         switch (difficulty) {
             case Difficulty.TUTORIAL:
                 SceneManager.LoadScene("PushLevel_1");
@@ -175,8 +176,8 @@ public class PushPuzzleFloor : Floor {
                 SceneManager.LoadScene("PushLevel_4");
                 break;
         }
-		
-
-        CreateLevel ();
+		*/
+		SceneManager.LoadScene("PushLevel_1");
+        //CreateLevel ();
     }
 }

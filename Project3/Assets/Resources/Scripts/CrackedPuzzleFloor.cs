@@ -58,7 +58,7 @@ public class CrackedPuzzleFloor : Floor {
 
     public override int[,] GetEasyPuzzle()
     {
-        // 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End
+        // 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End, 5 - Crates
         return new int[,] {
             { 2, 3, 5, 0, 0, 0, 0, 0, 0, 0 },
             { 5, 0, 5, 0, 0, 0, 0, 0, 0, 0 },
@@ -75,7 +75,20 @@ public class CrackedPuzzleFloor : Floor {
 
     public override int[,] GetMediumPuzzle()
     {
-        return GetEasyPuzzle();
+        // 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End, 5 - Crates
+        return new int[,]
+        {
+            { 5, 5, 5, 5, 3, 2, 5, 5, 5, 5 },
+            { 5, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 5, 0, 0, 0, 0, 0, 0, 0, 5, 0 },
+            { 0, 0, 0, 6, 6, 6, 0, 0, 5, 0 },
+            { 0, 5, 0, 6, 6, 6, 0, 0, 5, 0 },
+            { 0, 5, 0, 6, 6, 6, 0, 0, 5, 0 },
+            { 0, 5, 0, 0, 0, 0, 0, 0, 5, 0 },
+            { 0, 5, 0, 0, 0, 0, 0, 0, 5, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 5, 5, 5, 5, 4, 5, 5, 5, 5, 5 }
+        };
     }
 
     public override int[,] GetHardPuzzle()

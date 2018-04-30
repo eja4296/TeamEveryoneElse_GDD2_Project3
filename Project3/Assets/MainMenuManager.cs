@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour {
     public GameObject ControlsPanel;
+    public GameObject DifficultyPanel;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -18,12 +20,19 @@ public class MainMenuManager : MonoBehaviour {
         Application.Quit();
     }
     public void StartGame() {
-        SceneManager.LoadScene("EnemyLevel");
+        //SceneManager.LoadScene("EnemyLevel");
+        DifficultyPanel.SetActive(!DifficultyPanel.activeSelf);
     }
     public void ShowControls() {
         ControlsPanel.SetActive(!ControlsPanel.activeSelf);
     }
     public void HideControls() {
         ControlsPanel.SetActive(false);
+    }
+
+    public void LoadGame(int difficultyInt)
+    {
+        DifficultyClass.CurrentDifficulty = (Difficulty)difficultyInt;
+        SceneManager.LoadScene("EnemyLevel");
     }
 }

@@ -10,6 +10,11 @@ public enum Difficulty
     HARD
 }
 
+public class DifficultyClass
+{
+    public static Difficulty CurrentDifficulty = Difficulty.EASY;
+}
+
 public abstract class Floor : MonoBehaviour
 {
 
@@ -47,7 +52,7 @@ public abstract class Floor : MonoBehaviour
     public int playerPosZ = 0;
 
     // The difficult of the puzzles
-    public Difficulty difficulty = Difficulty.EASY;
+    protected Difficulty difficulty = Difficulty.EASY;
 
     // Empty arrays of puzzles
     public int[,] puzzle;
@@ -59,7 +64,7 @@ public abstract class Floor : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        
+        difficulty = DifficultyClass.CurrentDifficulty;
 
         switch (difficulty)
         {

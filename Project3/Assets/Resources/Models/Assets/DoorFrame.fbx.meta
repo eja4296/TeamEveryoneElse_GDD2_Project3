@@ -1,0 +1,133 @@
+fileFormatVersion: 2
+guid: 7fe67e08651add34f988a06bc9a9ee8f
+timeCreated: 1525103780
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: building6:group32
+    100002: building6:pasted__group27
+    100004: building6:pasted__group28
+    100006: building6:pasted__group29
+    100008: building6:pasted__group30
+    100010: building6:pasted__pasted__group27
+    100012: building6:pasted__pasted__group28
+    100014: building6:pasted__pasted__pasted__group27
+    100016: building6:pasted__pasted__pasted__pasted__pCube18
+    100018: building6:pasted__pasted__pasted__pCube18
+    100020: building6:pasted__pasted__pCube18
+    100022: building6:pasted__transform84
+    100024: building6:pasted__transform85
+    100026: building6:pasted__transform86
+    100028: building6:pasted__transform87
+    100030: //RootNode
+    100032: Doorframe1
+    100034: pasted__group13
+    100036: pasted__pasted__group
+    400000: building6:group32
+    400002: building6:pasted__group27
+    400004: building6:pasted__group28
+    400006: building6:pasted__group29
+    400008: building6:pasted__group30
+    400010: building6:pasted__pasted__group27
+    400012: building6:pasted__pasted__group28
+    400014: building6:pasted__pasted__pasted__group27
+    400016: building6:pasted__pasted__pasted__pasted__pCube18
+    400018: building6:pasted__pasted__pasted__pCube18
+    400020: building6:pasted__pasted__pCube18
+    400022: building6:pasted__transform84
+    400024: building6:pasted__transform85
+    400026: building6:pasted__transform86
+    400028: building6:pasted__transform87
+    400030: //RootNode
+    400032: Doorframe1
+    400034: pasted__group13
+    400036: pasted__pasted__group
+    2300000: Doorframe1
+    3300000: Doorframe1
+    4300000: Doorframe1
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DoorFrameMaterial
+    second: {fileID: 2100000, guid: 1dbb260fa6e4ed34299fd5375c39b6cb, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

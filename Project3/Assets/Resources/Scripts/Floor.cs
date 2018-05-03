@@ -60,6 +60,7 @@ public abstract class Floor : MonoBehaviour
     public bool resetLevel = false;
 
 	public Camera mainCam;
+	public Camera orthoCam;
 
     // Use this for initialization
     void Start()
@@ -96,7 +97,10 @@ public abstract class Floor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+		if (Input.GetKeyDown (KeyCode.C)) {
+			mainCam.enabled = !mainCam.enabled;
+			orthoCam.enabled = !orthoCam.enabled;
+		}
     }
 
     // Will check the progress of the respective child puzzle
@@ -172,6 +176,7 @@ public abstract class Floor : MonoBehaviour
 
 			newSpace.transform.Rotate(new Vector3(0f, randNum * 90f, 0f));
 		}
+	
         spaces[z, x] = newSpace;
     }
 

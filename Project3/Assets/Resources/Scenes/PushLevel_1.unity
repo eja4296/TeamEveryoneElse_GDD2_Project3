@@ -260,11 +260,14 @@ MonoBehaviour:
   zOffset: 0
   normalSpacePrefab: {fileID: 1291514326393230, guid: 42a4620ec7e2a7846b106b56e88977f9,
     type: 2}
-  obstaclePrefab: {fileID: 1920713295706562, guid: 914aa56c3eb5d19439d3fa1dd4b49eda,
+  obstaclePrefab: {fileID: 1396808563410814, guid: 914aa56c3eb5d19439d3fa1dd4b49eda,
     type: 2}
   endSpacePrefab: {fileID: 1287761863419198, guid: ddc1ec37e4f83c74aada157dfebf9512,
     type: 2}
   forwardSpacePrefab: {fileID: 0}
+  backwardSpacePrefab: {fileID: 0}
+  rightSpacePrefab: {fileID: 0}
+  leftSpacePrefab: {fileID: 0}
   movableObstaclePrefab: {fileID: 1803909959948976, guid: 0e32f5ef3f022c441a409d16397e449c,
     type: 2}
   breakableSpacePrefab: {fileID: 0}

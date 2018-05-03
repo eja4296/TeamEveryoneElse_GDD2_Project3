@@ -32,16 +32,16 @@ public class MovingPuzzleFloor : Floor {
 				switch (puzzle[i, j])
 				{
 				case 0: // Moving Tile - Downward
-					CreateTile(forwardSpacePrefab, j, 0, i, false, true, false, false, false, false, false, false, 0);
+					CreateTile(backwardSpacePrefab, j, 0, i, false, true, false, false, false, false, false, false, 0);
 					break;
 				case 1: // Moving Tile - Left
-					CreateTile(forwardSpacePrefab, j, 0, i, false, true, false, false, false, false, false, false, 3);
+					CreateTile(leftSpacePrefab, j, 0, i, false, true, false, false, false, false, false, false, 3);
 					break;
 				case 2: // Moving Tile - Forward
 					CreateTile(forwardSpacePrefab, j, 0, i, false, true, false, false, false, false, false, false, 2);
 					break;
 				case 3: // Moving Tile - Right
-					CreateTile(forwardSpacePrefab, j, 0, i, false, true, false, false, false, false, false, false, 1);
+					CreateTile(rightSpacePrefab, j, 0, i, false, true, false, false, false, false, false, false, 1);
 					break;
 				case 4: // Player/Start Location 
 					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, true, false, false, false, true, -1);

@@ -39,6 +39,9 @@ public abstract class Floor : MonoBehaviour
     public GameObject obstaclePrefab;
     public GameObject endSpacePrefab;
     public GameObject forwardSpacePrefab;
+	public GameObject backwardSpacePrefab;
+	public GameObject rightSpacePrefab;
+	public GameObject leftSpacePrefab;
     public GameObject movableObstaclePrefab;
     public GameObject breakableSpacePrefab;
 	public GameObject jesterPrefab;
@@ -132,6 +135,7 @@ public abstract class Floor : MonoBehaviour
     /// <param name="direction">Direction this tile would move us in (-1 default)</param>
 	public void CreateTile(GameObject prefab, int x, float y, int z, bool isObstacle, bool isMovingSpace, bool isBreakable, bool occupied, bool isEnemy, bool isMovable, bool isEndSpace, bool isPlayer, int direction)
     {
+
         GameObject newSpace = GameObject.Instantiate(prefab, new Vector3(x + xOffset, y, z + zOffset), Quaternion.identity);
         newSpace.AddComponent<Space>();
         newSpace.GetComponent<Space>().isObstacle = isObstacle;
@@ -142,10 +146,12 @@ public abstract class Floor : MonoBehaviour
 		newSpace.GetComponent<Space> ().occupied = occupied;
 		newSpace.GetComponent<Space> ().isMovableObstacle = isMovable;
 		newSpace.GetComponent<Space> ().isEndPosition = isEndSpace;
+		/*
 		if (isMovingSpace == true) {
 			newSpace.transform.Rotate(new Vector3 (0f, (90f * direction), 0f));
 
 		}
+		*/
 		if (isEnemy) {
 			GameObject enemy = GameObject.Instantiate(enemyPrefab, new Vector3 (x + xOffset - 0.25f, 0f, z + zOffset + 0.25f), Quaternion.identity);
 			enemy.AddComponent<Enemy> ();
@@ -181,7 +187,6 @@ public abstract class Floor : MonoBehaviour
     }
 
 	void CreateWalls(){
-		int increment = 0;
 		GameObject rightWall = GameObject.Instantiate(wallPrefab, new Vector3(width / 2f, 0f, 0f), Quaternion.identity);
 		rightWall.transform.Rotate (90f, 0f, 90f);
 		rightWall.transform.localScale = new Vector3 (length / 10f * 2f, 1f, 1f);

@@ -130,10 +130,11 @@ public class CrackedPuzzleFloor : Floor {
 	public override void NextLevel(){
 		// If all crackable spaces were visited, move to next level
 		if (IsComplete()) {
-            SceneManager.LoadScene ("MovingLevel_1", LoadSceneMode.Single);
-		}
+            StartCoroutine(LoadScene(victory, "PushLevel_1", false));
+            //SceneManager.LoadScene ("MovingLevel_1", LoadSceneMode.Single);
+        }
 
-	}
+    }
 
     /// <summary>
     /// Checks to see if every ice tile has been cracked,
@@ -169,7 +170,10 @@ public class CrackedPuzzleFloor : Floor {
     /// </summary>
 	public override void ResetPuzzle()
     {
+        StartCoroutine(LoadScene(failure, "CrackableLevel_1", true));
         resetLevel = true;
-        SceneManager.LoadScene("CrackableLevel_1");
+        //source.PlayOneShot(failure);
+        //resetLevel = true;
+        //SceneManager.LoadScene("CrackableLevel_1");
     }
 }

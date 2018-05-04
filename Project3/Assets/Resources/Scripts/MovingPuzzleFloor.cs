@@ -126,7 +126,8 @@ public class MovingPuzzleFloor : Floor {
 	}
 
 	public override void NextLevel(){
-		SceneManager.LoadScene ("EnemyLevel", LoadSceneMode.Single);
+        StartCoroutine(LoadScene(victory, "CrackableLevel_1", false));
+		//SceneManager.LoadScene ("EnemyLevel", LoadSceneMode.Single);
 	}
 
 
@@ -136,18 +137,20 @@ public class MovingPuzzleFloor : Floor {
 	/// </summary>
 	public override void ResetPuzzle()
 	{
-		resetLevel = true;
+		//resetLevel = true;
 
-		for (int i = 0; i < puzzle.GetLength(0); i++)
-		{
-			for (int j = 0; j < puzzle.GetLength(1); j++)
-			{
-				if (spaces[i, j].GetComponent<Space>().wasVisited)
-				{
-					spaces[i, j].GetComponent<Space>().wasVisited = false;
-					spaces[i, j].GetComponent<MeshRenderer>().material = unbrokenSpaceMat;
-				}
-			}
-		}
+        //for (int i = 0; i < puzzle.GetLength(0); i++)
+        //{
+        //	for (int j = 0; j < puzzle.GetLength(1); j++)
+        //	{
+        //		if (spaces[i, j].GetComponent<Space>().wasVisited)
+        //		{
+        //			spaces[i, j].GetComponent<Space>().wasVisited = false;
+        //			spaces[i, j].GetComponent<MeshRenderer>().material = unbrokenSpaceMat;
+        //		}
+        //	}
+        //}
+
+        StartCoroutine(LoadScene(failure, "MovingLevel_1", true));
 	}
 }

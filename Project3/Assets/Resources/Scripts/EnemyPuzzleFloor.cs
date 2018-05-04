@@ -124,7 +124,7 @@ public class EnemyPuzzleFloor : Floor {
 	/// </summary>
 	public override void ResetPuzzle()
 	{
-		resetLevel = true;
+		//resetLevel = true;
 
         /*
 		 * 
@@ -144,6 +144,7 @@ public class EnemyPuzzleFloor : Floor {
 		for (int i = 0; i < enemies.Length; i++) {
 			Destroy (enemies [i]);
 		}
-		SceneManager.LoadScene("EnemyLevel");
+        StartCoroutine(LoadScene(failure, "EnemyLevel", true));
+		//SceneManager.LoadScene("EnemyLevel");
 	}
 }

@@ -33,6 +33,6 @@ public class MainMenuManager : MonoBehaviour {
     public void LoadGame(int difficultyInt)
     {
         DifficultyClass.CurrentDifficulty = (Difficulty)difficultyInt;
-        SceneManager.LoadScene("EnemyLevel");
+        SceneManager.LoadScene("MovingLevel_1");
     }
 }

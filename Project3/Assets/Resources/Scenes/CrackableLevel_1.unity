@@ -88,7 +88,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 112000002, guid: 0b22bc8ebdf5abd4187ad1c18008bb20,
     type: 2}
   m_UseShadowmask: 1
@@ -361,6 +360,7 @@ GameObject:
   - component: {fileID: 801475501}
   - component: {fileID: 801475500}
   - component: {fileID: 801475499}
+  - component: {fileID: 801475503}
   m_Layer: 0
   m_Name: CrackedPuzzleFloor
   m_TagString: Untagged
@@ -426,6 +426,8 @@ MonoBehaviour:
   resetLevel: 0
   mainCam: {fileID: 1957878368}
   orthoCam: {fileID: 446264609}
+  victory: {fileID: 8300000, guid: a13350795d5897b4d9f86b4ef14f09be, type: 3}
+  failure: {fileID: 8300000, guid: 9581e122724f3c940a6c69a23b8e36a2, type: 3}
 --- !u!23 &801475500
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -470,9 +472,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &801475502
@@ -483,6 +485,86 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 801475497}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &801475503
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 801475497}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &866907617
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,9 +643,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &866907621
@@ -652,9 +734,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &959454358
@@ -685,12 +767,12 @@ Prefab:
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 574
+      value: 382
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 267.5
+      value: 179
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
@@ -918,9 +1000,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &973647801
@@ -1009,9 +1091,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1159804221
@@ -1100,9 +1182,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1186621179
@@ -1250,12 +1332,12 @@ Prefab:
     - target: {fileID: 224404937885248106, guid: 869f1aeea550f3a45bf7b6f38f66d9cc,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 574
+      value: 382
       objectReference: {fileID: 0}
     - target: {fileID: 224404937885248106, guid: 869f1aeea550f3a45bf7b6f38f66d9cc,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 267.5
+      value: 179
       objectReference: {fileID: 0}
     - target: {fileID: 224404937885248106, guid: 869f1aeea550f3a45bf7b6f38f66d9cc,
         type: 2}
@@ -1403,7 +1485,6 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -1459,6 +1540,11 @@ Prefab:
     - target: {fileID: 4924869920234552, guid: 8dcc3a3fe85cc734bb2c93c6ff85fabf, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 81297561414970026, guid: 8dcc3a3fe85cc734bb2c93c6ff85fabf,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8dcc3a3fe85cc734bb2c93c6ff85fabf, type: 2}

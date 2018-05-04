@@ -139,7 +139,8 @@ public class PushPuzzleFloor : Floor {
 	}
 
 	public override void NextLevel(){
-		SceneManager.LoadScene ("CrackableLevel_1", LoadSceneMode.Single);
+        StartCoroutine(LoadScene(victory, "EnemyLevel", false));
+		//SceneManager.LoadScene ("CrackableLevel_1", LoadSceneMode.Single);
 	}
 
 
@@ -149,13 +150,13 @@ public class PushPuzzleFloor : Floor {
 	/// </summary>
 	public override void ResetPuzzle()
 	{
-		resetLevel = true;
+		//resetLevel = true;
 
         // Need to reset the positions of the pushable objects
         // Called in Player class with 'R' key press
 
         // Can't do this, have to destroy other objects first, or find some way to reset everything that 
-		/*
+        /*
         for (int i = 0; i < pushableObjects.Length; i++)
         {
             Destroy(pushableObjects[i]);
@@ -177,7 +178,8 @@ public class PushPuzzleFloor : Floor {
                 break;
         }
 		*/
-		SceneManager.LoadScene("PushLevel_1");
+        StartCoroutine(LoadScene(failure, "PushLevel_1", true));
+		//SceneManager.LoadScene("PushLevel_1");
         //CreateLevel ();
     }
 }

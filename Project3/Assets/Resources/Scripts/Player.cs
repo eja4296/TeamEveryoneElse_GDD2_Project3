@@ -75,6 +75,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (floor.paused)
+            return;
+
         // Not currently used, but may need to be at some point
         int prevXPos = positionOnFloorX;
         int prevZPos = positionOnFloorZ;

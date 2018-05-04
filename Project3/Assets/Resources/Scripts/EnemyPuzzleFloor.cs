@@ -23,7 +23,10 @@ public class EnemyPuzzleFloor : Floor {
 
 	public override void CreateLevel()
 	{
-		Debug.Log("Create Level Called");
+        normalTileNum = 0;
+        doorTileNum = 4;
+        movementSound = (AudioClip)Resources.Load("Sounds/Sound_Effects/Walking");
+        Debug.Log("Create Level Called");
 		for (int i = 0; i < puzzle.GetLength(0); i++)
 		{
 			for (int j = 0; j < puzzle.GetLength(1); j++)

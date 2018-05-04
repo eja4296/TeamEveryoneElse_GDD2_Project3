@@ -9,6 +9,10 @@ public class CrackedPuzzleFloor : Floor {
     private int endI, endJ;
     public override void CreateLevel()
     {
+        normalTileNum = 6;
+        doorTileNum = 4;
+        movementSound = (AudioClip)Resources.Load("Sounds/Sound_Effects/Ice-Crack");
+
         Debug.Log("Create Level Called");
         for (int i = 0; i < puzzle.GetLength(0); i++)
         {

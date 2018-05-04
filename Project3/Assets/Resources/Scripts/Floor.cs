@@ -67,10 +67,12 @@ public abstract class Floor : MonoBehaviour
     public Camera mainCam;
     public Camera orthoCam;
 
+    public AudioClip movementSound;
     protected AudioClip victory;
     protected AudioClip failure;
-
     protected AudioSource source;
+    public int normalTileNum = 0; // This should be equal to whatever the normal, empty tile is for your floor
+    public int doorTileNum = 4; // This should be equal to whatever the end space is for your floor
 
     // Use this for initialization
     void Start()

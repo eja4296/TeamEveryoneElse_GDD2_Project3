@@ -40,9 +40,20 @@ public class Player : MonoBehaviour
 
 	public List<MovableObstacle> movingObjects = new List<MovableObstacle> ();
 
+    private AudioSource source;
+    private AudioClip normalWalking;
+    private AudioClip floorWalking;
+    private int normalTileNum = 0; // Whatever int represents a normal, empty tile for this floor
+
     // Use this for initialization
     void Start()
     {
+
+        source = GetComponent<AudioSource>();
+        normalWalking = (AudioClip)Resources.Load("Sounds/Sound_Effects/Walking");
+        floorWalking = floor.movementSound;
+        normalTileNum = floor.normalTileNum;
+
         stopTimer = .1f;
         //floor = GameObject.Find ("Floor").GetComponent<Floor> ();
 
@@ -333,6 +344,15 @@ public class Player : MonoBehaviour
             moving = true;
             moved = false;
 
+            if(floor.puzzle[newXPos, newZPos] == normalTileNum || floor.puzzle[newXPos, newZPos] == floor.doorTileNum)
+            {
+                source.PlayOneShot(normalWalking);
+            }
+            else
+            {
+                source.PlayOneShot(floorWalking);
+            }
+
 			if (floor.spaces [newXPos, newZPos].GetComponent<Space> ().isMovingSpace) {
 				floor.spaces [newXPos, newZPos].GetComponent<Space> ().EnableHalo ();
 			}
@@ -410,7 +430,7 @@ public class Player : MonoBehaviour
             knightAnimator.SetBool("StoppedRunning", true);
         }
         if (Input.GetKey (KeyCode.R)) {
-			ResetPlayer ();
+			//ResetPlayer (); // Commented out by Russ for audio update. If we are reloading the scene on failure no need to do this, it only causes bugs with the audio
 			floor.ResetPuzzle ();
 		}
 

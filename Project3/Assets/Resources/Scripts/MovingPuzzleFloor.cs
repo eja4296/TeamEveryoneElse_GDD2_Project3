@@ -24,7 +24,10 @@ public class MovingPuzzleFloor : Floor {
 
 	public override void CreateLevel()
 	{
-		Debug.Log("Create Level Called");
+        normalTileNum = 7;
+        movementSound = (AudioClip)Resources.Load("Sounds/Sound_Effects/Walking");
+        doorTileNum = 5;
+        Debug.Log("Create Level Called");
 		for (int i = 0; i < puzzle.GetLength(0); i++)
 		{
 			for (int j = 0; j < puzzle.GetLength(1); j++)

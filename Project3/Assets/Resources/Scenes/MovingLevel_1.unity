@@ -565,7 +565,9 @@ MonoBehaviour:
     type: 2}
   movableObstaclePrefab: {fileID: 0}
   breakableSpacePrefab: {fileID: 0}
-  jesterPrefab: {fileID: 1732577955657632, guid: 286c88acca35310409a1462d4dc50067,
+  jesterSpacePrefab: {fileID: 1291514326393230, guid: 60913e3d64e15224ab444481c6ecab40,
+    type: 2}
+  jesterPrefab: {fileID: 1732577955657632, guid: 1672b52b49a6b434ea0e4fca4101050b,
     type: 2}
   playerPrefab: {fileID: 1298860888064782, guid: 03700d098a1a71a4aa3f20f8a1880912,
     type: 2}
@@ -1741,12 +1743,12 @@ Prefab:
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 382
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 178.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224535498937477626, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
@@ -2050,12 +2052,12 @@ Prefab:
     - target: {fileID: 224404937885248106, guid: 869f1aeea550f3a45bf7b6f38f66d9cc,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 382
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224404937885248106, guid: 869f1aeea550f3a45bf7b6f38f66d9cc,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 178.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224404937885248106, guid: 869f1aeea550f3a45bf7b6f38f66d9cc,
         type: 2}

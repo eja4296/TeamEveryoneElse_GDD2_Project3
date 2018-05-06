@@ -45,7 +45,8 @@ public abstract class Floor : MonoBehaviour
     public GameObject leftSpacePrefab;
     public GameObject movableObstaclePrefab;
     public GameObject breakableSpacePrefab;
-    public GameObject jesterPrefab;
+    public GameObject jesterSpacePrefab;
+	public GameObject jesterPrefab;
     public GameObject playerPrefab;
     public GameObject wallPrefab;
 
@@ -149,7 +150,7 @@ public abstract class Floor : MonoBehaviour
     /// <param name="isMovingSpace">If this object can move</param>
     /// <param name="isBreakable">If this is a breakable tile</param>
     /// <param name="direction">Direction this tile would move us in (-1 default)</param>
-	public void CreateTile(GameObject prefab, int x, float y, int z, bool isObstacle, bool isMovingSpace, bool isBreakable, bool occupied, bool isEnemy, bool isMovable, bool isEndSpace, bool isPlayer, int direction)
+	public void CreateTile(GameObject prefab, int x, float y, int z, bool isObstacle, bool isMovingSpace, bool isBreakable, bool occupied, bool isEnemy, bool isMovable, bool isEndSpace, bool isPlayer, bool isJester, int direction)
     {
 
         GameObject newSpace = GameObject.Instantiate(prefab, new Vector3(x + xOffset, y, z + zOffset), Quaternion.identity);
@@ -196,6 +197,9 @@ public abstract class Floor : MonoBehaviour
             newPlayer.GetComponent<Player>().startingXIndex = z;
             newPlayer.GetComponent<Player>().startingZIndex = x;
         }
+		if (isJester) {
+			GameObject newJester = GameObject.Instantiate(jesterPrefab, new Vector3(x + xOffset, 0.5f, z + zOffset), Quaternion.identity);
+		}
 		if (!isEndSpace && isObstacle)
         {
             int randNum = Random.Range(0, 3);

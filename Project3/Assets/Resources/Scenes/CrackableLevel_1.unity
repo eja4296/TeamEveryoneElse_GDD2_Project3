@@ -416,7 +416,9 @@ MonoBehaviour:
   movableObstaclePrefab: {fileID: 0}
   breakableSpacePrefab: {fileID: 1966886287712608, guid: dfd7cc74071a85e4c834bad249573583,
     type: 2}
-  jesterPrefab: {fileID: 1732577955657632, guid: 286c88acca35310409a1462d4dc50067,
+  jesterSpacePrefab: {fileID: 1291514326393230, guid: 60913e3d64e15224ab444481c6ecab40,
+    type: 2}
+  jesterPrefab: {fileID: 1732577955657632, guid: 1672b52b49a6b434ea0e4fca4101050b,
     type: 2}
   playerPrefab: {fileID: 1298860888064782, guid: 03700d098a1a71a4aa3f20f8a1880912,
     type: 2}
@@ -555,7 +557,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:

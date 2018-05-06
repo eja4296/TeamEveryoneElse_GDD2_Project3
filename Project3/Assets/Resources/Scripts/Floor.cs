@@ -116,7 +116,9 @@ public abstract class Floor : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             mainCam.enabled = !mainCam.enabled;
+			orthoCam.orthographicSize = width / 2f;
             orthoCam.enabled = !orthoCam.enabled;
+
         }
     }
 

@@ -194,7 +194,7 @@ public abstract class Floor : MonoBehaviour
             newPlayer.GetComponent<Player>().startingXIndex = z;
             newPlayer.GetComponent<Player>().startingZIndex = x;
         }
-        if (isObstacle)
+		if (!isEndSpace && isObstacle)
         {
             int randNum = Random.Range(0, 3);
 

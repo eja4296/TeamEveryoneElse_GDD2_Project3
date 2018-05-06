@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour
         endPos = Vector3.zero;
 		speed = 1.25f;
 		stopTimer = .1f;
+
     }
 
     // Update is called once per frame

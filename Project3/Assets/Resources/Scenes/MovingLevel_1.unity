@@ -1876,7 +1876,7 @@ Prefab:
     - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: dialogue.Array.data[3]
-      value: elcome to puzzle one, beat this for more riddled fun!
+      value: Welcome to puzzle one, beat this for more riddled fun!
       objectReference: {fileID: 0}
     - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}

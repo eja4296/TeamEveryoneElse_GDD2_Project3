@@ -294,7 +294,7 @@ Prefab:
     - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: dialogue.Array.data[0]
-      value: My knights be on your tail. Get too close and back to jail! hi
+      value: My knights be on your tail. Get too close and back to jail!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 138d93fcf27e5f24e9d770ff23e05bd2, type: 2}

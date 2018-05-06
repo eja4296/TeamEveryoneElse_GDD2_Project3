@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 112000002, guid: 0b22bc8ebdf5abd4187ad1c18008bb20,
     type: 2}
   m_UseShadowmask: 1
@@ -424,10 +425,12 @@ MonoBehaviour:
   playerPosX: 0
   playerPosZ: 0
   resetLevel: 0
+  paused: 0
   mainCam: {fileID: 1957878368}
   orthoCam: {fileID: 446264609}
-  victory: {fileID: 8300000, guid: a13350795d5897b4d9f86b4ef14f09be, type: 3}
-  failure: {fileID: 8300000, guid: 9581e122724f3c940a6c69a23b8e36a2, type: 3}
+  movementSound: {fileID: 0}
+  normalTileNum: 0
+  doorTileNum: 4
 --- !u!23 &801475500
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -472,9 +475,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &801475502
@@ -643,9 +646,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &866907621
@@ -734,9 +737,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &959454358
@@ -877,7 +880,7 @@ Prefab:
     - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: dialogue.Array.data[1]
-      value: tep on once the ice will crack. Step on twice and ye go back!
+      value: Step on once the ice will crack. Step on twice and ye go back!
       objectReference: {fileID: 0}
     - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
@@ -887,7 +890,7 @@ Prefab:
     - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
       propertyPath: dialogue.Array.data[3]
-      value: eat puzzle one look at you! But this is only puzzle two!
+      value: Beat puzzle one look at you! But this is only puzzle two!
       objectReference: {fileID: 0}
     - target: {fileID: 114916194871359856, guid: 138d93fcf27e5f24e9d770ff23e05bd2,
         type: 2}
@@ -1000,9 +1003,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &973647801
@@ -1091,9 +1094,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1159804221
@@ -1182,9 +1185,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1186621179
@@ -1485,6 +1488,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10

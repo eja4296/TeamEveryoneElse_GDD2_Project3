@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667626, g: 0.48427176, b: 0.5645242, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -567,7 +567,7 @@ MonoBehaviour:
   breakableSpacePrefab: {fileID: 0}
   jesterSpacePrefab: {fileID: 1291514326393230, guid: 60913e3d64e15224ab444481c6ecab40,
     type: 2}
-  jesterPrefab: {fileID: 1732577955657632, guid: 1672b52b49a6b434ea0e4fca4101050b,
+  jesterPrefab: {fileID: 1549445998429012, guid: c85a368c6d78b6942b99e463f9873860,
     type: 2}
   playerPrefab: {fileID: 1298860888064782, guid: 03700d098a1a71a4aa3f20f8a1880912,
     type: 2}

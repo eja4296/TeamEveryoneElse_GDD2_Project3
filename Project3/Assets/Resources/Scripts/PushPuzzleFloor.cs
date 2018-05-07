@@ -39,7 +39,7 @@ public class PushPuzzleFloor : Floor {
 					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, false, false, -1);
 					break;
 				case 2: // Jester location
-					CreateTile(jesterSpacePrefab, j, 0, i, true, false, false, true, false, false, false, false, true, -1);
+					CreateTile(jesterSpacePrefab, j, 0, i, true, false, false, true, false, false, false, false, true, 3);
 					break;
 				case 3: // Player location
 					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, true, false, false, false, true, false, -1);

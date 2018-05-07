@@ -27,7 +27,7 @@ public class CrackedPuzzleFloor : Floor {
 					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, false, false, -1);
                         break;
                     case 2: // Jester location
-					CreateTile(jesterSpacePrefab, j, 0, i, true, false, false, true, false, false, false, false, true, -1);
+					CreateTile(jesterSpacePrefab, j, 0, i, true, false, false, true, false, false, false, false, true, 1);
 						break;
                     case 3: // Player location
 					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, true, false, false, false, true, false, -1);
@@ -53,7 +53,7 @@ public class CrackedPuzzleFloor : Floor {
     public override int[,] GetTutorialPuzzle()
     {
         return new int[,] {
-            { 5, 3, 2, 5 },
+            { 5, 2, 3, 5 },
             { 5, 0, 0, 5 },
             { 5, 0, 0, 5 },
             { 5, 4, 6, 5 },
@@ -82,7 +82,7 @@ public class CrackedPuzzleFloor : Floor {
         // 0 - crackable, 1 - cracked, 2 - Jester, 3 - Player, 4 - End, 5 - Crates
         return new int[,]
         {
-            { 5, 5, 5, 5, 3, 2, 5, 5, 5, 5 },
+            { 5, 5, 5, 5, 2, 3, 5, 5, 5, 5 },
             { 5, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
             { 5, 0, 0, 0, 0, 0, 0, 0, 5, 0 },
             { 0, 0, 0, 6, 6, 6, 0, 0, 5, 0 },

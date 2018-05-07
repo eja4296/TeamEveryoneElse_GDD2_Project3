@@ -53,7 +53,7 @@ public class MovingPuzzleFloor : Floor {
 					CreateTile (endSpacePrefab, j, 0.5f, i, false, false, false, false, false, false, true, false, false, -1);
 					break;
 				case 6: // Jester Location
-					CreateTile (jesterSpacePrefab, j, 0, i, true, false, false, true, false, false, false, false, true, -1);
+					CreateTile (jesterSpacePrefab, j, 0, i, true, false, false, true, false, false, false, false, true, 1);
 					break;
 				case 7: // Normal Space
 					CreateTile(normalSpacePrefab, j, 0, i, false, false, false, false, false, false, false, false, false, -1);

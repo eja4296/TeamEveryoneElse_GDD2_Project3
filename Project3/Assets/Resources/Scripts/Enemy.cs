@@ -166,6 +166,7 @@ public class Enemy : MonoBehaviour
                         {
                             // Keep new position and exit loop
                             findValidMovement = true;
+							direction = 0;
                         }
                         else
                         {
@@ -189,6 +190,7 @@ public class Enemy : MonoBehaviour
                         {
                             // Keep new position and exit loop
                             findValidMovement = true;
+							direction = 3;
                         }
                         else
                         {
@@ -212,6 +214,7 @@ public class Enemy : MonoBehaviour
                         {
                             // Keep new position and exit loop
                             findValidMovement = true;
+							direction = 2;
                         }
                         else
                         {
@@ -235,6 +238,7 @@ public class Enemy : MonoBehaviour
                         {
                             // Keep new position and exit loop
                             findValidMovement = true;
+							direction = 1;
                         }
                         else
                         {
@@ -264,6 +268,7 @@ public class Enemy : MonoBehaviour
                         {
                             // Keep new position and exit loop
                             findValidMovement = true;
+							direction = 1;
                         }
                         else
                         {
@@ -281,6 +286,7 @@ public class Enemy : MonoBehaviour
                         {
                             // Keep new position and exit loop
                             findValidMovement = true;
+							direction = 3;
                         }
                         else
                         {
@@ -305,6 +311,7 @@ public class Enemy : MonoBehaviour
                         {
                             // Keep new position and exit loop
                             findValidMovement = true;
+							direction = 0;
                         }
                         else
                         {
@@ -321,6 +328,7 @@ public class Enemy : MonoBehaviour
                         {
                             // Keep new position and exit loop
                             findValidMovement = true;
+							direction = 2;
                         }
                         else
                         {

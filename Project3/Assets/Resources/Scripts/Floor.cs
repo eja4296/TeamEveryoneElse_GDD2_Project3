@@ -195,6 +195,7 @@ public abstract class Floor : MonoBehaviour
         }
         if (isJester) {
 			GameObject newJester = GameObject.Instantiate(jesterPrefab, new Vector3(x + xOffset, 0.5f, z + zOffset), Quaternion.identity);
+			newJester.transform.Rotate(new Vector3(0f, direction * 90f, 0f));
 		}
 		if (!isEndSpace && isObstacle)
         {

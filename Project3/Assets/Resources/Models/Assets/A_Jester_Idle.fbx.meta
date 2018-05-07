@@ -1,0 +1,288 @@
+fileFormatVersion: 2
+guid: d0183cf4b88003b4c8051bb7e983673d
+timeCreated: 1525662776
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Jester_Character_mcs:GeoGRP
+    100004: Jester_Character_mcs:Jester
+    100006: Jester_Character_mcs:Jester_Body
+    100008: Jester_Character_mcs:Jester_Hat
+    100010: Jester_Character_mcs:Jester_HeadJT
+    100012: Jester_Character_mcs:Jester_Lt_AnkleJT
+    100014: Jester_Character_mcs:Jester_Lt_ClavicleJT
+    100016: Jester_Character_mcs:Jester_Lt_ElbowJT
+    100018: Jester_Character_mcs:Jester_Lt_EyeJT
+    100020: Jester_Character_mcs:Jester_Lt_FootEndJT
+    100022: Jester_Character_mcs:Jester_Lt_FootJT
+    100024: Jester_Character_mcs:Jester_Lt_ForearmJT
+    100026: Jester_Character_mcs:Jester_Lt_HipJT
+    100028: Jester_Character_mcs:Jester_Lt_Index01JT
+    100030: Jester_Character_mcs:Jester_Lt_Index02JT
+    100032: Jester_Character_mcs:Jester_Lt_Index03JT
+    100034: Jester_Character_mcs:Jester_Lt_IndexEndJT
+    100036: Jester_Character_mcs:Jester_Lt_KneeJT
+    100038: Jester_Character_mcs:Jester_Lt_Middle01JT
+    100040: Jester_Character_mcs:Jester_Lt_Middle02JT
+    100042: Jester_Character_mcs:Jester_Lt_Middle03JT
+    100044: Jester_Character_mcs:Jester_Lt_MiddleEndJT
+    100046: Jester_Character_mcs:Jester_Lt_Pinky01JT
+    100048: Jester_Character_mcs:Jester_Lt_Pinky02JT
+    100050: Jester_Character_mcs:Jester_Lt_Pinky03JT
+    100052: Jester_Character_mcs:Jester_Lt_PinkyEndJT
+    100054: Jester_Character_mcs:Jester_Lt_Ring01JT
+    100056: Jester_Character_mcs:Jester_Lt_Ring02JT
+    100058: Jester_Character_mcs:Jester_Lt_Ring03JT
+    100060: Jester_Character_mcs:Jester_Lt_RingEndJT
+    100062: Jester_Character_mcs:Jester_Lt_ShoulderJT
+    100064: Jester_Character_mcs:Jester_Lt_Thumb01JT
+    100066: Jester_Character_mcs:Jester_Lt_Thumb02JT
+    100068: Jester_Character_mcs:Jester_Lt_ThumbEndJT
+    100070: Jester_Character_mcs:Jester_Lt_WristJT
+    100072: Jester_Character_mcs:Jester_Lt_WristJT 1
+    100074: Jester_Character_mcs:Jester_Neck01JT
+    100076: Jester_Character_mcs:Jester_NeckPiece
+    100078: Jester_Character_mcs:Jester_RootJT
+    100080: Jester_Character_mcs:Jester_Rt_AnkleJT
+    100082: Jester_Character_mcs:Jester_Rt_ClavicleJT1
+    100084: Jester_Character_mcs:Jester_Rt_ElbowJT1
+    100086: Jester_Character_mcs:Jester_Rt_EyeJT
+    100088: Jester_Character_mcs:Jester_Rt_FootEndJT
+    100090: Jester_Character_mcs:Jester_Rt_FootJT
+    100092: Jester_Character_mcs:Jester_Rt_ForearmJT
+    100094: Jester_Character_mcs:Jester_Rt_HipJT
+    100096: Jester_Character_mcs:Jester_Rt_Index01JT1
+    100098: Jester_Character_mcs:Jester_Rt_Index02JT1
+    100100: Jester_Character_mcs:Jester_Rt_Index03JT1
+    100102: Jester_Character_mcs:Jester_Rt_IndexEndJT1
+    100104: Jester_Character_mcs:Jester_Rt_KneeJT
+    100106: Jester_Character_mcs:Jester_Rt_Middle01JT1
+    100108: Jester_Character_mcs:Jester_Rt_Middle02JT1
+    100110: Jester_Character_mcs:Jester_Rt_Middle03JT1
+    100112: Jester_Character_mcs:Jester_Rt_MiddleEndJT1
+    100114: Jester_Character_mcs:Jester_Rt_Pinky01JT1
+    100116: Jester_Character_mcs:Jester_Rt_Pinky02JT1
+    100118: Jester_Character_mcs:Jester_Rt_Pinky03JT1
+    100120: Jester_Character_mcs:Jester_Rt_PinkyEndJT1
+    100122: Jester_Character_mcs:Jester_Rt_Ring01JT1
+    100124: Jester_Character_mcs:Jester_Rt_Ring02JT1
+    100126: Jester_Character_mcs:Jester_Rt_Ring03JT1
+    100128: Jester_Character_mcs:Jester_Rt_RingEndJT1
+    100130: Jester_Character_mcs:Jester_Rt_ShoulderJT1
+    100132: Jester_Character_mcs:Jester_Rt_Thumb01JT1
+    100134: Jester_Character_mcs:Jester_Rt_Thumb02JT1
+    100136: Jester_Character_mcs:Jester_Rt_ThumbEndJT1
+    100138: Jester_Character_mcs:Jester_Rt_WristJT1
+    100140: Jester_Character_mcs:Jester_Rt_WristJT2
+    100142: Jester_Character_mcs:Jester_Spine01JT
+    100144: Jester_Character_mcs:Jester_Spine02JT
+    100146: Jester_Character_mcs:JointsGRP
+    100148: Jester_Character_mcs:LtEye
+    100150: Jester_Character_mcs:MasterMove
+    100152: Jester_Character_mcs:RtEye
+    100154: Scepter_005_mcs:pCube2
+    400000: //RootNode
+    400002: Jester_Character_mcs:GeoGRP
+    400004: Jester_Character_mcs:Jester
+    400006: Jester_Character_mcs:Jester_Body
+    400008: Jester_Character_mcs:Jester_Hat
+    400010: Jester_Character_mcs:Jester_HeadJT
+    400012: Jester_Character_mcs:Jester_Lt_AnkleJT
+    400014: Jester_Character_mcs:Jester_Lt_ClavicleJT
+    400016: Jester_Character_mcs:Jester_Lt_ElbowJT
+    400018: Jester_Character_mcs:Jester_Lt_EyeJT
+    400020: Jester_Character_mcs:Jester_Lt_FootEndJT
+    400022: Jester_Character_mcs:Jester_Lt_FootJT
+    400024: Jester_Character_mcs:Jester_Lt_ForearmJT
+    400026: Jester_Character_mcs:Jester_Lt_HipJT
+    400028: Jester_Character_mcs:Jester_Lt_Index01JT
+    400030: Jester_Character_mcs:Jester_Lt_Index02JT
+    400032: Jester_Character_mcs:Jester_Lt_Index03JT
+    400034: Jester_Character_mcs:Jester_Lt_IndexEndJT
+    400036: Jester_Character_mcs:Jester_Lt_KneeJT
+    400038: Jester_Character_mcs:Jester_Lt_Middle01JT
+    400040: Jester_Character_mcs:Jester_Lt_Middle02JT
+    400042: Jester_Character_mcs:Jester_Lt_Middle03JT
+    400044: Jester_Character_mcs:Jester_Lt_MiddleEndJT
+    400046: Jester_Character_mcs:Jester_Lt_Pinky01JT
+    400048: Jester_Character_mcs:Jester_Lt_Pinky02JT
+    400050: Jester_Character_mcs:Jester_Lt_Pinky03JT
+    400052: Jester_Character_mcs:Jester_Lt_PinkyEndJT
+    400054: Jester_Character_mcs:Jester_Lt_Ring01JT
+    400056: Jester_Character_mcs:Jester_Lt_Ring02JT
+    400058: Jester_Character_mcs:Jester_Lt_Ring03JT
+    400060: Jester_Character_mcs:Jester_Lt_RingEndJT
+    400062: Jester_Character_mcs:Jester_Lt_ShoulderJT
+    400064: Jester_Character_mcs:Jester_Lt_Thumb01JT
+    400066: Jester_Character_mcs:Jester_Lt_Thumb02JT
+    400068: Jester_Character_mcs:Jester_Lt_ThumbEndJT
+    400070: Jester_Character_mcs:Jester_Lt_WristJT
+    400072: Jester_Character_mcs:Jester_Lt_WristJT 1
+    400074: Jester_Character_mcs:Jester_Neck01JT
+    400076: Jester_Character_mcs:Jester_NeckPiece
+    400078: Jester_Character_mcs:Jester_RootJT
+    400080: Jester_Character_mcs:Jester_Rt_AnkleJT
+    400082: Jester_Character_mcs:Jester_Rt_ClavicleJT1
+    400084: Jester_Character_mcs:Jester_Rt_ElbowJT1
+    400086: Jester_Character_mcs:Jester_Rt_EyeJT
+    400088: Jester_Character_mcs:Jester_Rt_FootEndJT
+    400090: Jester_Character_mcs:Jester_Rt_FootJT
+    400092: Jester_Character_mcs:Jester_Rt_ForearmJT
+    400094: Jester_Character_mcs:Jester_Rt_HipJT
+    400096: Jester_Character_mcs:Jester_Rt_Index01JT1
+    400098: Jester_Character_mcs:Jester_Rt_Index02JT1
+    400100: Jester_Character_mcs:Jester_Rt_Index03JT1
+    400102: Jester_Character_mcs:Jester_Rt_IndexEndJT1
+    400104: Jester_Character_mcs:Jester_Rt_KneeJT
+    400106: Jester_Character_mcs:Jester_Rt_Middle01JT1
+    400108: Jester_Character_mcs:Jester_Rt_Middle02JT1
+    400110: Jester_Character_mcs:Jester_Rt_Middle03JT1
+    400112: Jester_Character_mcs:Jester_Rt_MiddleEndJT1
+    400114: Jester_Character_mcs:Jester_Rt_Pinky01JT1
+    400116: Jester_Character_mcs:Jester_Rt_Pinky02JT1
+    400118: Jester_Character_mcs:Jester_Rt_Pinky03JT1
+    400120: Jester_Character_mcs:Jester_Rt_PinkyEndJT1
+    400122: Jester_Character_mcs:Jester_Rt_Ring01JT1
+    400124: Jester_Character_mcs:Jester_Rt_Ring02JT1
+    400126: Jester_Character_mcs:Jester_Rt_Ring03JT1
+    400128: Jester_Character_mcs:Jester_Rt_RingEndJT1
+    400130: Jester_Character_mcs:Jester_Rt_ShoulderJT1
+    400132: Jester_Character_mcs:Jester_Rt_Thumb01JT1
+    400134: Jester_Character_mcs:Jester_Rt_Thumb02JT1
+    400136: Jester_Character_mcs:Jester_Rt_ThumbEndJT1
+    400138: Jester_Character_mcs:Jester_Rt_WristJT1
+    400140: Jester_Character_mcs:Jester_Rt_WristJT2
+    400142: Jester_Character_mcs:Jester_Spine01JT
+    400144: Jester_Character_mcs:Jester_Spine02JT
+    400146: Jester_Character_mcs:JointsGRP
+    400148: Jester_Character_mcs:LtEye
+    400150: Jester_Character_mcs:MasterMove
+    400152: Jester_Character_mcs:RtEye
+    400154: Scepter_005_mcs:pCube2
+    2100000: Jester_Character_mcs_Jester_Hat_mat
+    2100002: Jester_Character_mcs_Jester_Neckpiece_mat
+    2100004: Jester_Character_mcs_Eyes_mat
+    2100006: Scepter_005_mcs_Scepter_mat
+    2300000: Scepter_005_mcs:pCube2
+    3300000: Scepter_005_mcs:pCube2
+    4300000: Jester_Character_mcs:Jester_Hat
+    4300002: Jester_Character_mcs:Jester_NeckPiece
+    4300004: Jester_Character_mcs:RtEye
+    4300006: Jester_Character_mcs:LtEye
+    4300008: Scepter_005_mcs:pCube2
+    7400000: Jester_Idle
+    9500000: //RootNode
+    13700000: Jester_Character_mcs:Jester_Hat
+    13700002: Jester_Character_mcs:Jester_NeckPiece
+    13700004: Jester_Character_mcs:LtEye
+    13700006: Jester_Character_mcs:RtEye
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Jester_Idle
+      takeName: Jester_Idle
+      firstFrame: 1
+      lastFrame: 64
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -28,10 +28,12 @@ public class Enemy : MonoBehaviour
 	public float rotateSpeed;
 	public int direction = 0;
 
+    public GameObject knightModel;
 
     // Use this for initialization
     void Start()
     {
+        
 		player = GameObject.Find("Player(Clone)");
         floor = player.GetComponent<Player>().floor;
         play = player.GetComponent<Player>();
@@ -47,32 +49,11 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		switch (direction) {
-		case 0:
-			Quaternion oldRot = this.transform.rotation;
-			this.transform.LookAt(this.transform.position + new Vector3(0f, 0f, 10f));
-			Quaternion newRot = this.transform.rotation;
-			this.transform.rotation = Quaternion.Lerp(oldRot, newRot, Time.deltaTime * rotateSpeed);
-			break;
-		case 1:
-			Quaternion oldRot1 = this.transform.rotation;
-			this.transform.LookAt(this.transform.position + new Vector3(10f, 0f, 0f));
-			Quaternion newRot1 = this.transform.rotation;
-			this.transform.rotation = Quaternion.Lerp(oldRot1, newRot1, Time.deltaTime * rotateSpeed);
-			break;
-		case 2:
-			Quaternion oldRot2 = this.transform.rotation;
-			this.transform.LookAt(this.transform.position + new Vector3(0f, 0f, -10f));
-			Quaternion newRot2 = this.transform.rotation;
-			this.transform.rotation = Quaternion.Lerp(oldRot2, newRot2, Time.deltaTime * rotateSpeed);
-			break;
-		case 3:
-			Quaternion oldRot3 = this.transform.rotation;
-			this.transform.LookAt(this.transform.position + new Vector3(-10f, 0f, 0f));
-			Quaternion newRot3 = this.transform.rotation;
-			this.transform.rotation = Quaternion.Lerp(oldRot3, newRot3, Time.deltaTime * rotateSpeed);
-			break;
-		}
+        if(!player) {
+            player = GameObject.Find("Player(Clone)");
+            floor = player.GetComponent<Player>().floor;
+            play = player.GetComponent<Player>();
+        }
 
         // Check if the player has moved and if the enemy is not currently moving
         // If so, choose a movement for the enemy
@@ -85,6 +66,46 @@ public class Enemy : MonoBehaviour
         if (moving)
         {
             Moving();
+        }
+        switch (direction) {
+            case 0:
+                Quaternion oldRot = knightModel.transform.rotation;
+                knightModel.transform.LookAt(knightModel.transform.position + new Vector3(0f, 0f, 10f));
+                Quaternion newRot = knightModel.transform.rotation;
+                knightModel.transform.rotation = Quaternion.Lerp(oldRot, newRot, Time.deltaTime * rotateSpeed);
+                break;
+            case 1:
+                Quaternion oldRot1 = knightModel.transform.rotation;
+                knightModel.transform.LookAt(knightModel.transform.position + new Vector3(10f, 0f, 0f));
+                Quaternion newRot1 = knightModel.transform.rotation;
+                knightModel.transform.rotation = Quaternion.Lerp(oldRot1, newRot1, Time.deltaTime * rotateSpeed);
+                break;
+            case 2:
+                Quaternion oldRot2 = knightModel.transform.rotation;
+                knightModel.transform.LookAt(knightModel.transform.position + new Vector3(0f, 0f, -10f));
+                Quaternion newRot2 = knightModel.transform.rotation;
+                knightModel.transform.rotation = Quaternion.Lerp(oldRot2, newRot2, Time.deltaTime * rotateSpeed);
+                break;
+            case 3:
+                Quaternion oldRot3 = knightModel.transform.rotation;
+                knightModel.transform.LookAt(knightModel.transform.position + new Vector3(-10f, 0f, 0f));
+                Quaternion newRot3 = knightModel.transform.rotation;
+                knightModel.transform.rotation = Quaternion.Lerp(oldRot3, newRot3, Time.deltaTime * rotateSpeed);
+                break;
+        }
+        //animate
+        if (moving && !knightAnimator.GetCurrentAnimatorStateInfo(0).IsName("Run") && !knightAnimator.GetCurrentAnimatorStateInfo(0).IsName("Start Run")) {
+           
+            knightAnimator.Play("Start Run");
+            knightAnimator.SetBool("StoppedRunning", false);
+        } else if (!moving && !knightAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle") && !knightAnimator.GetCurrentAnimatorStateInfo(0).IsName("Stop Run")) {
+            stopTimer -= Time.deltaTime;
+        }
+
+        if (stopTimer <= 0f) {
+            stopTimer = .1f;
+            knightAnimator.SetBool("StoppedRunning", true);
+            
         }
     }
 
@@ -118,7 +139,21 @@ public class Enemy : MonoBehaviour
             {
                 // Random int: 0, 1, 2, or 3 (forward, left, backward, and right directions)
                 int rand = Random.Range(0, 4);
+                switch (rand) {
+                    case 0:
+                        direction = 0;
+                        break;
+                    case 1:
+                        direction = 3;
+                        break;
+                    case 2:
+                        direction = 2;
+                        break;
+                    case 3:
+                        direction = 1;
+                        break;
 
+                }
                 // Move forward
                 if (rand == 0)
                 {
@@ -360,18 +395,7 @@ public class Enemy : MonoBehaviour
 			}
 			*/
 
-			//animate
-			if (moving && !knightAnimator.GetCurrentAnimatorStateInfo(0).IsName("Run") && !knightAnimator.GetCurrentAnimatorStateInfo(0).IsName("Start Run")) {
-				knightAnimator.Play("Start Run");
-				knightAnimator.SetBool("StoppedRunning", false);
-			} else if (!moving && !knightAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle") && !knightAnimator.GetCurrentAnimatorStateInfo(0).IsName("Stop Run")) {
-				stopTimer -= Time.deltaTime;
-			}
-
-			if (stopTimer <= 0f) {
-				stopTimer = .1f;
-				knightAnimator.SetBool("StoppedRunning", true);
-			}
+			
 
             // Make enemy's new position occupied
             floor.spaces[positionOnFloorX, positionOnFloorZ].GetComponent<Space>().occupied = true;

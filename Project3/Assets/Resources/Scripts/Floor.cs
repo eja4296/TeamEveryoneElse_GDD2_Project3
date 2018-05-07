@@ -169,15 +169,6 @@ public abstract class Floor : MonoBehaviour
 
 		}
 		*/
-        if (isEnemy)
-        {
-            GameObject enemy = GameObject.Instantiate(enemyPrefab, new Vector3(x + xOffset - 0.25f, 0f, z + zOffset + 0.25f), Quaternion.identity);
-            enemy.AddComponent<Enemy>();
-            enemy.GetComponent<Enemy>().positionOnFloorX = z;
-            enemy.GetComponent<Enemy>().positionOnFloorZ = x;
-            enemy.GetComponent<Enemy>().knightAnimator = knightAnimator;
-
-        }
         if (isMovable)
         {
             GameObject movableObstacleObj = GameObject.Instantiate(movableObstaclePrefab, new Vector3(x + xOffset, 0.5f, z + zOffset), Quaternion.identity);
@@ -197,7 +188,12 @@ public abstract class Floor : MonoBehaviour
             newPlayer.GetComponent<Player>().startingXIndex = z;
             newPlayer.GetComponent<Player>().startingZIndex = x;
         }
-		if (isJester) {
+        if (isEnemy) {
+            GameObject enemy = GameObject.Instantiate(enemyPrefab, new Vector3(x + xOffset - 0.25f, 0f, z + zOffset + 0.25f), Quaternion.identity);
+            enemy.GetComponent<Enemy>().positionOnFloorX = z;
+            enemy.GetComponent<Enemy>().positionOnFloorZ = x;
+        }
+        if (isJester) {
 			GameObject newJester = GameObject.Instantiate(jesterPrefab, new Vector3(x + xOffset, 0.5f, z + zOffset), Quaternion.identity);
 		}
 		if (!isEndSpace && isObstacle)

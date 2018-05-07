@@ -822,6 +822,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4701914152304602}
+  - component: {fileID: 114759645538179168}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Player
@@ -1824,7 +1825,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1671902815745824}
-  m_LocalRotation: {x: -0.015287549, y: 0.029970888, z: 0.0016459541, w: 0.9994325}
+  m_LocalRotation: {x: -0.01528755, y: 0.029970888, z: 0.0016459542, w: 0.9994325}
   m_LocalPosition: {x: -0.000000014901161, y: -0.85281485, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3140,7 +3141,7 @@ Animator:
   m_GameObject: {fileID: 1302454207745576}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 3b14fe421dad37d4aa7745f4d61785dd, type: 3}
-  m_Controller: {fileID: 9100000, guid: c2dcb7e1c9869e541af46e0fab329e02, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6574c2e84640cd243adcdd0156b37623, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3148,6 +3149,35 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114759645538179168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1593898353560798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6304f3c91baf54d44aa742bf84c4bfef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionOnFloorX: 0
+  positionOnFloorZ: 9
+  floor: {fileID: 0}
+  moved: 0
+  moving: 0
+  newXPos: 0
+  newZPos: 0
+  fracJourney: 0
+  speed: 1.25
+  startTime: 0
+  journeyLength: 0
+  player: {fileID: 0}
+  play: {fileID: 0}
+  chase: 0
+  knightAnimator: {fileID: 95481651395875684}
+  rotateSpeed: 5
+  direction: 0
+  knightModel: {fileID: 1302454207745576}
 --- !u!137 &137211913806667264
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

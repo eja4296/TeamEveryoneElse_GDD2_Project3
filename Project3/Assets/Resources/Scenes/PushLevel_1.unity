@@ -274,7 +274,9 @@ MonoBehaviour:
   breakableSpacePrefab: {fileID: 0}
   jesterSpacePrefab: {fileID: 1291514326393230, guid: 60913e3d64e15224ab444481c6ecab40,
     type: 2}
-  jesterPrefab: {fileID: 1549445998429012, guid: c85a368c6d78b6942b99e463f9873860,
+  jesterPrefab: {fileID: 1612785233133934, guid: 5037e420870261a4084861d80749ea2a,
+    type: 2}
+  jesterJugglePrefab: {fileID: 1428810609037586, guid: 8578702f587afd9478e23497d9f9638c,
     type: 2}
   playerPrefab: {fileID: 1298860888064782, guid: 03700d098a1a71a4aa3f20f8a1880912,
     type: 2}

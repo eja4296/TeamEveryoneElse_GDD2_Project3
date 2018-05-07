@@ -47,6 +47,7 @@ public abstract class Floor : MonoBehaviour
     public GameObject breakableSpacePrefab;
     public GameObject jesterSpacePrefab;
 	public GameObject jesterPrefab;
+	public GameObject jesterJugglePrefab;
     public GameObject playerPrefab;
     public GameObject wallPrefab;
 
@@ -74,6 +75,7 @@ public abstract class Floor : MonoBehaviour
     protected AudioSource source;
     public int normalTileNum = 0; // This should be equal to whatever the normal, empty tile is for your floor
     public int doorTileNum = 4; // This should be equal to whatever the end space is for your floor
+
 
     // Use this for initialization
     void Start()
@@ -121,6 +123,9 @@ public abstract class Floor : MonoBehaviour
             orthoCam.enabled = !orthoCam.enabled;
 
         }
+
+
+
     }
 
     // Will check the progress of the respective child puzzle
@@ -194,8 +199,30 @@ public abstract class Floor : MonoBehaviour
             enemy.GetComponent<Enemy>().positionOnFloorZ = x;
         }
         if (isJester) {
-			GameObject newJester = GameObject.Instantiate(jesterPrefab, new Vector3(x + xOffset, 0.5f, z + zOffset), Quaternion.identity);
-			newJester.transform.Rotate(new Vector3(0f, direction * 90f, 0f));
+			GameObject newJester;
+			int rand = Random.Range (0, 2);
+
+			switch (rand) {
+			case 0:
+				newJester = GameObject.Instantiate (jesterPrefab, new Vector3 (x + xOffset, 0, z + zOffset), Quaternion.identity);
+				newJester.transform.Rotate (new Vector3 (0f, direction * 90f, 0f));
+				//jesterGO = newJester;
+				break;
+			case 1:
+				newJester = GameObject.Instantiate (jesterJugglePrefab, new Vector3 (x + xOffset, 0, z + zOffset), Quaternion.identity);
+				newJester.transform.Rotate (new Vector3 (0f, direction * 90f, 0f));
+				//jesterGO = newJester;
+				break;
+			default:
+				newJester = GameObject.Instantiate (jesterPrefab, new Vector3 (x + xOffset, 0, z + zOffset), Quaternion.identity);
+				newJester.transform.Rotate (new Vector3 (0f, direction * 90f, 0f));
+				//jesterGO = newJester;
+				break;
+			}
+
+
+
+
 		}
 		if (!isEndSpace && isObstacle)
         {

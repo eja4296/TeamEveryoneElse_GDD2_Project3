@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Resources/Scenes/Main Menu.unity
     guid: 7b61881924605974080e1ccc64079379
   - enabled: 1
-    path: Assets/Resources/Scenes/EnemyLevel.unity
-    guid: 055903c1d6527fc47bf67e6349f1f071
-  - enabled: 1
     path: Assets/Resources/Scenes/MovingLevel_1.unity
     guid: 816d76f2a481af048a828c10183149de
   - enabled: 1
@@ -20,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Scenes/PushLevel_1.unity
     guid: 66316953b2c3b22478717121aee8ee6d
+  - enabled: 1
+    path: Assets/Resources/Scenes/EnemyLevel.unity
+    guid: 055903c1d6527fc47bf67e6349f1f071

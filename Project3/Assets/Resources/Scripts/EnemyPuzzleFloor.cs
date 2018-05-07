@@ -66,13 +66,16 @@ public class EnemyPuzzleFloor : Floor {
 
     public override int[,] GetTutorialPuzzle()
     {
+		
         return new int[,] {
             { 3, 2, 0, 0 },
             { 0, 0, 0, 0 },
-            { 0, 5, 5, 5 },
-            { 4, 5, 0, 5 },
-            { 0, 0, 6, 0 }
+            { 0, 5, 5, 0 },
+            { 0, 5, 0, 0 },
+            { 0, 5, 0, 0 },
+			{ 4, 5, 6, 0 }
         };
+
     }
 
     public override int[,] GetEasyPuzzle()
